@@ -6,7 +6,7 @@
 .company-Logo {
     display: table-cell;
     width: 20%;
-    background-color: purple;
+    background-color: #bf4aa8;
 }
 
 .search-bar {
@@ -19,5 +19,9 @@
 .account-info {
     display: table-cell;
     width: 20%;
-    background-color: purple;
+    background-color: #bf4aa8;
+}
+
+.SubmitButton {
+    background-color: #51d0de;
 }
