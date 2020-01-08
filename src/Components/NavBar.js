@@ -7,7 +7,7 @@ export class NavBar extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        console.log("Hey")
+        console.log(event.target.name.value)
     }
 
     render() {
