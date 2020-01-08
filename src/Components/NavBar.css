@@ -1,6 +1,8 @@
 .NavBar {
     display: table;
     width: 100%;
+    position: absolute;
+    top: 0px;
 }
 
 .company-Logo {
@@ -9,12 +11,6 @@
     background-color: #bf4aa8;
 }
 
-.search-bar {
-    display: table-cell;
-    width: 60%;
-    background-color: white;
-    text-align: center;
-}
 
 .account-info {
     display: table-cell;
@@ -22,6 +18,19 @@
     background-color: #bf4aa8;
 }
 
+/* Search Bar */
+
+.search-bar {
+    display: table-cell;
+    width: 60%;
+    background-color: white;
+    text-align: center;
+}
+
 .SubmitButton {
     background-color: #51d0de;
+}
+
+.Form {
+    background-color: #bf4aa8;
 }
