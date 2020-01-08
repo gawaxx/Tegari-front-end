@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import './NavBar.css';
+import SearchBar from './SearchBar';
+
 
 export class NavBar extends Component {
+
+    handleSubmit = event => {
+        event.preventDefault()
+        console.log(event.target.name.value)
+    }
+
     render() {
         return (
             <div className="NavBar">
@@ -9,7 +17,7 @@ export class NavBar extends Component {
                     <h1>Company Logo</h1>
                 </div>
                 <div className="search-bar">
-                    <p> search bar </p>
+                    <SearchBar handleSubmit={this.handleSubmit} />
                 </div>
                 <div className="account-info">
                     <p> user info stuff</p>

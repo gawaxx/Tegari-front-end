@@ -1,22 +1,42 @@
 .NavBar {
     display: table;
     width: 100%;
+    position: absolute;
+    top: 0px;
 }
 
 .company-Logo {
     display: table-cell;
     width: 20%;
-    background-color: purple;
+    background-color: #bf4aa8;
 }
+
+
+.account-info {
+    display: table-cell;
+    width: 20%;
+    background-color: #bf4aa8;
+}
+
+/* Search Bar */
 
 .search-bar {
     display: table-cell;
     width: 60%;
     background-color: white;
+    text-align: center;
+    position: relative;
 }
 
-.account-info {
-    display: table-cell;
-    width: 20%;
-    background-color: purple;
+.SubmitButton {
+    background-color: #51d0de;
+}
+
+.Form {
+    background-color: #bf4aa8;
+    width: 60%;
+    padding: 1%;
+    position: absolute;
+    left: 19%;
+    top: 75%;
 }
