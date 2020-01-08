@@ -1,0 +1,22 @@
+.NavBar {
+    display: table;
+    width: 100%;
+}
+
+.company-Logo {
+    display: table-cell;
+    width: 20%;
+    background-color: purple;
+}
+
+.search-bar {
+    display: table-cell;
+    width: 60%;
+    background-color: white;
+}
+
+.account-info {
+    display: table-cell;
+    width: 20%;
+    background-color: purple;
+}
