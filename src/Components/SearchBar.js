@@ -1,12 +1,11 @@
 import React from 'react';
-import { Input, Menu } from 'semantic-ui-react'
 
-const SearchBar = () => {
+const SearchBar = props => {
     return (
         <div>
-            <form>
+            <form onSubmit={e => props.handleSubmit(e)} >
                 <label>
-                    Logo:
+                    Q:
                     <input type="text" name="name" />
                 </label>
                 <input type="submit" value="Submit" />

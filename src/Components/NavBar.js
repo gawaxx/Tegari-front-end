@@ -4,6 +4,12 @@ import SearchBar from './SearchBar';
 
 
 export class NavBar extends Component {
+
+    handleSubmit = event => {
+        event.preventDefault()
+        console.log("Hey")
+    }
+
     render() {
         return (
             <div className="NavBar">
@@ -11,7 +17,7 @@ export class NavBar extends Component {
                     <h1>Company Logo</h1>
                 </div>
                 <div className="search-bar">
-                    <SearchBar />
+                    <SearchBar handleSubmit={this.handleSubmit} />
                 </div>
                 <div className="account-info">
                     <p> user info stuff</p>
