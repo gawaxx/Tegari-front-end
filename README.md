@@ -1,2 +1,1 @@
-# mod-5-front-end
-Built with React
+This is the front end of my final project at Flatiron, built with React.
