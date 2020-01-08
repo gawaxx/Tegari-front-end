@@ -25,6 +25,7 @@
     width: 60%;
     background-color: white;
     text-align: center;
+    position: relative;
 }
 
 .SubmitButton {
@@ -33,4 +34,9 @@
 
 .Form {
     background-color: #bf4aa8;
+    width: 60%;
+    padding: 1%;
+    position: absolute;
+    left: 19%;
+    top: 75%;
 }
