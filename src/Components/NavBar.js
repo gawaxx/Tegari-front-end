@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.css';
+import SearchBar from './SearchBar';
+
 
 export class NavBar extends Component {
     render() {
@@ -9,7 +11,7 @@ export class NavBar extends Component {
                     <h1>Company Logo</h1>
                 </div>
                 <div className="search-bar">
-                    <p> search bar </p>
+                    <SearchBar />
                 </div>
                 <div className="account-info">
                     <p> user info stuff</p>
