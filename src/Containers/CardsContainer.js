@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { APILINK, API } from '../Components/API.js'
 import NormalCard from '../Components/Card/NormalCard.js'
+import CreatePost from '../Components/CreatePost.js';
 
 
 export class CardsContainer extends Component {
@@ -15,10 +16,15 @@ export class CardsContainer extends Component {
 
     render() {
         return (
-            <div>
-                {
-                    this.state.posts.map(post => <NormalCard key={post.id} post={post} />)
-                }
+            <div className="BigWrapper">
+                <div className="SearchResultContainer">
+                    {
+                        this.state.posts.map(post => <NormalCard key={post.id} post={post} />)
+                    }
+                </div>
+                <div className="CreatePostButton">
+                    <CreatePost />
+                </div>
             </div>
         );
     }
