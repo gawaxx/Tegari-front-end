@@ -6,7 +6,7 @@
 
   
   $color_white: #fff;
-  $color_prime: #5ad67d;
+  $color_prime: #51d0de;
   $color_grey: #e2e2e2;
   $color_grey_dark: #a2a2a2;
   
@@ -165,9 +165,9 @@
     }
   
   
-    @media (min-width: 640px) {
+    @media (min-width: 830px) {
       flex-direction: row;
-      max-width: 700px;
+      max-width: 830px;
       .meta {
         flex-basis: 40%;
         height: auto;
