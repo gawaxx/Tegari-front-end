@@ -7,7 +7,8 @@ export class NavBar extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        console.log(event.target.name.value)
+        console.log(event.target.search.value)
+        event.target.search.value = ""
     }
 
     render() {
