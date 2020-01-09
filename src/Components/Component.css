@@ -93,6 +93,7 @@ input[name=search] {
 }
 
 .urgentimg {
+    max-height: 150px;
     border-radius: 15px 15px 0 0;
     width: 100%;
 }

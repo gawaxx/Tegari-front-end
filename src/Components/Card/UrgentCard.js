@@ -9,7 +9,7 @@ export class UrgentCard extends Component {
                 <div class="Urgentcard">
                     <img className="urgentimg" src={image_url} alt="urgent card" />
                     <div class="Urgentcontainer">
-                        <h4><b>{title}</b></h4>
+                        <h4><b>{title} - £{price} </b></h4>
                         <p>{description}</p>
                     </div>
                 </div>
