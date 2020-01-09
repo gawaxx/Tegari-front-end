@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './NavBar.css';
+import './Component.css';
 import SearchBar from './SearchBar';
 // import { APILINK, API } from './API.js'
 

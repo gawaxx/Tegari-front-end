@@ -4,7 +4,12 @@ export class CreatePost extends Component {
     render() {
         return (
             <div>
-                Hello
+                <div className="cardCreatePostButton">
+                    <div className="containerCreatePostButton">
+                        <h4><b>John Doe</b></h4>
+                        <p>Architect & Engineer</p>
+                    </div>
+                </div>
             </div>
         );
     }

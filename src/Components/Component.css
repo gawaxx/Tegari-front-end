@@ -1,3 +1,5 @@
+/* Search Bar  */
+
 .NavBar {
     display: table;
     width: 100%;
@@ -43,4 +45,24 @@
 
 input[name=search] {
     width: 60%;
+}
+
+/* CreatePostButton */
+
+.cardCreatePostButton {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: red;
+  }
+  
+/* On mouse-over, add a deeper shadow */
+.cardCreatePostButton:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.containerCreatePostButton {
+  padding: 2px 16px;
 }
