@@ -8,7 +8,6 @@ export class UrgentCard extends Component {
         const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
         return (
             <Card>
-            <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
                 <Image src={image_url} wrapped ui={false} />
                     <Card.Content>
                     <Card.Header>Matthew</Card.Header>
