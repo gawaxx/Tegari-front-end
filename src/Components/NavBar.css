@@ -40,3 +40,7 @@
     left: 19%;
     top: 75%;
 }
+
+input[name=search] {
+    width: 60%;
+}
