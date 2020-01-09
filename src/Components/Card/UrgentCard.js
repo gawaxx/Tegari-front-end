@@ -7,7 +7,7 @@ export class UrgentCard extends Component {
         return (
             <div>
                 <div class="Urgentcard">
-                    <img src={image_url} alt="urgent card" />
+                    <img className="urgentimg" src={image_url} alt="urgent card" />
                     <div class="Urgentcontainer">
                         <h4><b>{title}</b></h4>
                         <p>{description}</p>

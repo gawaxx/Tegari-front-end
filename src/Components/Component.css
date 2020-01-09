@@ -79,6 +79,9 @@ input[name=search] {
     transition: 0.3s;
     border-radius: 15px;
     background-color: #fff;
+    margin-bottom: 4%;
+    width: 95%;
+    margin: 1rem auto;
 }
   
 .Urgentcard:hover {
@@ -89,6 +92,7 @@ input[name=search] {
     padding: 2px 16px;
 }
 
-img {
-    border-radius: 5px 5px 0 0;
+.urgentimg {
+    border-radius: 15px 15px 0 0;
+    width: 100%;
 }
