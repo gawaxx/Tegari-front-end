@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.css';
 import SearchBar from './SearchBar';
+import { APILINK, GetAPI, PostAPI, PatchAPI, DeleteAPI, API } from './API.js'
 
 
 export class NavBar extends Component {
@@ -8,7 +9,8 @@ export class NavBar extends Component {
     handleSubmit = event => {
         event.preventDefault()
         console.log(event.target.search.value)
-        event.target.search.value = ""
+        // event.target.search.value = ""
+        console.log(API.GetAPI(`${APILINK}/users`))
     }
 
     render() {
