@@ -55,6 +55,8 @@ input[name=search] {
     transition: 0.3s;
     border-radius: 15px;
     background-color: #51d0de;
+    margin: 1rem auto;
+    width: 95%;
   }
   
 /* On mouse-over, add a deeper shadow */
