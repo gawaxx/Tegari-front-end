@@ -1,4 +1,4 @@
-export const APILINK = "http://localhost:3000/"
+export const APILINK = "http://localhost:3000"
 // export const APIUSERS = `${APILINK}/users`
 // export const APIPOSTS = `${APILINK}/posts`
 // export const APISAVEPOST = `${APILINK}/save_posts`
