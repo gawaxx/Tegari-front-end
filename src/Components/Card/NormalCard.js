@@ -3,14 +3,13 @@ import './NormalCard.scss'
 
 export class NormalCard extends Component {
     render() {
-        const {category, user_id, id, price, postcode, city, description, image, condition, created_at} = this.props.post
+        const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
         return (
             <div>
-                {console.log(this.props.post)}
                 <div className="blog-card">
                     <div className="meta">
                     <div className="photo">
-                        <img alt="placholder" src="https://via.placeholder.com/300x240"></img>
+                        <img alt="placholder" src={image_url}></img>
                     </div>
                     <ul className="details">
                         <li className="author"><a href="/"> {user_id} </a></li>
@@ -26,7 +25,7 @@ export class NormalCard extends Component {
                     </ul>
                     </div>
                     <div className="description">
-                    <h1> Title PlaceHolder </h1>
+                    <h1> Selling a {title}  </h1>
                     <h2> Condition: {condition} | {postcode}({city}) </h2>
                     <p> {description} </p>
                     <p className="read-more">
