@@ -53,8 +53,8 @@ input[name=search] {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    border-radius: 5px;
-    background-color: red;
+    border-radius: 15px;
+    background-color: #51d0de;
   }
   
 /* On mouse-over, add a deeper shadow */
@@ -65,4 +65,9 @@ input[name=search] {
 /* Add some padding inside the card container */
 .containerCreatePostButton {
   padding: 2px 16px;
+  text-align: center;
+}
+
+.containerCreatePostButton h1 {
+    font-size: 100px;
 }

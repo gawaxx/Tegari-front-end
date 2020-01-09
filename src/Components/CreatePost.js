@@ -6,8 +6,8 @@ export class CreatePost extends Component {
             <div>
                 <div className="cardCreatePostButton">
                     <div className="containerCreatePostButton">
-                        <h4><b>John Doe</b></h4>
-                        <p>Architect & Engineer</p>
+                        <h1> <b> + </b> </h1>
+                        <h4><b>Create A post !</b></h4>
                     </div>
                 </div>
             </div>
