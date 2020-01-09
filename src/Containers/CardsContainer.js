@@ -10,7 +10,7 @@ export class CardsContainer extends Component {
     }
 
     componentDidMount() {
-        API.GetAPI(`${APILINK}/users`).then(posts => this.setState({ posts }))
+        API.GetAPI(`${APILINK}/posts`).then(posts => this.setState({ posts }))
     }
 
     render() {
