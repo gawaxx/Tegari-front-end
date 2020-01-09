@@ -148,7 +148,7 @@
 @media (min-width: 830px) {
   .blog-card {
     flex-direction: row;
-    max-width: 830px;
+    max-width: 1200px;
   }
   .blog-card .meta {
     flex-basis: 40%;

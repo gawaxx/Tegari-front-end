@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Component.css';
 import SearchBar from './SearchBar';
-// import { APILINK, API } from './API.js'
 
 
 export class NavBar extends Component {
@@ -10,7 +9,6 @@ export class NavBar extends Component {
         event.preventDefault()
         console.log(event.target.search.value)
         event.target.search.value = ""
-        // console.log(API.GetAPI(`${APILINK}/users`))
     }
 
     render() {
