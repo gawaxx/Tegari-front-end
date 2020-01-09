@@ -1,0 +1,16 @@
+.BigWrapper {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 0.7fr;
+}
+
+.SearchResultContainer{
+    background-color: green;
+}
+
+.CreatePostButton {
+    background-color: blue;
+}
+
+.UrgentPostContainer {
+    background-color: red;
+}

@@ -6,9 +6,6 @@ import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}
 
-
-
-
 function App() {
   return (
     <Router>
@@ -21,7 +18,7 @@ function App() {
           {/* <Route exact path='/login' component={} /> */}
 
           <Container className="links">
-              <Route exact path='/Search' component={CardsContainer} />
+              <Route exact path='/Search' component={CardsContainer}/>
           </Container>
           
         </Container>
