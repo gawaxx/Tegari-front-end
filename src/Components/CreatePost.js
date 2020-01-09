@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
 export class CreatePost extends Component {
+
+    handleClick = () => {
+        console.log("Hey")
+    }
+
     render() {
         return (
             <div>
-                <div className="cardCreatePostButton">
+                <div className="cardCreatePostButton" onClick={() => this.handleClick()} >
                     <div className="containerCreatePostButton">
                         <h1> <b> + </b> </h1>
                         <h4><b>Create A post !</b></h4>
