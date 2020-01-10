@@ -14,7 +14,6 @@ export class AuthFormsContainer extends Component {
         return (
             <div className="App">
                 <nav>
-                    <div>food blog</div>
                     {this.props.user && <span>Hello, {this.props.user.email}!</span>}
                 </nav>
                 {/* {!user ? ( */}
