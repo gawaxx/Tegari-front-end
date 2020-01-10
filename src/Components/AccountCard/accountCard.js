@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
 export class accountCard extends Component {
+
+    handleClick = () => {
+        console.log("Here")
+    }
+
     render() {
         return (
             <div>
                 <div>
                 <div className="Urgentcard">
-                    <div className="Urgentcontainer">
-                        <h4><b> {this.props.user} </b></h4>
-                        <p>  </p>
+                    <div className="Urgentcontainer" onClick={() => this.handleClick()}>
+                        <h4><b> Welcome {this.props.user.name} {console.log(this.props.user)} </b></h4>
+                        <p> {this.props.user.points} points </p>
                     </div>
                 </div>
             </div>
