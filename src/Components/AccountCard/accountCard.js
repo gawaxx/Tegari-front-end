@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Component.css'
 
 export class accountCard extends Component {
 
@@ -10,9 +11,9 @@ export class accountCard extends Component {
         return (
             <div>
                 <div>
-                <div className="Urgentcard">
-                    <div className="Urgentcontainer" onClick={() => this.handleClick()}>
-                        <h4><b> Welcome {this.props.user.name} {console.log(this.props.user)} </b></h4>
+                <div className="AccountCard">
+                    <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
+                        <h4><b> Welcome {this.props.user.user_name} </b></h4>
                         <p> {this.props.user.points} points </p>
                     </div>
                 </div>
