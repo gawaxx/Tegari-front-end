@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Component.css';
 import SearchBar from './SearchBar';
-import { APILINK, API } from '../Components/API.js'
 
 
 export class NavBar extends Component {

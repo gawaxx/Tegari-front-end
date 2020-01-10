@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React, { Component } from "react"; //useState, useEffect, 
 // import { APILINK, API } from '../Components/API.js'
 import AuthForms from '../Components/AuthForms.js'
 
