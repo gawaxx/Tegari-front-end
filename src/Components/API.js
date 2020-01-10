@@ -58,7 +58,7 @@ export const login = (url, loginData) =>
       Accept: "application/json"
     },
     body: JSON.stringify({ user: loginData })
-})
+    })
     .then(jsonify)
     .then(data => {
       localStorage.setItem("token", data.token);
