@@ -32,7 +32,7 @@ function App() {
 
           
           <Container className="navBar">
-            <NavBar user={user} />
+            <Route path='/' render={() => <NavBar user={user} /> } />
           </Container>
           {/* <Route exact path='/login' component={} /> */}
 

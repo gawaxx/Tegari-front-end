@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './Component.css';
 import SearchBar from './SearchBar';
+import AccountCard from './AccountCard/accountCard';
+import AuthForms from '../Components/AuthForms.js'
+
 
 
 export class NavBar extends Component {
@@ -9,16 +12,6 @@ export class NavBar extends Component {
         event.preventDefault()
         console.log(event.target.search.value)
         event.target.search.value = ""
-        // const postInfo = {
-        //     user_name: "Blob",
-        //     password_digest: "1234",
-        //     points: 0,
-        //     name: "Bob",
-        //     surname: "bob",
-        //     n_of_reports: 0,
-        //     email: "email@email.com"
-        // }
-        // API.PostAPI(`${APILINK}/users`, postInfo).then(console.log)
     }
 
     render() {
@@ -31,7 +24,9 @@ export class NavBar extends Component {
                     <SearchBar handleSubmit={this.handleSubmit} />
                 </div>
                 <div className="account-info">
-                    <p> user info stuff</p>
+                    {
+                        this.props.user ? <AccountCard user={this.props.user} /> : <div> you are not logged in </div>
+                    }
                 </div>
             </div>
         );
