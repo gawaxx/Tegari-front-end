@@ -19,6 +19,7 @@ export class CardsContainer extends Component {
     }
 
     filterNUPosts = (posts) => {
+        console.log(posts)
         let array = posts.filter(post => post.urgent === false)
         this.setState({nonUrgentPosts: array})
     }
