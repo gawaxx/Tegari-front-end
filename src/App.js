@@ -5,10 +5,27 @@ import { BrowserRouter as Router, Route } from 'react-router-dom' // Link, Switc
 import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 import AuthFormsContainer from "./Containers/AuthFormsContainer";
+import { APILINK, API } from './Components/API.js'
+
 
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+      API.validateUser()
+        .then(user => setUser(user))
+        .catch(console.error);
+  }, []);
+
+  const handleLogin = loginData => {
+      API.login( `${APILINK}/login`, loginData).then(user => setUser(user));
+  };
+
+  const handleSignup = () => {};
+
   return (
     <Router>
         <Container className="container">
@@ -21,7 +38,7 @@ function App() {
 
           <Container className="links">
               <Route exact path='/Search' component={CardsContainer}/>
-              <Route exact path='/login' component={AuthFormsContainer}/>
+              <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} setUser={setUser} /> }  />
           </Container>
           
         </Container>

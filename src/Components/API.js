@@ -50,7 +50,7 @@ export const signUp = (url, signupData) =>
     body: JSON.stringify({ user: signupData })
   }).then(jsonify);
 
-  export const login = (url, loginData) =>
+export const login = (url, loginData) =>
   fetch(url, {
     method: "POST",
     headers: {
@@ -58,11 +58,11 @@ export const signUp = (url, signupData) =>
       Accept: "application/json"
     },
     body: JSON.stringify({ user: loginData })
-  })
+})
     .then(jsonify)
     .then(data => {
       localStorage.setItem("token", data.token);
       return data.user;
-    });
+});
 
-export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser }
+export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login, signUp }

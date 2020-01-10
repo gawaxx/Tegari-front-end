@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const AuthForms = ({ login, signup }) => {
+  
   const [loginData, setLoginData] = useState({});
   const [signupData, setSignupData] = useState({});
 
