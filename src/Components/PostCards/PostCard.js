@@ -25,7 +25,7 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo"></div>
-                
+            
             </div>
         );
     }
