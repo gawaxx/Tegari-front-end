@@ -12,10 +12,10 @@ export class AuthFormsContainer extends Component {
             <div className="App">
                 {/* {!user ? ( */}
                     {console.log(this.props.handleLogin)}
-                    <AuthForms login={this.props.handleLogin} signup={this.props.handleLogin} />
+                    <AuthForms login={this.props.handleLogin} signup={this.props.handleSignup} />
                 {/* ) : ( */}
                     {/* <PostForm postPost={API.postPost} /> */}
-                )}
+                {/* )} */}
             </div>
         );
     }

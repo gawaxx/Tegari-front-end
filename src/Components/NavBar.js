@@ -18,7 +18,7 @@ export class NavBar extends Component {
         return (
             <div className="NavBar">
                 <div className="company-Logo">
-                    <h1>Company Logo</h1>
+                    <Link to="/"><h1>Company Logo</h1></Link>
                 </div>
                 <div className="search-bar">
                     <SearchBar handleSubmit={this.handleSubmit} />
