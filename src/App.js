@@ -6,7 +6,7 @@ import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 import AuthFormsContainer from "./Containers/AuthFormsContainer";
 import { APILINK, API } from './Components/API.js'
-import LandingPage from "./Components/LandingPage";
+import LandingPage from "./Containers/LandingPage";
 
 
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}

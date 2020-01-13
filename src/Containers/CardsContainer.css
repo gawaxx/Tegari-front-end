@@ -3,6 +3,8 @@
     grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
+/* Search Page container */
+
 /* .SearchResultContainer{
     background-color: green;
 }
@@ -14,3 +16,19 @@
 .UrgentPostContainer {
     background-color: red;
 } */
+
+
+/* LandingPage */
+
+.LandingPageBigWrapper{
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 0.7fr;
+}
+
+.Welcome {
+    text-align: center;
+}
+
+.FrontPageRightSide {
+    background-color: red;
+}
