@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../Containers/CardsContainer.css'
 import CreatePost from '../Components/CreatePost';
+import { Link } from 'react-router-dom'
 
 export class LandingPage extends Component {
 
@@ -22,12 +23,16 @@ export class LandingPage extends Component {
                 </div>
 
                 <div className="FrontPageRightSide">
-                    <CreatePost />
+                    <div onClick={() => this.handleClick()} >
+                        <CreatePost />
+                    </div>
                     <h1> Or </h1>
                     <div className="AccountCard">
-                        <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
-                            <h4><b> Create an account </b></h4>
-                            <p> it's free :) </p>
+                        <div className="AccountCardcontainer">
+                            <Link to="/login" style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                                <h4><b> Create an account </b></h4>
+                                <p> it's free :) </p>
+                            </Link>
                         </div>
                     </div>
                 </div>
