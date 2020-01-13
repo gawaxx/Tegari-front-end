@@ -27,7 +27,8 @@ const AuthForms = ({ login, signup }) => {
   const handleSignupSubmit = e => {
     e.preventDefault();
     signup(signupData);
-  };
+  }
+  
   return (
     <>
       <form onSubmit={handleLoginSubmit}>

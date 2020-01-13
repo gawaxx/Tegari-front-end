@@ -24,7 +24,7 @@ function App() {
       API.login( `${APILINK}/login`, loginData).then(user => setUser(user));
   };
 
-  // const handleSignup = () => {}; makes a post request for a user
+  const handleSignup = () => {}; //makes a post request for a user
 
   return (
     <Router>
@@ -38,7 +38,7 @@ function App() {
 
           <Container className="links">
               <Route exact path='/Search' component={CardsContainer}/>
-              <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} setUser={setUser} /> }  />
+              <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  />
           </Container>
           
         </Container>
