@@ -3,12 +3,13 @@ import '../Component.css'
 
 export class UrgentCard extends Component {
     render() {
-        const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
+        // category, user_id, id, postcode, city, condition, created_at
+        const {title, price, description, image_url } = this.props.post
         return (
             <div>
-                <div class="Urgentcard">
+                <div className="Urgentcard">
                     <img className="urgentimg" src={image_url} alt="urgent card" />
-                    <div class="Urgentcontainer">
+                    <div className="Urgentcontainer">
                         <h4><b>{title} - £{price} </b></h4>
                         <p>{description}</p>
                     </div>

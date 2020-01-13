@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Component.css';
 import SearchBar from './SearchBar';
+import AccountCard from './AccountCard/accountCard';
+
 
 
 export class NavBar extends Component {
@@ -21,7 +23,9 @@ export class NavBar extends Component {
                     <SearchBar handleSubmit={this.handleSubmit} />
                 </div>
                 <div className="account-info">
-                    <p> user info stuff</p>
+                    {
+                        this.props.user ? <AccountCard user={this.props.user} /> : <div> you are not logged in </div>
+                    }
                 </div>
             </div>
         );
