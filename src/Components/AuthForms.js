@@ -25,9 +25,23 @@ const AuthForms = ({ login, signup }) => {
   };
 
   const handleSignupSubmit = e => {
-    e.preventDefault();
-    signup(signupData);
-  };
+    if (e.target.password.value === e.target.password_confirmation.value) {
+      e.preventDefault();
+      let signUpData = {
+        email: signupData.email,
+        password: e.target.password.value,
+        name: e.target.nameofuser.value,
+        familyName: e.target.familyName.value,
+        username: e.target.username.value
+      }
+      signup(signUpData)
+    }
+    else {
+      e.preventDefault()
+      console.log("Passwords don't match")
+    }
+  }
+
   return (
     <>
       <form onSubmit={handleLoginSubmit}>
@@ -49,24 +63,12 @@ const AuthForms = ({ login, signup }) => {
       or
       <form onSubmit={handleSignupSubmit}>
         <h2>sign up</h2>
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          onChange={handleSignupChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleLoginChange}
-        />
-        <input
-          type="password"
-          name="password_confirmation"
-          placeholder="Password confirmation"
-          onChange={handleLoginChange}
-        />
+        <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
+        <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
+        <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
+        <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
+        <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
+        <input type="username" name="username" placeholder="Username" onChange={handleSignupChange} />
         <input type="submit" />
       </form>
     </>
