@@ -47,22 +47,24 @@ const AuthForms = ({ login, signup }) => {
     <>
     <div className="FormContainer">
         <form onSubmit={handleLoginSubmit}>
-          <h2>log in</h2>
-          <input
-            type="email"
-            name="email"
-            placeholder="E-mail"
-            onChange={handleLoginChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleLoginChange}
-          />
-          <input type="submit" />
+          <label>
+            <h2>log in</h2>
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              onChange={handleLoginChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleLoginChange}
+            />
+            <input type="submit" />
+          </label>
         </form>
-        or
+        <h1> Or </h1>
         <form onSubmit={handleSignupSubmit}>
           <label>
             <h2>sign up</h2>
