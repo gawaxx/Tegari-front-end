@@ -3,6 +3,12 @@
     grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
+.center {
+    background-color: rgb(220, 220, 220);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 15px;
+}
+
 .center h1 {
     background-color: rgb(160, 160, 160);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
