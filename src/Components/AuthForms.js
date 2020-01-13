@@ -5,6 +5,7 @@ const AuthForms = ({ login, signup }) => {
   
   const [loginData, setLoginData] = useState({});
   const [signupData, setSignupData] = useState({});
+  const [isLogin, setisLogin] = useState({});
 
   const handleLoginChange = e => {
     setLoginData({
@@ -45,23 +46,35 @@ const AuthForms = ({ login, signup }) => {
 
   return (
     <>
+
+    <div className="buttonChoice">
+      <h1 onClick={ () => setisLogin(true) }> Login </h1>
+      <h1 onClick={ () => setisLogin(false) } > Signup </h1> 
+      <hr></hr>
+    </div>
+
+
     <div className="FormContainer">
+
+        {(isLogin) ? 
         <form onSubmit={handleLoginSubmit}>
-          <h2>log in</h2>
-          <label>
-            <input type="email" name="email" placeholder="E-mail" onChange={handleLoginChange} />
-            <span> E-mail </span>
-          </label>
+            <h2>log in</h2>
+            <label>
+              <input type="email" name="email" placeholder="E-mail" onChange={handleLoginChange} />
+              <span> E-mail </span>
+            </label>
 
-          <label>
-            <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
-            <span> Password </span>
-          </label>
+            <label>
+              <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
+              <span> Password </span>
+            </label>
 
-          <input type="submit" />
-        </form>
-        <h1> Or </h1>
-        <form onSubmit={handleSignupSubmit}>
+            <input type="submit" />
+          </form> 
+          
+          : 
+
+          <form onSubmit={handleSignupSubmit}>
           <h2>sign up</h2>
           <label>
             <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
@@ -95,6 +108,9 @@ const AuthForms = ({ login, signup }) => {
 
           <input type="submit" />
         </form>
+      }
+
+
     </div>
     </>
   );

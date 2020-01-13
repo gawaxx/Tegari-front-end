@@ -65,3 +65,20 @@
 .FormContainer form input[type="submit"]:hover {
   background: #51d0de;
 }
+
+.buttonChoice {
+  text-align: center;
+}
+
+.buttonChoice h1 {
+  padding-left: 15px;
+  color: #51d0de;
+  display: table-caption;
+  display: inline-block
+}
+
+.buttonChoice hr {
+  background-color: #51d0de;
+  height: 4px;
+  width: 50vw;
+}
