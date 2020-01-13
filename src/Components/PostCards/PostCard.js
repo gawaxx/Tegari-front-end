@@ -13,8 +13,12 @@ export class PostCard extends Component {
     }
 
     findUser = () => {
-        API.getAPI(`${APIUSERS}/${this.props.post.user_id}`)
+        API.GetAPI(`${APIUSERS}/${this.props.post.user_id}`)
         .then(user => this.setState({user}))
+    }
+
+    componentDidMount() {
+        this.findUser()
     }
 
     render() {
@@ -36,7 +40,7 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-
+                    <h1>{this.state.user.name}</h1>
                 </div>
             
             </div>
