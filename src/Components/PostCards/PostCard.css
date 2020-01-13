@@ -1,0 +1,4 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 0.7fr;
+}

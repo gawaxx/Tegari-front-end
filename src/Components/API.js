@@ -1,5 +1,5 @@
 export const APILINK = "http://localhost:3000"
-// export const APIUSERS = `${APILINK}/users`
+export const APIUSERS = `${APILINK}/users`
 // export const APIPOSTS = `${APILINK}/posts`
 // export const APISAVEPOST = `${APILINK}/save_posts`
 // export const APIADMIN = `${APILINK}/admins`
@@ -40,15 +40,15 @@ export const validateUser = url => { // APILINK/profile
     }
   };
   
-export const signUp = (url, signupData) =>
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({ user: signupData })
-  }).then(jsonify);
+// export const signUp = (url, signupData) =>
+//   fetch(url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json"
+//     },
+//     body: JSON.stringify({ user: signupData })
+//   }).then(jsonify);
 
 export const login = (url, loginData) =>
   fetch(url, {
@@ -65,4 +65,4 @@ export const login = (url, loginData) =>
       return data.user;
 });
 
-export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login, signUp }
+export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }

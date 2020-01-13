@@ -37,6 +37,10 @@ export class CardsContainer extends Component {
         console.log("there")
     }
 
+    deRenderAPost = () => {
+        this.setState({ selectedPost: "" })
+    }
+
     render() {
             if (this.state.selectedPost.length === 0) {
                 return(
@@ -60,7 +64,7 @@ export class CardsContainer extends Component {
             else if (this.state.selectedPost.length !== 0 ) {
                 return(
                     <div>
-                        <PostCard post={this.state.selectedPost}/>
+                        <PostCard post={this.state.selectedPost} deRenderAPost={this.deRenderAPost}/>
                     </div>
                 )
             }
