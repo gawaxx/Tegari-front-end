@@ -11,3 +11,9 @@
 .username h1 {
     display: table-caption;
 }
+
+
+
+.TheirInfo {
+    display: flex;
+}

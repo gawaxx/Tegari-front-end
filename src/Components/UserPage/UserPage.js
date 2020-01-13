@@ -16,12 +16,19 @@ export class UserPage extends Component {
                 </div>
 
                 <div className="center">
-                    <div className="username" >
-                        <h1> {user_name} </h1> 
-                    </div>
+                    <div className="TheirInfo">
+                        <div className="username" >
+                            <h1> {user_name} </h1> 
+                        </div>
 
-                    <h1> Their name: {name} </h1> 
-                    <h1> {points} points </h1>
+                        <div className="name" > 
+                            <h1> Name: {name} </h1> 
+                        </div>
+                        
+                        <div>
+                            <h1> {points} points </h1>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="right">
