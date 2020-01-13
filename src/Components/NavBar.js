@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Component.css';
 import SearchBar from './SearchBar';
 import AccountCard from './AccountCard/accountCard';
+import { Link } from 'react-router-dom'
 
 
 
@@ -24,7 +25,11 @@ export class NavBar extends Component {
                 </div>
                 <div className="account-info">
                     {
-                        this.props.user ? <AccountCard user={this.props.user} /> : <div> you are not logged in </div>
+                        this.props.user ? <AccountCard user={this.props.user} /> : 
+                        <div> 
+                            You are not logged in
+                            <Link to="/login"> Click here to login</Link>
+                        </div>
                     }
                 </div>
             </div>
