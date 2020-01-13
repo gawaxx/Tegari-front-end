@@ -25,7 +25,7 @@ function App() {
   };
 
   const handleSignup = (signupData) => {
-    console.log(signupData)
+    API.PostAPI(`${APILINK}/users/create`, signupData)
   }; //makes a post request for a user
 
   return (

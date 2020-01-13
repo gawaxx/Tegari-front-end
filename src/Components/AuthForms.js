@@ -25,7 +25,7 @@ const AuthForms = ({ login, signup }) => {
   };
 
   const handleSignupSubmit = e => {
-    if (e.target.password === e.target.password_confirmation) {
+    if (e.target.password.value === e.target.password_confirmation.value) {
       e.preventDefault();
       signup(signupData);
     }
