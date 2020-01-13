@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../Containers/CardsContainer.css'
 
 export class LandingPage extends Component {
     render() {
