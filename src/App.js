@@ -24,7 +24,7 @@ function App() {
       API.login( `${APILINK}/login`, loginData).then(user => setUser(user));
   };
 
-  // const handleSignup = () => {};
+  // const handleSignup = () => {}; makes a post request for a user
 
   return (
     <Router>
