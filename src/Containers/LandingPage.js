@@ -16,10 +16,23 @@ export class LandingPage extends Component {
                 </div>
 
                 <div className="Welcome" >
-                    <h1> WELCOME TO *INSERT APP NAME* </h1>
-                    <h2> You can buy or sale anything you want! It's easy and since this is a demo you don't even need an account!</h2>
-                    <h2> This website is made to avoid scams, based on a point system for users as well as an active moderation </h2>
-                    <h2> To get started you can search up there or look at what's on the left </h2>
+
+                    <div>
+                        <h1> WELCOME TO *INSERT APP NAME* </h1>
+                    </div>
+
+                    <div>
+                        <h2> You can buy or sale anything you want! It's easy and since this is a demo you don't even need an account!</h2>
+                    </div>
+
+                    <div>
+                        <h2> This website is made to avoid scams, based on a point system for users as well as an active moderation </h2>
+                    </div>
+
+                    <div>
+                        <h2> To get started you can search up there or look at what's on the right </h2>
+                    </div>
+
                 </div>
 
                 <div className="FrontPageRightSide">

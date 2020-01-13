@@ -28,6 +28,14 @@
 
 .Welcome {
     text-align: center;
+    width: 95%;
+}
+
+.Welcome div {
+    background-color: #51d0de;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    height: 15vh;
 }
 
 .FrontPageRightSide {
