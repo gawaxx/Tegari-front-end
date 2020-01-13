@@ -27,10 +27,11 @@ const AuthForms = ({ login, signup }) => {
   const handleSignupSubmit = e => {
     if (e.target.password.value === e.target.password_confirmation.value) {
       e.preventDefault();
-      signUpData = {
+      let signUpData = {
         email: signupData.email,
         password: e.target.password.value,
-        name: e.target.nameofuser.value
+        name: e.target.nameofuser.value,
+        familyName: e.target.familyName.value
       }
       signup(signUpData)
     }
@@ -64,6 +65,8 @@ const AuthForms = ({ login, signup }) => {
         <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
         <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
         <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
+        <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
+        <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
         <input type="submit" />
       </form>
     </>
