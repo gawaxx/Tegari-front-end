@@ -2,3 +2,12 @@
     display: grid;
     grid-template-columns: 0.7fr 2fr 0.7fr;
 }
+
+.center h1 {
+    background-color: rgb(160, 160, 160);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.username h1 {
+    display: table-caption;
+}
