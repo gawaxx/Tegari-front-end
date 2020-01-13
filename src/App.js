@@ -40,7 +40,7 @@ function App() {
           {/* <Route exact path='/login' component={} /> */}
 
           <Container className="links">
-              <Route exact path="/users/:username" component={UserContainer}/>
+              <Route exact path="/users/:id" component={UserContainer}/>
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/Search' component={CardsContainer}/>

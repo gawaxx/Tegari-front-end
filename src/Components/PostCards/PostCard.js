@@ -25,7 +25,7 @@ export class PostCard extends Component {
 
     render() {
         const {category, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
-        const { user_name, name, points } = this.state.user
+        const { user_name, name, points, id } = this.state.user
         return (
             <div className="wrapper">
 
@@ -44,7 +44,7 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <Link to={`/users/${user_name}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
                         <h1>Username: {user_name}</h1>
                     </Link>
                     <h2>Posted by: {name} </h2>
