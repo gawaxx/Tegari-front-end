@@ -39,6 +39,7 @@ function App() {
           {/* <Route exact path='/login' component={} /> */}
 
           <Container className="links">
+              <Route exact path='/' component={} />
               <Route exact path='/Search' component={CardsContainer}/>
               <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  />
           </Container>
