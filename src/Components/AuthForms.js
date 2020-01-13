@@ -25,10 +25,16 @@ const AuthForms = ({ login, signup }) => {
   };
 
   const handleSignupSubmit = e => {
-    e.preventDefault();
-    signup(signupData);
+    if (e.target.password === e.target.password_confirmation) {
+      e.preventDefault();
+      signup(signupData);
+    }
+    else {
+      e.preventDefault()
+      console.log("Passwords don't match")
+    }
   }
-  
+
   return (
     <>
       <form onSubmit={handleLoginSubmit}>
