@@ -47,9 +47,11 @@ export class UserPage extends Component {
                     </div>
 
                     <div className="PostedByThem">
-                        {
-                            this.state.allPosts.map(post => <AllPostUser post={post} key={post.id} /> )
-                        }
+                        <div className="cardscontainer"> 
+                            {
+                                this.state.allPosts.map(post => <AllPostUser post={post} key={post.id} /> )
+                            }
+                        </div>
                     </div>
 
                 </div>
