@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import '../Containers/CardsContainer.css'
+import CreatePost from '../Components/CreatePost';
 
 export class LandingPage extends Component {
+
+    handleClick = () => {
+        console.log("here")
+    } 
+
     render() {
         return (
             <div className="LandingPageBigWrapper">
-                <div>
+                <div className="FrontPageLeftSide">
                     1
                 </div>
 
@@ -16,7 +22,14 @@ export class LandingPage extends Component {
                 </div>
 
                 <div className="FrontPageRightSide">
-                    3
+                    <CreatePost />
+                    <h1> Or </h1>
+                    <div className="AccountCard">
+                        <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
+                            <h4><b> Create an account </b></h4>
+                            <p> it's free :) </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
