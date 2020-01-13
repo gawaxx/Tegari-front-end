@@ -5,8 +5,12 @@ import AllPostUser from './AllPostUser';
 
 export class UserPage extends Component {
 
-    state = {
-        alloftheirPosts: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: this.props.user,
+            allPosts: []
+        }
     }
 
     handleClick = () => {
@@ -15,15 +19,20 @@ export class UserPage extends Component {
 
     getTheirPost = () => {
         API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
+            .then(allPosts => this.setState({ ...this.state, allPosts }) )
+            .then(console.log(this.props.user))
     }
 
-    componentDidMount() {
-        this.getTheirPost()
-        .then(alloftheirPosts => this.setState({ alloftheirPosts }))
+    componentDidUpdate(prevProps) {
+        if(prevProps.user.id !== this.props.user.id) {
+        console.log("that's me!",this.props.user.id)
+        console.log("above me")
+        this.getTheirPost()}
     }
 
     render() {
         const { user_name, name, points } = this.props.user
+        console.log(this.props.user)
         return (
             <div className="wrapper" >
                 <div className="left">
@@ -47,9 +56,7 @@ export class UserPage extends Component {
 
                     <div className="PostedByThem">
                         {
-                            this.state.alloftheirPosts.map(post => {
-                                return <AllPostUser post={post} />
-                            })
+                            this.state.allPosts.map(post => <AllPostUser post={post} /> )
                         }
                     </div>
 

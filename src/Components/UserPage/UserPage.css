@@ -18,9 +18,11 @@
     display: table-caption;
 }
 
-
-
 .TheirInfo {
     display: flex;
     justify-content: space-around;
+}
+
+.PostedByThem {
+    background-color: red;
 }
