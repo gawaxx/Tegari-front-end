@@ -23,11 +23,13 @@ export class PostCard extends Component {
 
     render() {
         const {category, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
-
+        const { user_name, name, points } = this.state.user
         return (
             <div className="wrapper">
 
-                <div className="tips"></div>
+                <div className="tips">
+                    <h3>If it looks too good to be true, it probably is</h3>
+                </div>
 
                 <div className="PostInfo">
                     <p onClick={ () => {this.handleClick()} }>Go Back</p>
@@ -35,12 +37,14 @@ export class PostCard extends Component {
                     <h1>{title}</h1>
                     <h2>{postcode}, {city}</h2>
                     <p>{category}</p>
-                    <p>{condition}</p>
+                    <p>condition: {condition}</p>
                     <p>{description}</p>
                 </div>
 
                 <div className="sellerInfo">
-                    <h1>{this.state.user.name}</h1>
+                    <h1>Username: {user_name}</h1>
+                    <h2>Posted by: {name} </h2>
+                    <h2>Points: {points} </h2>
                 </div>
             
             </div>
