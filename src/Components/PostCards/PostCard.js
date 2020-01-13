@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './PostCard.css'
-import { APILINK, API } from './Components/API.js'
+import { APIUSERS, API } from '../API.js'
 
 export class PostCard extends Component {
 
@@ -13,10 +13,12 @@ export class PostCard extends Component {
     }
 
     findUser = () => {
-        API.get
+        API.getAPI(`${APIUSERS}/${this.props.post.user_id}`)
+        .then(user => this.setState({user}))
     }
+
     render() {
-        const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
+        const {category, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
 
         return (
             <div className="wrapper">

@@ -1,5 +1,5 @@
 export const APILINK = "http://localhost:3000"
-// export const APIUSERS = `${APILINK}/users`
+export const APIUSERS = `${APILINK}/users`
 // export const APIPOSTS = `${APILINK}/posts`
 // export const APISAVEPOST = `${APILINK}/save_posts`
 // export const APIADMIN = `${APILINK}/admins`
@@ -65,4 +65,4 @@ export const login = (url, loginData) =>
       return data.user;
 });
 
-export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login, signUp }
+export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
