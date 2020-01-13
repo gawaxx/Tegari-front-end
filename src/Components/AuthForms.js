@@ -31,7 +31,8 @@ const AuthForms = ({ login, signup }) => {
         email: signupData.email,
         password: e.target.password.value,
         name: e.target.nameofuser.value,
-        familyName: e.target.familyName.value
+        familyName: e.target.familyName.value,
+        username: e.target.username.value
       }
       signup(signUpData)
     }
@@ -67,6 +68,7 @@ const AuthForms = ({ login, signup }) => {
         <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
         <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
         <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
+        <input type="username" name="username" placeholder="Username" onChange={handleSignupChange} />
         <input type="submit" />
       </form>
     </>
