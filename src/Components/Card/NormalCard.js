@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import './NormalCard.scss'
 
 export class NormalCard extends Component {
+
+    handleClick = () => {
+        this.props.renderAPost(this.props.post.id)
+    }
+
     render() {
         const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
+
         return (
             <div>
-                <div className="blog-card">
+                <div className="blog-card" onClick={ () => this.handleClick()}>
                     <div className="meta">
                     <div className="photo">
                         <img alt="placholder" src={image_url}></img>

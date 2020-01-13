@@ -24,7 +24,7 @@ function App() {
       API.login( `${APILINK}/login`, loginData).then(user => setUser(user));
   };
 
-  const handleSignup = () => {};
+  // const handleSignup = () => {}; makes a post request for a user
 
   return (
     <Router>
@@ -32,7 +32,7 @@ function App() {
 
           
           <Container className="navBar">
-            <NavBar user={user} />
+            <Route path='/' render={() => <NavBar user={user} /> } />
           </Container>
           {/* <Route exact path='/login' component={} /> */}
 
