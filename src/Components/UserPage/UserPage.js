@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import './UserPage.css'
+import { API, APILINK } from '../API';
+import AllPostUser from './AllPostUser';
 
 export class UserPage extends Component {
 
+    state = {
+        alloftheirPosts: []
+    }
+
     handleClick = () => {
         debugger
+    }
+
+    getTheirPost = () => {
+        API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
+    }
+
+    componentDidMount() {
+        this.getTheirPost()
+        .then(alloftheirPosts => this.setState({ alloftheirPosts }))
     }
 
     render() {
@@ -29,10 +44,18 @@ export class UserPage extends Component {
                             <h1> {points} points </h1>
                         </div>
                     </div>
+
+                    <div className="PostedByThem">
+                        {
+                            this.state.alloftheirPosts.map(post => {
+                                return <AllPostUser post={post} />
+                            })
+                        }
+                    </div>
+
                 </div>
 
                 <div className="right">
-
                 </div>
             </div>
         );
