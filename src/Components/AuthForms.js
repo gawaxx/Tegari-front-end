@@ -49,18 +49,8 @@ const AuthForms = ({ login, signup }) => {
         <form onSubmit={handleLoginSubmit}>
           <label>
             <h2>log in</h2>
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail"
-              onChange={handleLoginChange}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              onChange={handleLoginChange}
-            />
+            <input type="email" name="email" placeholder="E-mail" onChange={handleLoginChange} />
+            <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
             <input type="submit" />
           </label>
         </form>
