@@ -5,8 +5,7 @@ const AuthForms = ({ login, signup }) => {
   
   const [loginData, setLoginData] = useState({});
   const [signupData, setSignupData] = useState({});
-
-  let isSignUp = false
+  const [isLogin, setisLogin] = useState({});
 
   const handleLoginChange = e => {
     setLoginData({
@@ -47,9 +46,16 @@ const AuthForms = ({ login, signup }) => {
 
   return (
     <>
+
+    <div className="buttonChoice">
+      <h1 onClick={ () => setisLogin(true) }> Login </h1>
+      <h1 onClick={ () => setisLogin(false) } > Signup </h1> 
+    </div>
+
+    <hr></hr>
     <div className="FormContainer">
 
-        {(isSignUp) ? 
+        {(isLogin) ? 
         <form onSubmit={handleLoginSubmit}>
             <h2>log in</h2>
             <label>
