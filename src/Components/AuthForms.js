@@ -50,9 +50,10 @@ const AuthForms = ({ login, signup }) => {
     <div className="buttonChoice">
       <h1 onClick={ () => setisLogin(true) }> Login </h1>
       <h1 onClick={ () => setisLogin(false) } > Signup </h1> 
+      <hr></hr>
     </div>
 
-    <hr></hr>
+
     <div className="FormContainer">
 
         {(isLogin) ? 
