@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import './PostCard.css'
+import { APILINK, API } from './Components/API.js'
 
 export class PostCard extends Component {
 
+    state = {
+        user: []
+    }
+
     handleClick = () => {
         this.props.deRenderAPost()
+    }
+
+    findUser = () => {
+        API.get
     }
     render() {
         const {category, user_id, id, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
@@ -24,7 +33,9 @@ export class PostCard extends Component {
                     <p>{description}</p>
                 </div>
 
-                <div className="sellerInfo"></div>
+                <div className="sellerInfo">
+
+                </div>
             
             </div>
         );

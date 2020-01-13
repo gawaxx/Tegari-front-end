@@ -40,15 +40,15 @@ export const validateUser = url => { // APILINK/profile
     }
   };
   
-export const signUp = (url, signupData) =>
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({ user: signupData })
-  }).then(jsonify);
+// export const signUp = (url, signupData) =>
+//   fetch(url, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Accept: "application/json"
+//     },
+//     body: JSON.stringify({ user: signupData })
+//   }).then(jsonify);
 
 export const login = (url, loginData) =>
   fetch(url, {
