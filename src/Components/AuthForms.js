@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './AuthForms.css'
 
 const AuthForms = ({ login, signup }) => {
   
@@ -44,33 +45,37 @@ const AuthForms = ({ login, signup }) => {
 
   return (
     <>
-      <form onSubmit={handleLoginSubmit}>
-        <h2>log in</h2>
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          onChange={handleLoginChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleLoginChange}
-        />
-        <input type="submit" />
-      </form>
-      or
-      <form onSubmit={handleSignupSubmit}>
-        <h2>sign up</h2>
-        <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
-        <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
-        <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
-        <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
-        <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
-        <input type="username" name="username" placeholder="Username" onChange={handleSignupChange} />
-        <input type="submit" />
-      </form>
+    <div className="FormContainer">
+        <form onSubmit={handleLoginSubmit}>
+          <h2>log in</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            onChange={handleLoginChange}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={handleLoginChange}
+          />
+          <input type="submit" />
+        </form>
+        or
+        <form onSubmit={handleSignupSubmit}>
+          <label>
+            <h2>sign up</h2>
+            <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
+            <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
+            <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
+            <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
+            <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
+            <input type="username" name="username" placeholder="Username" onChange={handleSignupChange} />
+            <input type="submit" />
+          </label>
+        </form>
+    </div>
     </>
   );
 };
