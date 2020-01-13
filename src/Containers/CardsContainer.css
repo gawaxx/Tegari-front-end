@@ -23,6 +23,7 @@
 .LandingPageBigWrapper{
     display: grid;
     grid-template-columns: 0.7fr 2fr 0.7fr;
+    height: 85vh;
 }
 
 .Welcome {
