@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './PostCard.css'
 import { APIUSERS, API } from '../API.js'
+import { Link } from 'react-router-dom' // Link, Switch
+
 
 export class PostCard extends Component {
 
@@ -23,7 +25,7 @@ export class PostCard extends Component {
 
     render() {
         const {category, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
-        const { user_name, name, points } = this.state.user
+        const { user_name, name, points, id } = this.state.user
         return (
             <div className="wrapper">
 
@@ -42,7 +44,9 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <h1>Username: {user_name}</h1>
+                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                        <h1>Username: {user_name}</h1>
+                    </Link>
                     <h2>Posted by: {name} </h2>
                     <h2>Points: {points} </h2>
                     <p> posted at {created_at} </p>
