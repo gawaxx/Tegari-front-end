@@ -25,6 +25,7 @@ export class PostCreation extends Component {
         let condition = event.target.condition.value 
         let cat = event.target.categories.value
         let image = event.target.image.value
+        let price = event.target.price.value
         const postData = {
             title: title,
             description: desc,
@@ -34,7 +35,8 @@ export class PostCreation extends Component {
             phone_number: phonenum,
             condition: condition,
             category: cat,
-            image_url: image
+            image_url: image,
+            price: price
         }
 
         API.PostAPI(APIPOSTS, postData)
@@ -54,13 +56,18 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <input type="image" alt="no" name="image" placeholder="Image" />
+                            <input alt="no" name="image" placeholder="Image" />
                             <span> Image </span>
                         </label>
 
                         <label>
                             <input type="description" name="description" placeholder="Description" />
                             <span> Description </span>
+                        </label>
+
+                        <label>
+                            <input type="price" name="price" placeholder="Price" />
+                            <span> Price </span>
                         </label>
 
                         <label>
