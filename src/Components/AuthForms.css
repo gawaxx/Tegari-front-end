@@ -82,3 +82,19 @@
   height: 4px;
   width: 50vw;
 }
+
+.loginSelect .login h1 {
+  color: #51d0de;
+}
+
+.loginSelect .signup h1 {
+  color: rgb(150,150,150);
+}
+
+.signupSelect .login {
+  color: rgb(150,150,150);
+}
+
+.signupSelect .signup {
+  color: #51d0de;
+}
