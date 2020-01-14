@@ -7,6 +7,7 @@
     background-color: rgb(220, 220, 220);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border-radius: 15px;
+    height: 80vh;
 }
 
 .TheirInfo h1 {
@@ -21,6 +22,36 @@
 .TheirInfo {
     display: flex;
     justify-content: space-around;
+}
+
+/*  */
+
+.reportButton {
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 0.7fr 0.4fr 0.7fr;
+}
+
+.reportContainer {
+    background-color: rgb(255, 0, 0);
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+
+.reportContainer:hover {
+    background-color: rgb(255, 0, 0);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+.reportContainer:active {
+    transition: 0.1s;
+    background-color: rgb(200,0,0);
+}
+
+.reportButton h1 {
+    font-size: 30px;
 }
 
 /* Posted Cards */
