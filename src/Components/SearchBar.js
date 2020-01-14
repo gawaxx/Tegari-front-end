@@ -13,7 +13,7 @@ const SearchBar = props => {
                     <FaSearch />
                     <input type="text" name="search"/>
                 </label>
-                <Link to="/Search"> <input type="submit" value="Submit" className="SubmitButton"/> </Link>
+                <Link to="/search"> <input type="submit" value="Submit" className="SubmitButton"/> </Link>
             </form>
         </div>
     );

@@ -45,7 +45,7 @@ function App() {
               <Route exact path="/posts/:id" component={PostCard}/>
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
-              <Route exact path='/Search' component={CardsContainer}/>
+              <Route exact path='/search' component={CardsContainer}/>
               <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  />
           </Container>
           
