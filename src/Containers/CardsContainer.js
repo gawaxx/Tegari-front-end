@@ -52,7 +52,7 @@ export class CardsContainer extends Component {
                 </div>
                 <div className="SearchResultContainer">
                     {
-                        this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
+                        this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
                     }
                 </div>
                 <div className="CreatePostButton">

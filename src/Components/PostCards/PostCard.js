@@ -12,7 +12,8 @@ export class PostCard extends Component {
     }
 
     handleClick = () => {
-        this.props.deRenderAPost()
+        // this.props.deRenderAPost()
+        console.log("Hi")
     }
 
     findUser = () => {
