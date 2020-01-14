@@ -12,16 +12,46 @@ export class PostCreation extends Component {
         this.setState({value: event.target.value});
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        let title = event.target.title.value
+        let desc = event.target.description.value
+        let postalCode = event.target.postalcode.value
+        let email = event.target.email.value
+        let city = event.target.city.value 
+        let phonenum = event.target.phonenumber.value 
+        let condition = event.target.condition.value 
+        let cat = event.target.categories.value
+        let image = event.target.image.value
+        const postData = {
+            title: title,
+            description: desc,
+            postcode: postalCode,
+            email: email,
+            city: city,
+            phone_number: phonenum,
+            condition: condition,
+            category: cat,
+            image_url: image
+        }
+        console.log(event.target)
+    }
+
 
     render() {
         return (
             <div>
                 <img src="https://via.placeholder.com/250" alt="placeholder" />
                 <div className="FormContainer">
-                    <form>
+                    <form onSubmit={(e) => this.handleSubmit(e) }>
                         <label>
                             <input type="title" name="title" placeholder="Title" />
                             <span> Title </span>
+                        </label>
+
+                        <label>
+                            <input type="image" alt="no" name="image" placeholder="Image" />
+                            <span> Image </span>
                         </label>
 
                         <label>
@@ -50,7 +80,7 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <select onChange={this.handleChange}>
+                            <select id="condition" onChange={this.handleChange}>
                                 <option value="New">New</option>
                                 <option value="Almostnew">Almost new</option>
                                 <option value="Used">Used</option>
@@ -58,8 +88,15 @@ export class PostCreation extends Component {
                             </select>
                         </label>
 
+                        <label>
+                            <select id="categories" onChange={this.handleChange}>
+                                <option value="electronic">electronic</option>
+                                <option value="furniture">furniture</option>
+                                <option value="entertainment">entertainment</option>
+                            </select>
+                        </label>
 
-                        <input type="submit" />
+                        <input type="submit" value="Post Your ad !"/>
                     </form> 
                 </div>
             </div>
