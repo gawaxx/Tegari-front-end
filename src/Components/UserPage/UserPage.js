@@ -55,6 +55,14 @@ export class UserPage extends Component {
                         </div>
                     </div>
 
+                    <div className="reportButton">
+                        <div></div>
+                        <div className="reportContainer">
+                            <h1>Report</h1>
+                        </div>
+                        <div></div>
+                    </div>
+
                 </div>
 
                 <div className="right">
