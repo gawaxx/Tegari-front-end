@@ -9,6 +9,7 @@ import { APILINK, API } from './Components/API.js'
 import LandingPage from "./Containers/LandingPage";
 import UserContainer from "./Containers/UserContainer";
 import PostCard from "./Components/PostCards/PostCard";
+import PostCreation from "./Components/PostCreation/PostCreation";
 
 
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}
@@ -48,7 +49,7 @@ function App() {
           <Container className="links">
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
-              <Route exact path="" component={} />
+              <Route exact path="/create" component={PostCreation} />
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
