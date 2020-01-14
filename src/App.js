@@ -48,6 +48,7 @@ function App() {
           <Container className="links">
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
+              <Route exact path="" component={} />
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
