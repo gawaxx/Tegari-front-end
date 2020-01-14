@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './UserPage.css'
 import { API, APILINK } from '../API';
 import AllPostUser from './AllPostUser';
+import { Link } from 'react-router-dom'
 
 export class UserPage extends Component {
 
@@ -49,7 +50,7 @@ export class UserPage extends Component {
                     <div className="PostedByThem">
                         <div className="cardscontainer"> 
                             {
-                                this.state.allPosts.map(post => <AllPostUser post={post} key={post.id} /> )
+                                this.state.allPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostUser post={post} key={post.id} /> </Link> )
                             }
                         </div>
                     </div>
