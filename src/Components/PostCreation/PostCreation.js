@@ -46,7 +46,7 @@ export class PostCreation extends Component {
 
     render() {
         return (
-            <div>
+            <div className="CreateAPost" >
                 <img src="https://via.placeholder.com/250" alt="placeholder" />
                 <div className="FormContainer">
                     <form onSubmit={(e) => this.handleSubmit(e) }>
