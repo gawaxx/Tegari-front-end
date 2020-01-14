@@ -8,10 +8,9 @@ import { Link } from 'react-router-dom'
 
 export class NavBar extends Component {
 
-    handleSubmit = event => {
-        event.preventDefault()
-        console.log(event.target.search.value)
-        event.target.search.value = ""
+    handleSubmit = value => {
+        // event.preventDefault()
+        console.log(value)
     }
 
     render() {
