@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../AuthForms.css'
+import { APIPOSTS, API } from '../API.js'
+
 
 export class PostCreation extends Component {
 
@@ -34,6 +36,8 @@ export class PostCreation extends Component {
             category: cat,
             image_url: image
         }
+
+        API.PostAPI(APIPOSTS, postData)
         console.log(event.target)
     }
 
