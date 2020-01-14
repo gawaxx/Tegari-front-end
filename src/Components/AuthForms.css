@@ -66,6 +66,11 @@
   background: #bf4aa8;
 }
 
+.FormContainer form input[type="description"] {
+  height: 200px;
+  width: 40vw;
+}
+
 .buttonChoice {
   text-align: center;
 }
