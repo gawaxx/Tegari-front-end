@@ -11,7 +11,7 @@ export class UserPage extends Component {
     }
 
     handleClick = () => {
-        debugger
+        console.log("repooort")
     }
 
     getTheirPost = () => {
@@ -57,7 +57,7 @@ export class UserPage extends Component {
 
                     <div className="reportButton">
                         <div></div>
-                        <div className="reportContainer">
+                        <div className="reportContainer" onClick={ () => this.handleClick()}>
                             <h1>Report</h1>
                         </div>
                         <div></div>
