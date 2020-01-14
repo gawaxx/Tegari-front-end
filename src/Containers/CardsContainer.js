@@ -4,7 +4,6 @@ import NormalCard from '../Components/Card/NormalCard.js'
 import CreatePost from '../Components/CreatePost.js';
 import './CardsContainer.css'
 import UrgentCard from '../Components/Card/UrgentCard.js';
-import PostCard from '../Components/PostCards/PostCard.js';
 import { Link } from 'react-router-dom'
 
 
@@ -59,16 +58,8 @@ export class CardsContainer extends Component {
                     <CreatePost />
                 </div>
             </div>
-
-
-            // else if (this.state.selectedPost.length !== 0 ) {
-            //     return(
-            //         <div>
-            //             <PostCard post={this.state.selectedPost} deRenderAPost={this.deRenderAPost}/>
-            //         </div>
-            //     )
-            // }
-        )}
+        )
+    }
 }
 
 export default CardsContainer;
