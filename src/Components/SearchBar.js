@@ -16,7 +16,7 @@ const SearchBar = props => {
                     <FaSearch />
                     <input type="text" name="search" onChange={ (e) => setValue(e.target.value)}/>
                 </label>
-                <Link to="/search"> <input type="submit" value="Submit" className="SubmitButton" onClick={() => props.handleSubmit(value)}/> </Link>
+                <Link to="/search"> <input type="submit" value="Submit" className="SubmitButton" onClick={() => props.handleSearchSubmit(value)}/> </Link>
             </form>
         </div>
     );

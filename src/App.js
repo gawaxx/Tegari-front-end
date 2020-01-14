@@ -31,12 +31,16 @@ function App() {
     API.PostAPI(`${APILINK}/users/create`, signupData)
   }; //makes a post request for a user
 
+  const handleSearchSubmit = value => {
+    console.log(value)
+  }
+
   return (
     <Router>
         <Container className="container">
 
           <Container className="navBar">
-            <Route path='/' render={() => <NavBar user={user} /> } />
+            <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit}/> } />
           </Container>
           {/* <Route exact path='/login' component={} /> */}
 

@@ -8,10 +8,6 @@ import { Link } from 'react-router-dom'
 
 export class NavBar extends Component {
 
-    handleSubmit = value => {
-        // event.preventDefault()
-        console.log(value)
-    }
 
     render() {
         return (
@@ -20,11 +16,13 @@ export class NavBar extends Component {
                     <Link to="/"><h1>Company Logo</h1></Link>
                 </div>
                 <div className="search-bar">
-                    <SearchBar handleSubmit={this.handleSubmit} />
+                    <SearchBar handleSearchSubmit={this.props.handleSearchSubmit} />
                 </div>
                 <div className="account-info">
-                    {
-                        this.props.user ? <AccountCard user={this.props.user} /> : 
+                    { 
+                    this.props.user ? 
+                        <AccountCard user={this.props.user} /> 
+                    : 
                         <div> 
                             You are not logged in
                             <Link to="/login"> Click here to login</Link>
