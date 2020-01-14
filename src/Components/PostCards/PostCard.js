@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './PostCard.css'
-import { APIUSERS, API } from '../API.js'
+import { APIUSERS, APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
 
 
 export class PostCard extends Component {
 
     state = {
-        user: []
+        user: [],
+        post: []
     }
 
     handleClick = () => {
@@ -15,16 +16,25 @@ export class PostCard extends Component {
     }
 
     findUser = () => {
-        API.GetAPI(`${APIUSERS}/${this.props.post.user_id}`)
+        API.GetAPI(`${APIUSERS}/${this.state.post.user_id}`)
         .then(user => this.setState({user}))
     }
 
+    findPost = () => {
+        API.GetAPI(`${APIPOSTS}/${window.location.href.split("/")[4]}`)
+        .then(post => this.setState({post}))
+    }
+
     componentDidMount() {
+        this.findPost()
+    }
+
+    componentDidUpdate() {
         this.findUser()
     }
 
     render() {
-        const {category, title, price, postcode, city, description, image_url, condition, created_at} = this.props.post
+        const {category, title, price, postcode, city, description, image_url, condition, created_at} = this.state.post
         const { user_name, name, points, id } = this.state.user
         return (
             <div className="wrapper">

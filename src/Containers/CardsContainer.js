@@ -5,6 +5,7 @@ import CreatePost from '../Components/CreatePost.js';
 import './CardsContainer.css'
 import UrgentCard from '../Components/Card/UrgentCard.js';
 import PostCard from '../Components/PostCards/PostCard.js';
+import { Link } from 'react-router-dom'
 
 
 export class CardsContainer extends Component {
@@ -42,34 +43,32 @@ export class CardsContainer extends Component {
     }
 
     render() {
-            if (this.state.selectedPost.length === 0) {
-                return(
-                    <div className="BigWrapper">
-                        <div className="UrgentPostContainer">
-                            {
-                                this.state.urgentPosts.map(post => <UrgentCard key={post.id} post={post} />)
-                            }
-                        </div>
-                        <div className="SearchResultContainer">
-                            {
-                                this.state.nonUrgentPosts.map(post => <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} />)
-                            }
-                        </div>
-                        <div className="CreatePostButton">
-                            <CreatePost />
-                        </div>
-                    </div>
-                )
-            }
-            else if (this.state.selectedPost.length !== 0 ) {
-                return(
-                    <div>
-                        <PostCard post={this.state.selectedPost} deRenderAPost={this.deRenderAPost}/>
-                    </div>
-                )
-            }
+        return (
+            <div className="BigWrapper">
+                <div className="UrgentPostContainer">
+                    {
+                        this.state.urgentPosts.map(post => <UrgentCard key={post.id} post={post} />)
+                    }
+                </div>
+                <div className="SearchResultContainer">
+                    {
+                        this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
+                    }
+                </div>
+                <div className="CreatePostButton">
+                    <CreatePost />
+                </div>
+            </div>
 
-    }
+
+            // else if (this.state.selectedPost.length !== 0 ) {
+            //     return(
+            //         <div>
+            //             <PostCard post={this.state.selectedPost} deRenderAPost={this.deRenderAPost}/>
+            //         </div>
+            //     )
+            // }
+        )}
 }
 
 export default CardsContainer;
