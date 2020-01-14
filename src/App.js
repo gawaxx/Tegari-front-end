@@ -16,6 +16,7 @@ import PostCard from "./Components/PostCards/PostCard";
 function App() {
 
   const [user, setUser] = useState(null);
+  const [search, setsearch] = useState("");
 
   useEffect(() => {
       API.validateUser()
@@ -32,7 +33,7 @@ function App() {
   }; //makes a post request for a user
 
   const handleSearchSubmit = value => {
-    console.log(value)
+    setsearch(value)
   }
 
   return (
@@ -49,7 +50,7 @@ function App() {
               <Route exact path="/posts/:id" component={PostCard}/>
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
-              <Route exact path='/search' component={CardsContainer}/>
+              <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
               <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  />
           </Container>
           
