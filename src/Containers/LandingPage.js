@@ -36,8 +36,8 @@ export class LandingPage extends Component {
                 </div>
 
                 <div className="FrontPageRightSide">
-                    <div onClick={() => this.handleClick()} >
-                        <CreatePost />
+                    <div >
+                        <Link to="/create" style={{ color: 'inherit', textDecoration: 'inherit'}} > <CreatePost /> </Link>
                     </div>
                     <h1> Or </h1>
                     <div className="AccountCard">

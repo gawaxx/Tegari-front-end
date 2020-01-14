@@ -69,7 +69,7 @@ export class CardsContainer extends Component {
                     }
                 </div>
                 <div className="CreatePostButton">
-                    <CreatePost />
+                    <Link to="/create" style={{ color: 'inherit', textDecoration: 'inherit'}} > <CreatePost /> </Link>
                 </div>
             </div>
         )
