@@ -6,10 +6,10 @@ export class PostCreation extends Component {
         return (
             <div className="FormContainer">
                 <form>
-                    <h2>Create a Post</h2>
+                    <h2>Create a post</h2>
                     <label>
-                        <input type="email" name="email" placeholder="E-mail" />
-                        <span> E-mail </span>
+                        <input type="title" name="title" placeholder="Title" />
+                        <span> Title </span>
                     </label>
 
                     <label>
