@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Component.css';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom'
 
 
 const SearchBar = props => {
+
+    const [value, setValue] = useState(" ");
+
     return (
         <div className="Form">
-            <form onSubmit={e => props.handleSubmit(e)} >
+            <form>
                 <label>
                     <FaSearch />
-                    <input type="text" name="search"/>
+                    <input type="text" name="search" onChange={ (e) => setValue(e.target.value)}/>
                 </label>
-                <Link to="/search"> <input type="submit" value="Submit" className="SubmitButton"/> </Link>
+                <Link to="/search"> <input type="submit" value="Submit" className="SubmitButton" onClick={() => props.handleSearchSubmit(value)}/> </Link>
             </form>
         </div>
     );

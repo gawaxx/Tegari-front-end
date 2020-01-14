@@ -15,9 +15,23 @@ export class CardsContainer extends Component {
         selectedPost: []
     }
 
-    componentDidMount() {
-        API.GetAPI(`${APILINK}/posts`).then(posts => this.filterNUPosts(posts))
+    getUNPost = () => {
+        API.GetAPI(`${APILINK}/posts?title=${this.props.search}`).then(posts => this.filterNUPosts(posts))
+    }
+
+    getUPost = () => {
         API.GetAPI(`${APILINK}/posts`).then(posts => this.filterUPosts(posts))
+    }
+
+    componentDidMount() {
+        this.getUNPost()
+        this.getUPost()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.search !== prevProps.search) {
+            this.getUNPost()
+        }
     }
 
     filterNUPosts = (posts) => {
