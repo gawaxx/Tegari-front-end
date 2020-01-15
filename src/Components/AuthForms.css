@@ -1,3 +1,12 @@
+/* .whatever{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ag{
+  margin-left: 15vw;
+} */
+
 .FormContainer h1 {
   display: table;
   margin: 40px auto;
@@ -13,6 +22,7 @@
 .FormContainer form label {
   position: relative;
   display: block;
+  padding: 4px;
 }
 .FormContainer form label input {
   font: 18px Helvetica, Arial, sans-serif;
