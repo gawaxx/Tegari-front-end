@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../Component.css'
+import '../Component.css';
+import { Link } from 'react-router-dom';
 
 export class accountCard extends Component {
 
@@ -11,14 +12,16 @@ export class accountCard extends Component {
         return (
             <div>
                 <div>
-                    <div className="AccountCard">
-                        <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
-                            {/* <NavLink className='bottom-nav-link' to="/" exact> */}
-                                <h4><b> Welcome {this.props.user.user_name} </b></h4>
-                                <p> {this.props.user.points} points </p>
-                            {/* </Navlink> */}
+                    <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                        <div className="AccountCard">
+                            <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
+                                {/* <NavLink className='bottom-nav-link' to="/" exact> */}
+                                    <h4><b> Welcome {this.props.user.user_name} </b></h4>
+                                    <p> {this.props.user.points} points </p>
+                                {/* </Navlink> */}
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         );
