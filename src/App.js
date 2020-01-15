@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import NavBar from './Components/NavBar';
-import { BrowserRouter as Router, Route } from 'react-router-dom' // Link, Switch
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom' // Link, Switch
 import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 import AuthFormsContainer from "./Containers/AuthFormsContainer";
@@ -15,20 +15,26 @@ import MyAccount from "./Components/AccountCard/MyAccount";
 
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}
 
-function App() {
+function App(props) {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [search, setsearch] = useState("");
 
-  useEffect(() => {
-      API.validateUser()
-        .then(user => setUser(user))
-        .catch(console.error);
-  }, []);
+  // useEffect(() => {
+  //     API.validateUser()
+  //       .then(user => setUser(user))
+  //       .catch(console.error);
+  // }, []);
 
-  const handleLogin = loginData => {
-      API.login( `${APILINK}/login`, loginData).then(user => setUser(user));
-  };
+  const getUserData = () => {
+    API.validateUser(`${APILINK}/validate_user`)
+    .then(data => {
+        console.log('got the data =>',data.user)
+        setUser(data.user)
+      })
+    .catch(() => {debugger})
+}
+
 
   const handleSignup = (signupData) => {
     API.PostAPI(`${APILINK}/users/create`, signupData)
@@ -37,6 +43,8 @@ function App() {
   const handleSearchSubmit = value => {
     setsearch(value)
   }
+
+  const loggedIn = !!localStorage.jwt 
 
   return (
     <Router>
@@ -51,11 +59,16 @@ function App() {
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
               <Route exact path="/create" component={PostCreation} />
-              <Route exact path="/my_profile" component={MyAccount} />
-              {/* <Route exact path='/users' component={UserContainer} /> */}
+              {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
+              <Route exact path="/my_profile" >
+                {loggedIn ? < MyAccount getUserData={getUserData} user={user} /> : <Redirect to='/login' />}
+              </Route>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
-              <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  />
+              {/* <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  /> */}
+              <Route exact path="/login" >
+                {loggedIn ? <Redirect to='/my_profile' /> : <AuthFormsContainer user={user} handleSignup={handleSignup} setUser={setUser} />}
+              </Route>
           </Container>
           
         </Container>

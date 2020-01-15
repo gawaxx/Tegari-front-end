@@ -7,18 +7,25 @@ export class MyAccount extends Component {
         current_user: {}
     }
 
-    getUserData = () => {
-        API.validateUser(`${APILINK}/validate_user`)
-    }
+    // getUserData = () => {
+        
+    //     API.validateUser(`${APILINK}/validate_user`)
+    //     .then(data => {
+            
+    //         console.log(data.user)
+    //         this.setState({current_user: data.user})
+    //       });
+    // }
 
     componentDidMount() {
-        this.getUserData()
+        this.props.getUserData()
     }
 
     render() {
+        const {user} = this.props
         return (
             <div>
-                <h1> hello </h1>
+                <h1> hello {user.user_name}</h1>
             </div>
         );
     }
