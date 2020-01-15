@@ -4,7 +4,7 @@ export class MyAccount extends Component {
     render() {
         return (
             <div>
-                bruh bruh
+                this is my account
             </div>
         );
     }
