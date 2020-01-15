@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../Component.css'
+import '../Component.css';
+import { Link } from 'react-router-dom';
 
 export class accountCard extends Component {
 
