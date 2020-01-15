@@ -9,7 +9,7 @@ import AuthForms from '../Components/AuthForms.js'
  class AuthFormsContainer extends Component {
 
     handleLogin = loginData => {
-        API.login( `${APILINK}/login`, loginData).then(() => {debugger;this.props.history.push('/my_profile')});
+        API.login( `${APILINK}/login`, loginData).then(() => {this.props.history.push('/my_profile')}); //debugger
     };
 
     render() {
