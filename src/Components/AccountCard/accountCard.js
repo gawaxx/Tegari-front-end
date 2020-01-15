@@ -12,7 +12,7 @@ export class accountCard extends Component {
         return (
             <div>
                 <div>
-                    <Link to="/account" style={{ color: 'inherit', textDecoration: 'inherit'}} >
+                    <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit'}} >
                         <div className="AccountCard">
                             <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
                                 {/* <NavLink className='bottom-nav-link' to="/" exact> */}

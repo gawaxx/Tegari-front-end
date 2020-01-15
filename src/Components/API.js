@@ -23,7 +23,7 @@ export const DeleteAPI = (url, deleteInfo) => fetch(url, { method: "DELETE", hea
 export const GetProfile = (url) => fetch(url, {method: "GET", headers: {headers2}} )
 
 
-export const validateUser = url => { // APILINK/profile
+export const validateUser = (url) => { // APILINK/profile
     if (localStorage.token) {
       return fetch(url, {
         headers: {
@@ -33,6 +33,7 @@ export const validateUser = url => { // APILINK/profile
         .then(jsonify)
         .then(data => {
           localStorage.setItem("token", data.token);
+          console.log(data.user)
           return data.user;
         });
     } else {
@@ -61,7 +62,7 @@ export const login = (url, loginData) =>
     })
     .then(jsonify)
     .then(data => {
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token", data.token)
       return data.user;
 });
 

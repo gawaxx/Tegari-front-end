@@ -51,7 +51,7 @@ function App() {
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
               <Route exact path="/create" component={PostCreation} />
-              <Route exact path="/account" component={MyAccount} />
+              <Route exact path="/my_profile" component={MyAccount} />
               {/* <Route exact path='/users' component={UserContainer} /> */}
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
