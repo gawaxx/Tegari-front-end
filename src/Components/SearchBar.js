@@ -23,9 +23,10 @@ const SearchBar = props => {
         <div class="SearchWrap">
             <div class="search">
                 <input type="text" placeholder="What are you looking for?" className="searchTerm" onChange={ (e) => setValue(e.target.value)}/>
-                <button type="submit" class="searchButton">
+                <Link to="/search"> <button type="submit" class="searchButton" onClick={() => props.handleSearchSubmit(value)}>
                     <i class="fa fa-search"></i>
                 </button>
+                </Link>
             </div>
         </div>
         
