@@ -8,6 +8,9 @@ export class PostCreation extends Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            userid: {}
+        }
       }
 
     handleChange(event) {
@@ -26,6 +29,11 @@ export class PostCreation extends Component {
         let cat = event.target.categories.value
         let image = event.target.image.value
         let price = event.target.price.value
+        if (localStorage.data.user) {
+            this.setState({userid: localStorage.data.user.id})
+        } else {
+            this.setState({userid: 172})
+        }
         const postData = {
             title: title,
             description: desc,
@@ -36,7 +44,8 @@ export class PostCreation extends Component {
             condition: condition,
             category: cat,
             image_url: image,
-            price: price
+            price: price,
+            user_id: this.state.userid
         }
 
         API.PostAPI(APIPOSTS, postData)
@@ -49,7 +58,7 @@ export class PostCreation extends Component {
             <div className="CreateAPost" >
                 <img src="https://via.placeholder.com/250" alt="placeholder" />
                 <div className="FormContainer">
-                    <form onSubmit={(e) => this.handleSubmit(e) }>
+                    <form onSubmit={(e) => this.handleSubmit(e)} className="whatever">
                         <label>
                             <input type="title" name="title" placeholder="Title" />
                             <span> Title </span>
@@ -107,7 +116,8 @@ export class PostCreation extends Component {
                             </select>
                         </label>
 
-                        <input type="submit" value="Post Your ad !"/>
+                        <input className="ag" type="submit" value="Post Your ad !"/>
+
                     </form> 
                 </div>
             </div>

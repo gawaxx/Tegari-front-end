@@ -23,34 +23,20 @@ export const DeleteAPI = (url, deleteInfo) => fetch(url, { method: "DELETE", hea
 export const GetProfile = (url) => fetch(url, {method: "GET", headers: {headers2}} )
 
 
-export const validateUser = url => { // APILINK/profile
-    if (localStorage.token) {
+export const validateUser = (url) => { // APILINK/profile
+    if (localStorage.jwt) {
       return fetch(url, {
         headers: {
-          Authorisation: localStorage.token
+          Authorisation: localStorage.jwt
         }
       })
         .then(jsonify)
-        .then(data => {
-          localStorage.setItem("token", data.token);
-          return data.user;
-        });
     } else {
       return Promise.reject({ error: "no token" });
     }
   };
   
-// export const signUp = (url, signupData) =>
-//   fetch(url, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Accept: "application/json"
-//     },
-//     body: JSON.stringify({ user: signupData })
-//   }).then(jsonify);
-
-export const login = (url, loginData) =>
+  export const login = (url, loginData) =>
   fetch(url, {
     method: "POST",
     headers: {
@@ -58,11 +44,20 @@ export const login = (url, loginData) =>
       Accept: "application/json"
     },
     body: JSON.stringify({ user: loginData })
-    })
-    .then(jsonify)
-    .then(data => {
-      localStorage.setItem("token", data.token);
-      return data.user;
-});
-
-export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
+  })
+  .then(jsonify)
+  .then(data => {
+    console.log('got the token =>', data.jwt)
+    localStorage.setItem("jwt", data.jwt)
+  });
+  
+  export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
+  // export const signUp = (url, signupData) =>
+  //   fetch(url, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Accept: "application/json"
+  //     },
+  //     body: JSON.stringify({ user: signupData })
+  //   }).then(jsonify);

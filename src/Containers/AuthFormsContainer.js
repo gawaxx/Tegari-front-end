@@ -1,18 +1,22 @@
 import React, { Component } from "react"; //useState, useEffect, 
-// import { APILINK, API } from '../Components/API.js'
+import {withRouter} from 'react-router'
+import { APILINK, API } from '../Components/API.js'
 import AuthForms from '../Components/AuthForms.js'
 
 
 
 
-export class AuthFormsContainer extends Component {
+ class AuthFormsContainer extends Component {
+
+    handleLogin = loginData => {
+        API.login( `${APILINK}/login`, loginData).then(() => {debugger;this.props.history.push('/my_profile')});
+    };
 
     render() {
         return (
             <div className="App">
                 {/* {!user ? ( */}
-                    {console.log(this.props.handleLogin)}
-                    <AuthForms login={this.props.handleLogin} signup={this.props.handleSignup} />
+                    <AuthForms login={this.handleLogin} signup={this.props.handleSignup} />
                 {/* ) : ( */}
                     {/* <PostForm postPost={API.postPost} /> */}
                 {/* )} */}
@@ -21,4 +25,4 @@ export class AuthFormsContainer extends Component {
     }
 }
 
-export default AuthFormsContainer;
+export default withRouter(AuthFormsContainer);
