@@ -65,6 +65,8 @@ code {
   margin: 1rem auto;
 }
 
+
+
 .AccountCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   background-color: #bf4aa8;
