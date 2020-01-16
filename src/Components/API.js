@@ -17,7 +17,7 @@ const jsonify = res => res.json();
 
 
 export const GetAPI = (url) => fetch(url).then(res => res.json())
-export const PostAPI = (url, postInfo) => fetch(url, { method: "POST", headers: headers, body: JSON.stringify(postInfo)}).then(resp => resp.json()).then(console.log)
+export const PostAPI = (url, postInfo) => fetch(url, { method: "POST", headers: headers, body: JSON.stringify(postInfo)}).then(resp => resp.json())
 export const PatchAPI = (url, patchInfo) => fetch(url, { method: "PATCH", headers: headers, body: JSON.stringify(patchInfo)}).then(resp => resp.json())
 export const DeleteAPI = (url, deleteInfo) => fetch(url, { method: "DELETE", headers: headers, body: JSON.stringify(deleteInfo)})
 export const GetProfile = (url) => fetch(url, {method: "GET", headers: {headers2}} )
