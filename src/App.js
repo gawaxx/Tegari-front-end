@@ -35,7 +35,7 @@ function App(props) {
         setUser(data.user)
       })
     .catch(() => {debugger})
-}
+  }
 
 
   const handleSignup = (signupData) => {
@@ -60,7 +60,7 @@ function App(props) {
           <Container className="links">
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
-              <Route exact path="/create" component={PostCreation} />
+              <Route exact path="/create" render={() => <PostCreation user={user} />}  />
               {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
               <Route exact path="/my_profile" >
                 {loggedIn ? < MyAccount getUserData={getUserData} user={user} /> : <Redirect to='/login' />}

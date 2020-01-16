@@ -5,17 +5,14 @@ import { APIPOSTS, API } from '../API.js'
 
 export class PostCreation extends Component {
 
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.state = {
-            userid: {}
-        }
-      }
+    state = {
+        userid: {}
+    } 
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
+    // handleChange(event) {
+    //     // this.setState({value: event.target.value});
+    //     console.l
+    // }
 
     handleSubmit = (event) => {
         event.preventDefault()
@@ -29,11 +26,13 @@ export class PostCreation extends Component {
         let cat = event.target.categories.value
         let image = event.target.image.value
         let price = event.target.price.value
-        if (localStorage.data.user) {
-            this.setState({userid: localStorage.data.user.id})
+        if (this.props.user !== {}) {
+            // debugger
+            this.setState({userid: this.props.user.id})
         } else {
             this.setState({userid: 172})
         }
+        // debugger
         const postData = {
             title: title,
             description: desc,
@@ -47,9 +46,7 @@ export class PostCreation extends Component {
             price: price,
             user_id: this.state.userid
         }
-
         API.PostAPI(APIPOSTS, postData)
-        console.log(event.target)
     }
 
 
@@ -100,7 +97,7 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <select id="condition" onChange={this.handleChange}>
+                            <select id="condition" >
                                 <option value="New">New</option>
                                 <option value="Almostnew">Almost new</option>
                                 <option value="Used">Used</option>
@@ -109,7 +106,7 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <select id="categories" onChange={this.handleChange}>
+                            <select id="categories" >
                                 <option value="electronic">electronic</option>
                                 <option value="furniture">furniture</option>
                                 <option value="entertainment">entertainment</option>
