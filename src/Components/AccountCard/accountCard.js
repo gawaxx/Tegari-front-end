@@ -42,11 +42,11 @@ export class accountCard extends Component {
                 <Card.Content extra>
                     <div className='ui two buttons'>
                     <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit'}} >
-                        <Button basic color='green'>
+                        <Button positive>
                             My Profile
                         </Button>
                     </Link>
-                    <Button basic color='red' onClick={this.props.logout}>
+                    <Button negative onClick={this.props.logout}>
                         Logout
                     </Button>
                     </div>

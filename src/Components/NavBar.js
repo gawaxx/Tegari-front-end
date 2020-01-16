@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import AccountCard from './AccountCard/accountCard';
 import { Link } from 'react-router-dom'
+import { Button, Icon } from 'semantic-ui-react'
+
 
 
 
@@ -20,12 +22,17 @@ export class NavBar extends Component {
                     (this.props.user && this.props.user.user_name ) ? 
                         <AccountCard user={this.props.user} logout={this.props.logout} /> 
                     : 
-                        <div className="NotAccountCard"> 
-                            <div className="NotAccountCardContainer">
-                                You are not logged in
-                                <Link to="/login"> Click here to login</Link>
-                            </div>
-                        </div>
+
+                    <div>
+                        < Link to="/login">
+                            <Button animated>
+                                <Button.Content visible> Click here to log in</Button.Content>
+                                <Button.Content hidden>
+                                    <Icon name='arrow right' />
+                                </Button.Content>
+                            </Button>
+                        </Link>
+                    </div>
                     }
                 </div>
             </div>
