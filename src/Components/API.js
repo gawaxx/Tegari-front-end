@@ -31,6 +31,12 @@ export const validateUser = (url) => { // APILINK/profile
         }
       })
         .then(jsonify)
+        .then(data => {
+          if (data.token) {
+            localStorage.jwt = data.token
+          }
+          return data.user
+        })
     } else {
       return Promise.reject({ error: "no token" });
     }
@@ -49,6 +55,7 @@ export const validateUser = (url) => { // APILINK/profile
   .then(data => {
     console.log('got the token =>', data.jwt)
     localStorage.setItem("jwt", data.jwt)
+    return data.user
   });
   
   export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }

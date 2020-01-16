@@ -17,8 +17,8 @@ export class NavBar extends Component {
                 </div>
                 <div className="account-info">
                     { 
-                    (this.props.user !== {} ) ? 
-                        <AccountCard user={this.props.user} /> 
+                    (this.props.user && this.props.user.user_name ) ? 
+                        <AccountCard user={this.props.user} logout={this.props.logout} /> 
                     : 
                         <div className="NotAccountCard"> 
                             <div className="NotAccountCardContainer">

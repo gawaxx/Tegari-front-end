@@ -8,12 +8,16 @@ const options = [
     { key: 'entertainment', text: 'In entertainment', value: 'entertainment' },
     { key: 'electronic', text: 'In electronic', value: 'electronic' },
     { key: 'furniture', text: 'In furniture', value: 'furniture' },
-    { key: 'all', text: 'In all', value: {} },
+    // { key: 'all', text: 'In all', value: {} },
   ]
 
 const SearchBar = props => {
 
     const [value, setValue] = useState(" ");
+
+    const handleSubmit = (e) => {
+        debugger
+    }
 
     return (
         // onChange={ (e) => setValue(e.target.value)}
@@ -36,6 +40,7 @@ const SearchBar = props => {
             iconPosition='left'
             placeholder='Search for a product!'
             onChange={ (e) => setValue(e.target.value)}
+            onSubmit={(e) => handleSubmit(e, value)}
         />
         
     );
