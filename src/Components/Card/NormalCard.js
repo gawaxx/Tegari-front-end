@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './NormalCard.scss'
 
 export class NormalCard extends Component {
 

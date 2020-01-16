@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../Component.css'
 
 export class UrgentCard extends Component {
     render() {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Component.css';
 import SearchBar from './SearchBar';
 import AccountCard from './AccountCard/accountCard';
 import { Link } from 'react-router-dom'

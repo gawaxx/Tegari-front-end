@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 // import { API, APILINK } from '../API';
 
 export class MyAccount extends Component {
