@@ -13,12 +13,6 @@ code {
     monospace;
 }
 
-/*  Nav Bar  */
-
-.navBar {
-  height: 15vh;
-}
-
 /* Cards Container */
 
 .BigWrapper {
@@ -64,8 +58,6 @@ code {
   width: 95%;
   margin: 1rem auto;
 }
-
-
 
 .AccountCard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -126,7 +118,9 @@ code {
 
 .NavBar {
   display: table;
-  width: 100%;
+  width: 100vw;
+  left: 0;
+  height: 15vh;
   position: absolute;
   top: 0px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
