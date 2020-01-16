@@ -59,7 +59,7 @@ function App(props) {
   const loggedIn = !!user 
 
   return (
-    <>
+    <div>
         <Container className="container">
 
           <Container className="navBar">
@@ -84,7 +84,7 @@ function App(props) {
           </Container>
           
         </Container>
-			</>
+			</div>
   );
 }
 

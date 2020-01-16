@@ -18,6 +18,10 @@ code {
   grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
+.ui .container .links {
+  top: -150px;
+}
+
 /* Search Bar */
 .searchBar {
   width: 45vw;
