@@ -14,7 +14,7 @@ const options = [
 const SearchBar = props => {
 
     const [value, setValue] = useState(" ");
-    const [option, setOption] = useState(" ")
+    // const [option, setOption] = useState(" ")
 
     const handleSubmit = () => {
         console.log(value)
