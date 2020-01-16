@@ -31,10 +31,13 @@ function App(props) {
   const getUserData = () => {
     API.validateUser(`${APILINK}/validate_user`)
     .then(data => {
-        console.log('got the data =>',data.user)
         setUser(data.user)
       })
     .catch(() => {debugger})
+  }
+
+  const logOut = () => {
+    localStorage.clear()
   }
 
 
@@ -63,7 +66,7 @@ function App(props) {
               <Route exact path="/create" render={() => <PostCreation user={user} />}  />
               {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
               <Route exact path="/my_profile" >
-                {loggedIn ? < MyAccount getUserData={getUserData} user={user} /> : <Redirect to='/login' />}
+                {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
               </Route>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>

@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
-import { API, APILINK } from '../API';
+// import { API, APILINK } from '../API';
 
 export class MyAccount extends Component {
 
     state = {
         current_user: {}
     }
-
-    // getUserData = () => {
-        
-    //     API.validateUser(`${APILINK}/validate_user`)
-    //     .then(data => {
-            
-    //         console.log(data.user)
-    //         this.setState({current_user: data.user})
-    //       });
-    // }
 
     componentDidMount() {
         this.props.getUserData()
@@ -26,6 +16,9 @@ export class MyAccount extends Component {
         return (
             <div>
                 <h1> hello {user.user_name}</h1>
+                <div className="logoutbutton">
+                    <h2 onClick={() => this.props.logOut() }> Logout </h2>
+                </div>
             </div>
         );
     }
