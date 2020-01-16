@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import NavBar from './Components/NavBar';
-import { BrowserRouter as Router, Route, Redirect, useHistory } from 'react-router-dom' // Link, Switch
+import { Route, Redirect, useHistory } from 'react-router-dom' // Link, Switch
 import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 import AuthFormsContainer from "./Containers/AuthFormsContainer";

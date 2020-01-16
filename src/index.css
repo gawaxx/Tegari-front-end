@@ -20,7 +20,8 @@ code {
 
 /* Search Bar */
 .searchBar {
-  width: 50vw;
+  width: 45vw;
+  left: -5vw;
 }
 
 /* Search Page container */

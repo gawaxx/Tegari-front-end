@@ -11,12 +11,15 @@ export class NavBar extends Component {
     render() {
         return (
             <div className="NavBar">
+
                 <div className="company-Logo">
                     <Link to="/"><h1>Company Logo</h1></Link>
                 </div>
+
                 <div className="search-bar">
                     <SearchBar handleSearchSubmit={this.props.handleSearchSubmit} />
                 </div>
+
                 <div className="account-info">
                     { 
                     (this.props.user && this.props.user.user_name ) ? 
@@ -25,7 +28,7 @@ export class NavBar extends Component {
 
                     <div>
                         < Link to="/login">
-                            <Button animated>
+                            <Button animated color='purple'>
                                 <Button.Content visible> Click here to log in</Button.Content>
                                 <Button.Content hidden>
                                     <Icon name='arrow right' />
@@ -35,6 +38,7 @@ export class NavBar extends Component {
                     </div>
                     }
                 </div>
+                
             </div>
         );
     }
