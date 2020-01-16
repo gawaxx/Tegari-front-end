@@ -8,6 +8,7 @@ const options = [
     { key: 'entertainment', text: 'In entertainment', value: 'entertainment' },
     { key: 'electronic', text: 'In electronic', value: 'electronic' },
     { key: 'furniture', text: 'In furniture', value: 'furniture' },
+    { key: 'all', text: 'In all', value: {} },
   ]
 
 const SearchBar = props => {
@@ -34,6 +35,7 @@ const SearchBar = props => {
             icon='search'
             iconPosition='left'
             placeholder='Search for a product!'
+            onChange={ (e) => setValue(e.target.value)}
         />
         
     );
