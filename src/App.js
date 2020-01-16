@@ -48,6 +48,7 @@ function App(props) {
 
   const handleSearchSubmit = value => {
     setsearch(value)
+    history.push("/search")
   }
 
   const logout = () => {
