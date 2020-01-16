@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export class CreatePost extends Component {
 
     handleClick = () => {
-        console.log("Hey")
     }
 
     render() {

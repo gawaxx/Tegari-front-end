@@ -5,7 +5,7 @@ import { APIPOSTS, API } from '../API.js'
 export class PostCreation extends Component {
 
     state = {
-        userid: {}
+        userid: 172
     } 
 
     // handleChange(event) {
@@ -25,27 +25,24 @@ export class PostCreation extends Component {
         let cat = event.target.categories.value
         let image = event.target.image.value
         let price = event.target.price.value
-        if (this.props.user !== {}) {
-            // debugger
-            this.setState({userid: this.props.user.id})
-        } else {
-            this.setState({userid: 172})
+        if (this.props.user !== null) {
+            this.setState({userid: this.props.user.id}, function () {
+                const postData = {
+                    title: title,
+                    description: desc,
+                    postcode: postalCode,
+                    email: email,
+                    city: city,
+                    phone_number: phonenum,
+                    condition: condition,
+                    category: cat,
+                    image_url: image,
+                    price: price,
+                    user_id: this.state.userid
+                }
+                API.PostAPI(APIPOSTS, postData)
+            })
         }
-        // debugger
-        const postData = {
-            title: title,
-            description: desc,
-            postcode: postalCode,
-            email: email,
-            city: city,
-            phone_number: phonenum,
-            condition: condition,
-            category: cat,
-            image_url: image,
-            price: price,
-            user_id: this.state.userid
-        }
-        API.PostAPI(APIPOSTS, postData)
     }
 
 
