@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
 import { APIUSERS, APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
+import { Button, Icon } from 'semantic-ui-react'
+
+
 
 
 export class PostCard extends Component {
 
     state = {
         user: [],
-        post: []
+        post: [],
+    }
+
+    handleClick = (e, titleProps) => {
+        const { index } = titleProps
+        const { activeIndex } = this.state
+        const newIndex = activeIndex === index ? -1 : index
+
+        this.setState({ activeIndex: newIndex })
     }
 
     handleClick = () => {
         // this.props.deRenderAPost()
         console.log("Hi")
+        window.history.back()
     }
 
     findUser = () => {
@@ -44,7 +56,10 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="PostInfo">
-                    <p onClick={ () => {this.handleClick()} }>Go Back</p>
+                    <Button icon labelPosition='left' onClick={ () => {this.handleClick()} } >
+                        Go Back
+                        <Icon name='left arrow' />
+                    </Button>
                     <img src={image_url} alt="post" ></img>
                     <h1>{title}, £{price}</h1>
                     <h2>{postcode}, {city}</h2>
