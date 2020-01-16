@@ -59,15 +59,16 @@ function App(props) {
   const loggedIn = !!user 
 
   return (
-    <div>
-        <Container className="container">
+    <>
+    <Container className="navbar_container">
+      <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit} logout={logout}/> } />
+    </Container>
+        <Container>
 
-          <Container className="navBar">
-            <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit} logout={logout}/> } />
-          </Container>
+         
           {/* <Route exact path='/login' component={} /> */}
 
-          <Container className="links">
+          <Container className="sublinks">
               <Route exact path="/users/:id" component={UserContainer}/>
               <Route exact path="/posts/:id" component={PostCard}/>
               <Route exact path="/create" render={() => <PostCreation user={user} />}  />
@@ -84,7 +85,7 @@ function App(props) {
           </Container>
           
         </Container>
-			</div>
+			</>
   );
 }
 

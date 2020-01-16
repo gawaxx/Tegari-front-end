@@ -18,10 +18,6 @@ code {
   grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
-.ui .container .links {
-  top: -150px;
-}
-
 /* Search Bar */
 .searchBar {
   width: 45vw;
@@ -31,7 +27,7 @@ code {
 /* Search Page container */
 /* LandingPage */
 
-.LandingPage{
+.LandingPage {
   top: 500px;
   height: 85vh;
 }
@@ -75,6 +71,12 @@ code {
 }
 
 /* Nav Bar  */
+
+.navbar_container {
+  height: 140px;
+  /* position: absolute; */
+  top: 0
+}
 
 .NavBar {
   display: table;
@@ -225,11 +227,11 @@ text-align: center;
 /* .whatever{
   display: flex;
   flex-wrap: wrap;
-}
-
+} */
+/* 
 .ag{
   margin-left: 15vw;
-} */
+}  */
 
 .FormContainer h1 {
   display: table;
