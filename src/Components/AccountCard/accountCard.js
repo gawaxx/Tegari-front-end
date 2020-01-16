@@ -31,7 +31,7 @@ export class accountCard extends Component {
                     <Image
                     floated='right'
                     size='mini'
-                    src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+                    src='https://i7.pngguru.com/preview/243/8/56/computer-icons-user-profile-clip-art-person-icon-user-person-man-icon.jpg'
                     />
                     <Card.Header>{this.props.user.user_name}</Card.Header>
                     <Card.Meta>{this.props.user.points}</Card.Meta>
