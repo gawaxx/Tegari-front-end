@@ -25,15 +25,12 @@ export class MyAccount extends Component {
 
     componentDidMount() {
         this.props.getUserData()
+        this.getUserPost()
     }
 
     getUserPost = () => {
         API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
             .then(allPosts => this.setState({ allPosts }) )
-    }
-
-    componentDidMount() {
-        this.getUserPost()
     }
 
     render() {

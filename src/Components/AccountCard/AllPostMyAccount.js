@@ -16,10 +16,8 @@ export class AllPostMyAccount extends Component {
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                    <a>
                         <Icon name='pound' />
                         {price}
-                    </a>
                     </Card.Content>
                 </Card>
             </div>
