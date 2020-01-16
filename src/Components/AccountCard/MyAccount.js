@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Button, Popup } from 'semantic-ui-react'
-
 import "./MyAccount.css";
 import { API, APILINK } from '../API';
+import { Link } from 'react-router-dom' // Link, Switch
+import AllPostMyAccount from './AllPostMyAccount';
+
 
 
 // import { Redirect } from 'react-router-dom'
@@ -30,9 +32,13 @@ export class MyAccount extends Component {
             .then(allPosts => this.setState({ allPosts }) )
     }
 
-    componentDidUpdate(prevProps) {
-        if(prevProps.user.id !== this.props.user.id) {
-        this.getTheirPost()}
+    // componentDidUpdate(prevProps) {
+    //     if(prevProps.user.id !== this.props.user.id) {
+    //     this.getUserPost()}
+    // }
+
+    componentDidMount() {
+        this.getUserPost()
     }
 
     render() {
@@ -43,6 +49,12 @@ export class MyAccount extends Component {
                 <div className="allign" >
                     <h2> You have {user.points} points </h2>
                     <Popup trigger={<Button icon='question' />} content='Points are a way to trust other users, earn points by being active!' style={style} inverted />
+                </div>
+
+                <div className="cardscontainer"> 
+                    {
+                        this.state.allPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
+                    }
                 </div>
 
             </div>
