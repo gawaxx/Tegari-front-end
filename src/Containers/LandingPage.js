@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../Containers/CardsContainer.css'
 import CreatePost from '../Components/CreatePost';
 import { Link } from 'react-router-dom'
 
