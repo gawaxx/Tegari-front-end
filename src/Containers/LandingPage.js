@@ -10,7 +10,7 @@ export class LandingPage extends Component {
 
     render() {
         return (
-            <div className="LandingPageBigWrapper">
+            <div className="BigWrapper LandingPage">
                 <div className="FrontPageLeftSide">
                 </div>
 
