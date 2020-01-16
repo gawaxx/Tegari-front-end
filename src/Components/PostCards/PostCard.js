@@ -60,6 +60,7 @@ export class PostCard extends Component {
                         Go Back
                         <Icon name='left arrow' />
                     </Button>
+                    <br></br>
                     <img src={image_url} alt="post" ></img>
                     <h1>{title}, £{price}</h1>
                     <h2>{postcode}, {city}</h2>
