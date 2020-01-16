@@ -18,6 +18,7 @@ const SearchBar = props => {
 
     const handleSubmit = () => {
         console.log(value)
+        props.handleSearchSubmit(value)
     }
 
     return (
@@ -35,12 +36,15 @@ const SearchBar = props => {
         <Form onSubmit={() => handleSubmit() }> 
             <Input className="searchBar"
                 action={
-                <Dropdown button basic floating options={options} defaultValue='page' />
+                <Dropdown button basic floating 
+                options={options} 
+                defaultValue='page' 
+                />
                 }
                 icon='search'
                 iconPosition='left'
                 placeholder='Search for a product!'
-                onChange={ (e, action) => setValue(e.target.value)}
+                onChange={ (e) => setValue(e.target.value)}
             />
         </Form>
         
