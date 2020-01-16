@@ -24,7 +24,7 @@ const SearchBar = props => {
             <div class="search">
                 <input type="text" placeholder="What are you looking for?" className="searchTerm" onChange={ (e) => setValue(e.target.value)}/>
                 <Link to="/search"> <button type="submit" class="searchButton" onClick={() => props.handleSearchSubmit(value)}>
-                    <i class="fa fa-search"></i>
+                    <i> <FaSearch /> </i>
                 </button>
                 </Link>
             </div>
