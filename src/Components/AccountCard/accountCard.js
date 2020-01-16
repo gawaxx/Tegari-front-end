@@ -34,10 +34,10 @@ export class accountCard extends Component {
                     src='https://i7.pngguru.com/preview/243/8/56/computer-icons-user-profile-clip-art-person-icon-user-person-man-icon.jpg'
                     />
                     <Card.Header>{this.props.user.user_name}</Card.Header>
-                    <Card.Meta>{this.props.user.points}</Card.Meta>
-                    <Card.Description>
+                    <Card.Meta>{this.props.user.points} points</Card.Meta>
+                    {/* <Card.Description>
                     This here is your profile card
-                    </Card.Description>
+                    </Card.Description> */}
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui two buttons'>
