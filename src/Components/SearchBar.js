@@ -5,9 +5,9 @@ import { Dropdown, Input } from 'semantic-ui-react'
 // <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 
 const options = [
-    { key: 'page', text: 'This Page', value: 'page' },
-    { key: 'org', text: 'This Organization', value: 'org' },
-    { key: 'site', text: 'Entire Site', value: 'site' },
+    { key: 'entertainment', text: 'In entertainment', value: 'entertainment' },
+    { key: 'electronic', text: 'In electronic', value: 'electronic' },
+    { key: 'furniture', text: 'In furniture', value: 'furniture' },
   ]
 
 const SearchBar = props => {
@@ -15,16 +15,6 @@ const SearchBar = props => {
     const [value, setValue] = useState(" ");
 
     return (
-        // <div classNameName="Form">
-        //     <form>
-        //         <label>
-        //             <FaSearch />
-        //             <input type="text" name="search" onChange={ (e) => setValue(e.target.value)}/>
-        //         </label>
-        //         <Link to="/search"> <input type="submit" value="Submit" classNameName="SubmitButton" onClick={() => props.handleSearchSubmit(value)}/> </Link>
-        //     </form>
-        // </div>
-
         // onChange={ (e) => setValue(e.target.value)}
 
         // <div className="SearchWrap">
@@ -37,13 +27,13 @@ const SearchBar = props => {
         //     </div>
         // </div>
 
-        <Input
+        <Input className="searchBar"
             action={
             <Dropdown button basic floating options={options} defaultValue='page' />
             }
             icon='search'
             iconPosition='left'
-            placeholder='Search...'
+            placeholder='Search for a product!'
         />
         
     );
