@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './PostCard.css'
 import { APIUSERS, APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
 

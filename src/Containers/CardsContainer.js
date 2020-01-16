@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { APILINK, API } from '../Components/API.js'
 import NormalCard from '../Components/Card/NormalCard.js'
 import CreatePost from '../Components/CreatePost.js';
-import './CardsContainer.css'
 import UrgentCard from '../Components/Card/UrgentCard.js';
 import { Link } from 'react-router-dom'
 

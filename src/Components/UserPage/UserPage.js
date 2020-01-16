@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './UserPage.css'
 import { API, APILINK } from '../API';
 import AllPostUser from './AllPostUser';
 import { Link } from 'react-router-dom'

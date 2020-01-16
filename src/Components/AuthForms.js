@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import './AuthForms.css'
 
 const AuthForms = ({ login, signup }) => {
   
