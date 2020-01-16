@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import NavBar from './Components/NavBar';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom' // Link, Switch
+import { Route, Redirect, useHistory } from 'react-router-dom' // Link, Switch
 import { Container } from 'semantic-ui-react';
 import CardsContainer from './Containers/CardsContainer';
 import AuthFormsContainer from "./Containers/AuthFormsContainer";
@@ -19,22 +19,26 @@ import MyAccount from "./Components/AccountCard/MyAccount";
 
 function App(props) {
 
-  const [user, setUser] = useState({});
+  const history = useHistory()
+  const [user, setUser] = useState(null);
   const [search, setsearch] = useState("");
 
-  // useEffect(() => {
-  //     API.validateUser()
-  //       .then(user => setUser(user))
-  //       .catch(console.error);
-  // }, []);
+  useEffect(() => {
+      API.validateUser(`${APILINK}/validate_user`)
+        .then(user => setUser(user))
+        .catch(console.error);
+  }, []);
 
   const getUserData = () => {
-    API.validateUser(`${APILINK}/validate_user`)
-    .then(data => {
-        console.log('got the data =>',data.user)
-        setUser(data.user)
-      })
-    .catch(() => {debugger})
+    // API.validateUser(`${APILINK}/validate_user`)
+    // .then(data => {
+    //     setUser(data.user)
+    //   })
+    // .catch(() => {debugger})
+  }
+
+  const logOut = () => {
+    localStorage.clear()
   }
 
 
@@ -46,14 +50,20 @@ function App(props) {
     setsearch(value)
   }
 
-  const loggedIn = !!localStorage.jwt 
+  const logout = () => {
+    setUser(null)
+    localStorage.removeItem('jwt')
+    history.push('/')
+  }
+
+  const loggedIn = !!user 
 
   return (
-    <Router>
+    <div>
         <Container className="container">
 
           <Container className="navBar">
-            <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit}/> } />
+            <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit} logout={logout}/> } />
           </Container>
           {/* <Route exact path='/login' component={} /> */}
 
@@ -63,7 +73,7 @@ function App(props) {
               <Route exact path="/create" render={() => <PostCreation user={user} />}  />
               {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
               <Route exact path="/my_profile" >
-                {loggedIn ? < MyAccount getUserData={getUserData} user={user} /> : <Redirect to='/login' />}
+                {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
               </Route>
               <Route exact path='/' component={LandingPage} />
               <Route exact path='/search' render={() => <CardsContainer search={search} /> }/>
@@ -74,7 +84,7 @@ function App(props) {
           </Container>
           
         </Container>
-			</Router>
+			</div>
   );
 }
 

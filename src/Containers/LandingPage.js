@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../Containers/CardsContainer.css'
 import CreatePost from '../Components/CreatePost';
 import { Link } from 'react-router-dom'
 
@@ -11,7 +10,7 @@ export class LandingPage extends Component {
 
     render() {
         return (
-            <div className="LandingPageBigWrapper">
+            <div className="BigWrapper LandingPage">
                 <div className="FrontPageLeftSide">
                 </div>
 

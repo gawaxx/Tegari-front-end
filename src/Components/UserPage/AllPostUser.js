@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './UserPage.css'
-
 
 export class AllPostUser extends Component {
     render() {
