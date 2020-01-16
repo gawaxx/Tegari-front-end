@@ -32,11 +32,6 @@ export class MyAccount extends Component {
             .then(allPosts => this.setState({ allPosts }) )
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if(prevProps.user.id !== this.props.user.id) {
-    //     this.getUserPost()}
-    // }
-
     componentDidMount() {
         this.getUserPost()
     }

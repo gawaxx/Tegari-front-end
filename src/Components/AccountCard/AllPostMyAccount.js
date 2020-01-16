@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import { Card, Image } from 'semantic-ui-react' //Icon
+import { Card, Image, Icon } from 'semantic-ui-react' //Icon
 
 export class AllPostMyAccount extends Component {
     render() {
+        const { image_url, title, description, category, condition, price } = this.props.post 
         return (
             <div>
                 <Card>
-                    <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
+                    <Image src={image_url} wrapped ui={false} />
                     <Card.Content>
-                    <Card.Header>Daniel</Card.Header>
-                    <Card.Meta>Joined in 2016</Card.Meta>
+                    <Card.Header>{title}</Card.Header>
+                    <Card.Meta>{category}, condition: {condition} </Card.Meta>
                     <Card.Description>
-                        Daniel is a comedian living in Nashville.
+                        {description}
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                    {/* <a>
-                        <Icon name='user' />
-                        10 Friends
-                    </a> */}
+                    <a>
+                        <Icon name='pound' />
+                        {price}
+                    </a>
                     </Card.Content>
                 </Card>
             </div>
