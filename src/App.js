@@ -94,10 +94,7 @@ function App(props) {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About' />
                 <List link inverted>
-                  <List.Item as='a'>Sitemap</List.Item>
-                  <List.Item as='a'>Contact Us</List.Item>
-                  <List.Item as='a'>Religious Ceremonies</List.Item>
-                  <List.Item as='a'>Gazebo Plans</List.Item>
+                  <List.Item as='a' href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
