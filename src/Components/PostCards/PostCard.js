@@ -89,25 +89,24 @@ export class PostCard extends Component {
                     <p>{description}</p>
                     {
                         (this.props.user.id === this.state.post.user_id) ? 
-                            <div>
-                                <Modal
-                                    trigger={<Button onClick={this.handleOpen}>Delete your post</Button>}
-                                    open={this.state.modalOpen}
-                                    onClose={this.handleClose}
-                                    basic
-                                    size='small'
-                                >
-                                    <Header icon='browser' content='Cookies policy' />
-                                    <Modal.Content>
+                            <Modal
+                                trigger={<Button onClick={this.handleOpen}>Delete your post</Button>}
+                                open={this.state.modalOpen}
+                                onClose={this.handleClose}
+                                basic
+                                size='small'
+                                color="red"
+                            >
+                                <Header icon='trash alternate' content='Delete your post' />
+                                <Modal.Content>
                                     <h3>Are you sure you wish to delete your post ?</h3>
-                                    </Modal.Content>
-                                    <Modal.Actions>
-                                    <Button class="negative ui button" onClick={this.handleClose} inverted>
-                                        <Icon name='checkmark' /> Got it
+                                </Modal.Content>
+                                <Modal.Actions>
+                                    <Button color='red' onClick={this.handleClose} inverted>
+                                        <Icon name='checkmark' /> Yes, Delete it
                                     </Button>
-                                    </Modal.Actions>
-                                </Modal>
-                            </div>
+                                </Modal.Actions>
+                            </Modal>
                         :
                             ""
                     }
