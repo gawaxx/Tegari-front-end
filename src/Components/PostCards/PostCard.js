@@ -11,10 +11,8 @@ import { Button, Icon, Modal, Header } from 'semantic-ui-react'
 export class PostCard extends Component {
 
     state = {
-        data: {
-            user: {},
-            post: {}
-        },
+        post: [],
+        user: [],
         modalOpen: false
     }
 
@@ -50,7 +48,7 @@ export class PostCard extends Component {
 
     findPost = () => {
         API.GetAPI(`${APIPOSTS}/${window.location.href.split("/")[4]}`)
-        .then(data =>  this.setState({post: data[0]}) )
+        .then(data =>  this.setState( {post: data[0], user: data[1]} ) )
     }
 
     componentDidMount() {
