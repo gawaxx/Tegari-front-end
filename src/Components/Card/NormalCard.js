@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Placeholder } from 'semantic-ui-react'
+
 
 export class NormalCard extends Component {
 
