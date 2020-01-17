@@ -44,7 +44,7 @@ function App(props) {
 
   const handleSignup = (signupData) => {
     API.PostAPI(`${APILINK}/users/create`, signupData)
-      .then(history.push("/my_profile"))
+      .then(history.push("/login"))
   }; //makes a post request for a user
 
   const handleSearchSubmit = value => {
