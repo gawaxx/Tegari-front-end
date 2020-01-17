@@ -21,6 +21,10 @@ export class PostCard extends Component {
         this.setState({ activeIndex: newIndex })
     }
 
+    dbhandleClick = () => {
+        API.DeleteAPI(`${APIPOSTS}/${this.state.post.id}/destroy`)
+    }
+
     handleClick = () => {
         // this.props.deRenderAPost()
         console.log("Hi")
@@ -68,8 +72,8 @@ export class PostCard extends Component {
                     <p>condition: {condition}</p>
                     <p>{description}</p>
                     {
-                        (this.props.user === this.state.post.user_id) ? 
-                            <button class="negative ui button">Delete your post</button>
+                        (this.props.user.id === this.state.post.user_id) ? 
+                            <button class="negative ui button" onClick={ () => this.dbhandleClick()} >Delete your post</button>
                         :
                             ""
                     }
