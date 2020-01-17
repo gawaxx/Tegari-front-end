@@ -18,6 +18,12 @@ code {
   grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0%;
+}
+
+
 /* Search Bar */
 .searchBar {
   width: 45vw;
