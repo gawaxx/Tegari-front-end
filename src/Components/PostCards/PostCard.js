@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { APIUSERS, APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header } from 'semantic-ui-react'
+
 
 
 
@@ -11,6 +12,14 @@ export class PostCard extends Component {
     state = {
         user: [],
         post: [],
+        modalOpen: false
+    }
+
+    handleOpen = () => this.setState({ modalOpen: true })
+
+    handleClose = () => {
+        this.setState({ modalOpen: false }) 
+        this.dbhandleClick()
     }
 
     handleClick = (e, titleProps) => {
@@ -80,7 +89,25 @@ export class PostCard extends Component {
                     <p>{description}</p>
                     {
                         (this.props.user.id === this.state.post.user_id) ? 
-                            <button class="negative ui button" onClick={ () => this.dbhandleClick()} >Delete your post</button>
+                            <div>
+                                <Modal
+                                    trigger={<Button onClick={this.handleOpen}>Delete your post</Button>}
+                                    open={this.state.modalOpen}
+                                    onClose={this.handleClose}
+                                    basic
+                                    size='small'
+                                >
+                                    <Header icon='browser' content='Cookies policy' />
+                                    <Modal.Content>
+                                    <h3>Are you sure you wish to delete your post ?</h3>
+                                    </Modal.Content>
+                                    <Modal.Actions>
+                                    <Button class="negative ui button" onClick={this.handleClose} inverted>
+                                        <Icon name='checkmark' /> Got it
+                                    </Button>
+                                    </Modal.Actions>
+                                </Modal>
+                            </div>
                         :
                             ""
                     }
