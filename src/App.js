@@ -44,6 +44,7 @@ function App(props) {
 
   const handleSignup = (signupData) => {
     API.PostAPI(`${APILINK}/users/create`, signupData)
+      .then(history.push("/login"))
   }; //makes a post request for a user
 
   const handleSearchSubmit = value => {
@@ -65,7 +66,6 @@ function App(props) {
       <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit} logout={logout}/> } />
     </Container>
         <Container>
-
          
           {/* <Route exact path='/login' component={} /> */}
 
