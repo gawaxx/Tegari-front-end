@@ -92,16 +92,15 @@ function App(props) {
           <Grid divided inverted stackable>
             <Grid.Row>
               <Grid.Column width={3}>
-                <Header inverted as='h4' content='About' />
+                <Header inverted as='h4' content='About This Project' />
                 <List link inverted>
                   <List.Item as='a' href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
-                  <List.Item as='a' href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
-                <Header inverted as='h4' content='Services' />
+                <Header inverted as='h4' content='About Me' />
                 <List link inverted>
-                  <List.Item as='a'>Banana Pre-Order</List.Item>
+                <List.Item as='a' href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
