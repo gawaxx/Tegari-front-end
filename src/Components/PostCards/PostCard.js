@@ -90,12 +90,11 @@ export class PostCard extends Component {
                     {
                         (this.props.user.id === this.state.post.user_id) ? 
                             <Modal
-                                trigger={<Button onClick={this.handleOpen}>Delete your post</Button>}
+                                trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
                                 open={this.state.modalOpen}
                                 onClose={this.handleClose}
                                 basic
                                 size='small'
-                                color="red"
                             >
                                 <Header icon='trash alternate' content='Delete your post' />
                                 <Modal.Content>
