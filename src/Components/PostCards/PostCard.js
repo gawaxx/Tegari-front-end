@@ -21,6 +21,17 @@ export class PostCard extends Component {
         this.setState({ activeIndex: newIndex })
     }
 
+    dbhandleClick = () => {
+
+        const deleteInfo = {
+            userid: this.props.user.id 
+        }
+
+        API.DeleteAPI(`${APIPOSTS}/${this.state.post.id}/destroy`, deleteInfo)
+        .then(window.history.pushState({urlPath:'/my_profile'}, "", '/my_profile'))
+        .then(window.location.reload() )
+    }
+
     handleClick = () => {
         // this.props.deRenderAPost()
         console.log("Hi")
@@ -67,6 +78,12 @@ export class PostCard extends Component {
                     <p>{category}</p>
                     <p>condition: {condition}</p>
                     <p>{description}</p>
+                    {
+                        (this.props.user.id === this.state.post.user_id) ? 
+                            <button class="negative ui button" onClick={ () => this.dbhandleClick()} >Delete your post</button>
+                        :
+                            ""
+                    }
                 </div>
 
                 <div className="sellerInfo">

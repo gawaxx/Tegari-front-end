@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { APIPOSTS, API } from '../API.js'
+import { APIPOSTS, API, APILINK } from '../API.js'
 
 
 export class PostCreation extends Component {
@@ -27,6 +27,7 @@ export class PostCreation extends Component {
         let price = event.target.price.value
         if (this.props.user !== null) {
             this.setState({userid: this.props.user.id}, function () {
+
                 const postData = {
                     title: title,
                     description: desc,
@@ -40,6 +41,8 @@ export class PostCreation extends Component {
                     price: price,
                     user_id: this.state.userid
                 }
+
+                API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
                 API.PostAPI(APIPOSTS, postData)
             })
         }

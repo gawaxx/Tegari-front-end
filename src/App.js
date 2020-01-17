@@ -71,7 +71,7 @@ function App(props) {
 
           <Container className="sublinks">
               <Route exact path="/users/:id" component={UserContainer}/>
-              <Route exact path="/posts/:id" component={PostCard}/>
+              <Route exact path="/posts/:id" render={() => <PostCard user={user} /> }/>
               <Route exact path="/create" render={() => <PostCreation user={user} />}  />
               {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
               <Route exact path="/my_profile" >
