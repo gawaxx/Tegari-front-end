@@ -23,6 +23,10 @@ code {
   bottom: 0%;
 }
 
+.content_container {
+  min-height: 70vh;
+}
+
 
 /* Search Bar */
 .searchBar {
