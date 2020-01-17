@@ -18,6 +18,16 @@ code {
   grid-template-columns: 0.7fr 2fr 0.7fr;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0%;
+}
+
+.content_container {
+  min-height: 70vh;
+}
+
+
 /* Search Bar */
 .searchBar {
   width: 45vw;
