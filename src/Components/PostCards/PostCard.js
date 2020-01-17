@@ -67,6 +67,12 @@ export class PostCard extends Component {
                     <p>{category}</p>
                     <p>condition: {condition}</p>
                     <p>{description}</p>
+                    {
+                        (this.props.user === this.state.post.user_id) ? 
+                            <button class="negative ui button">Delete your post</button>
+                        :
+                            ""
+                    }
                 </div>
 
                 <div className="sellerInfo">
