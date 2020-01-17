@@ -65,7 +65,6 @@ function App(props) {
       <Route path='/' render={() => <NavBar user={user} handleSearchSubmit={handleSearchSubmit} logout={logout}/> } />
     </Container>
         <Container>
-
          
           {/* <Route exact path='/login' component={} /> */}
 

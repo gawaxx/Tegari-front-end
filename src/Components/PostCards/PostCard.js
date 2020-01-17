@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { APIUSERS, APIPOSTS, API } from '../API.js'
+import { APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
 import { Button, Icon, Modal, Header } from 'semantic-ui-react'
+
 
 
 
@@ -10,8 +11,10 @@ import { Button, Icon, Modal, Header } from 'semantic-ui-react'
 export class PostCard extends Component {
 
     state = {
-        user: [],
-        post: [],
+        data: {
+            user: {},
+            post: {}
+        },
         modalOpen: false
     }
 
@@ -42,27 +45,16 @@ export class PostCard extends Component {
     }
 
     handleClick = () => {
-        // this.props.deRenderAPost()
-        console.log("Hi")
         window.history.back()
-    }
-
-    findUser = () => {
-        API.GetAPI(`${APIUSERS}/${this.state.post.user_id}`)
-        .then(user => this.setState({user}))
     }
 
     findPost = () => {
         API.GetAPI(`${APIPOSTS}/${window.location.href.split("/")[4]}`)
-        .then(post => this.setState({post}))
+        .then(data =>  this.setState({post: data[0]}) )
     }
 
     componentDidMount() {
         this.findPost()
-    }
-
-    componentDidUpdate() {
-        this.findUser()
     }
 
     render() {
