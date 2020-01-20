@@ -17,10 +17,9 @@ export class PostEdit extends Component {
 
 
     render() {
-        const { title, image_url, description } = this.state.post
+        const { title, image_url, description, price, postcode, city } = this.state.post
         return (
             <div className="CreateAPost" >
-                <img src="https://via.placeholder.com/250" alt="placeholder" />
                 <div className="FormContainer">
                     <form onSubmit={(e) => this.handleSubmit(e)} className="whatever">
                         <label>
@@ -39,12 +38,12 @@ export class PostEdit extends Component {
                         </label>
 
                         <label>
-                            <input type="price" name="price" placeholder="Price" />
+                            <input type="price" name="price" placeholder="Price" value={price} />
                             <span> Price </span>
                         </label>
 
                         <label>
-                            <input type="postalcode" name="postalcode" placeholder="Postal Code" />
+                            <input type="postalcode" name="postalcode" placeholder="Postal Code" value={postcode} />
                             <span> Postal Code </span>
                         </label>
 
@@ -54,7 +53,7 @@ export class PostEdit extends Component {
                         </label>
 
                         <label>
-                            <input type="city" name="city" placeholder="City" />
+                            <input type="city" name="city" placeholder="City" value={city} />
                             <span> City </span>
                         </label>
 
