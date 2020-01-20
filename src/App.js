@@ -94,13 +94,13 @@ function App(props) {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About This Project' />
                 <List link inverted>
-                  <List.Item as='a' href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
+                  <List.Item as='a' target="_blank" href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About Me' />
                 <List link inverted>
-                <List.Item as='a' href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
+                <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
