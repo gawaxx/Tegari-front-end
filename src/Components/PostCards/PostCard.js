@@ -40,7 +40,7 @@ export class PostCard extends Component {
             user_id: this.props.user.id,
             post_id: this.state.post.id
         }
-        API.PostAPI(`${APILINK}/saveposts/docreate`, PostContent)
+        API.PostAPI(`${APILINK}/saveposts`, PostContent)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
