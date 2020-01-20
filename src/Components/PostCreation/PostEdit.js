@@ -7,21 +7,20 @@ export class PostEdit extends Component {
     }
 
     getThePost = () => {
+        debugger
         API.GetAPI(`${APILINK}/posts?id=${window.location.href.split("/")[4]}`)
             .then(post => this.setState({ post }) )
     }
 
-    componentDidUpdate(prevProps) {
-        if(prevProps.user.id !== this.props.user.id) {
-        this.getThePost()}
+    componentDidMount() {
+        this.getThePost()
     }
-
 
 
     render() {
         return (
             <div>
-                hi
+                hi {this.state.post.title}
             </div>
         );
     }
