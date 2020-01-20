@@ -19,25 +19,18 @@ const style = {
 export class MyAccount extends Component {
 
     state = {
-        current_user: {},
+        current_user: this.props.user,
         allPosts: [],
         savePost: []
     }
 
     componentDidMount() {
-        this.props.getUserData()
         this.getUserPost()
-        this.getUserSavePost()
     }
 
     getUserPost = () => {
-        API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
-            .then(allPosts => this.setState({ allPosts }) )
-    }
-
-    getUserSavePost = () => {
-        API.GetAPI(`${APILINK}/save_posts?user_id=${this.props.user.id}`)
-            .then(savePost => this.setState({ savePost }) )
+        API.GetAPI(`${APILINK}/users/${this.state.current_user.id}`)
+            .then(data => this.setState({ allPosts: data.posts }) )
     }
 
     render() {
@@ -61,9 +54,9 @@ export class MyAccount extends Component {
                 <h2> Post you saved </h2>
 
                 <div className="cardscontainer"> 
-                    {
+                    {/* {
                         this.state.savePost.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
-                    }
+                    } */}
                 </div>
 
             </div>
