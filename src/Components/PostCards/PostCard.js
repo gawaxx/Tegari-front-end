@@ -110,6 +110,7 @@ export class PostCard extends Component {
                         :
                             ""
                     }
+                    <button class="negative ui button">Negative Button</button>
                 </div>
 
                 <div className="sellerInfo">
