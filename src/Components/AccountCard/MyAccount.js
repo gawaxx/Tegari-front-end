@@ -20,7 +20,8 @@ export class MyAccount extends Component {
 
     state = {
         current_user: {},
-        allPosts: []
+        allPosts: [],
+        savePost: []
     }
 
     componentDidMount() {
@@ -31,6 +32,10 @@ export class MyAccount extends Component {
     getUserPost = () => {
         API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
             .then(allPosts => this.setState({ allPosts }) )
+    }
+
+    getUserSavePost = () => {
+        API.GetAPI(`${APILINK}/save_posts`)
     }
 
     render() {
