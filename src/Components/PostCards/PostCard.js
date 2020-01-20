@@ -151,6 +151,9 @@ export class PostCard extends Component {
 
                             (this.props.user.id === this.state.post.user_id) ?
                                 <div>
+
+                                    <button class="ui violet button">Edit your post</button>
+
                                     <Modal
                                         trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
                                         open={this.state.modalOpen}
@@ -168,9 +171,8 @@ export class PostCard extends Component {
                                     </Button>
                                         </Modal.Actions>
                                     </Modal>
-
-                                    <button class="ui violet button">Edit your post</button>
                                 </div>
+                                
                                 :
 
 
