@@ -34,8 +34,13 @@ export class PostCard extends Component {
         API.PostAPI(`${APILINK}/reports/docreate`, PostContent)
     }
 
-    handleSavePostClick = () => {
-        API.PostAPI(``)
+    handleSavePostClick = (e) => {
+        e.preventDefault()
+        const PostContent = {
+            user_id: this.props.user.id,
+            post_id: this.state.post.id
+        }
+        API.PostAPI(`${APILINK}/saveposts/docreate`, PostContent)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
@@ -137,7 +142,7 @@ export class PostCard extends Component {
                                     </Modal.Actions>
                                 </Modal>
                                 :
-                                <Button color='purple' onClick={() => this.handleSavePostClick()} >
+                                <Button color='purple' onClick={(e) => this.handleSavePostClick(e)} >
                                     Save Post 
                                 </Button>
                     }
