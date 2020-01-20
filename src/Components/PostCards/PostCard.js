@@ -148,7 +148,7 @@ export class PostCard extends Component {
                         open={this.state.modalOpen}
                         onClose={this.handleReportClose}
                         basic
-                        size='small'
+                        size='small' 
                     >
                         <Header icon='eye' content='Report this post' />
                         <Modal.Content>
