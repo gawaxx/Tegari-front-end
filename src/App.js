@@ -11,6 +11,7 @@ import PostCard from "./Components/PostCards/PostCard";
 import PostCreation from "./Components/PostCreation/PostCreation";
 import MyAccount from "./Components/AccountCard/MyAccount";
 import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
+import PostEdit from "./Components/PostCreation/PostEdit";
 
 
 
@@ -73,6 +74,7 @@ function App(props) {
           <Route exact path="/users/:id" component={UserContainer} />
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
           <Route exact path="/create" render={() => <PostCreation user={user} />} />
+          <Route exact path="/posts/:id/edit" render={() =>   <PostEdit user={user} /> } />
           {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
@@ -94,13 +96,13 @@ function App(props) {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About This Project' />
                 <List link inverted>
-                  <List.Item as='a' href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
+                  <List.Item as='a' target="_blank" href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About Me' />
                 <List link inverted>
-                <List.Item as='a' href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
+                <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
