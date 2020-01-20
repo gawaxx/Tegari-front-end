@@ -50,11 +50,15 @@ export class MyAccount extends Component {
                     <Popup trigger={<Button icon='question' />} content='Points are a way to trust other users, earn points by being active!' style={style} inverted />
                 </div>
 
+                <h2> Your posts </h2>
+
                 <div className="cardscontainer"> 
                     {
                         this.state.allPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
                     }
                 </div>
+
+                <h2> Post you saved </h2>
 
                 <div className="cardscontainer"> 
                     {
