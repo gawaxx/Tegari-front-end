@@ -21,7 +21,7 @@ export class PostCard extends Component {
         const PostContent = {
             post_id_reported: this.state.post.id,
             user_reported_id: this.state.user.id,
-            // user_reporting_id: (this.)
+            user_reporting_id: (this.props.user === null ? 173 : this.props.user.id )
         }
         API.PostAPI(`${APILINK}/reports`, PostContent)
     }
