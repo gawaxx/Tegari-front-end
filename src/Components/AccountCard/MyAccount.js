@@ -19,18 +19,18 @@ const style = {
 export class MyAccount extends Component {
 
     state = {
-        current_user: {},
-        allPosts: []
+        current_user: this.props.user,
+        allPosts: [],
+        savePost: []
     }
 
     componentDidMount() {
-        this.props.getUserData()
         this.getUserPost()
     }
 
     getUserPost = () => {
-        API.GetAPI(`${APILINK}/posts?user_id=${this.props.user.id}`)
-            .then(allPosts => this.setState({ allPosts }) )
+        API.GetAPI(`${APILINK}/users/${this.state.current_user.id}`)
+            .then(data => this.setState({ allPosts: data.posts, savePost: data.save_posts }) )
     }
 
     render() {
@@ -43,9 +43,19 @@ export class MyAccount extends Component {
                     <Popup trigger={<Button icon='question' />} content='Points are a way to trust other users, earn points by being active!' style={style} inverted />
                 </div>
 
+                <h2> Your posts </h2>
+
                 <div className="cardscontainer"> 
                     {
                         this.state.allPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
+                    }
+                </div>
+
+                <h2> Post you saved </h2>
+
+                <div className="cardscontainer"> 
+                    {
+                        this.state.savePost.map(post => <Link to={`/posts/${post.post_id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={() => API.GetAPI(`${APILINK}/posts/${post.post_id}`).then(post => post)} key={post.id} /> </Link> )
                     }
                 </div>
 

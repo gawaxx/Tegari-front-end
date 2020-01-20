@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Segment } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid } from 'semantic-ui-react'
 
 
 
@@ -32,6 +32,15 @@ export class PostCard extends Component {
             reason_reporting: this.state.value 
         }
         API.PostAPI(`${APILINK}/reports/docreate`, PostContent)
+    }
+
+    handleSavePostClick = (e) => {
+        e.preventDefault()
+        const PostContent = {
+            user_id: this.props.user.id,
+            post_id: this.state.post.id
+        }
+        API.PostAPI(`${APILINK}/saveposts`, PostContent)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
@@ -90,15 +99,15 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="PostInfo">
-                    <Button icon labelPosition='left' onClick={ () => {this.handleClick()} } >
+                    <Button icon labelPosition='left' onClick={() => { this.handleClick() }} >
                         Go Back
                         <Icon name='left arrow' />
                     </Button>
                     <br></br>
                     {
-                        image_url ? 
+                        image_url ?
                             <img src={image_url} alt="post" ></img>
-                        : 
+                            :
                             <Placeholder style={{ height: 300, width: 300 }}>
                                 <Placeholder.Image />
                             </Placeholder>
@@ -110,59 +119,67 @@ export class PostCard extends Component {
                     <p>{description}</p>
                     {
                         (this.props.user === null) ?
-                            ""
-                        :
-
-                        (this.props.user.id === this.state.post.user_id) ? 
                             <Modal
-                                trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
+                                trigger={<Button color='red' onClick={this.handleOpen}> Report  Post </Button>}
                                 open={this.state.modalOpen}
-                                onClose={this.handleClose}
+                                onClose={this.handleReportClose}
                                 basic
                                 size='small'
                             >
-                                <Header icon='trash alternate' content='Delete your post' />
+                                <Header icon='eye' content='Report this post' />
                                 <Modal.Content>
-                                    <h3>Are you sure you wish to delete your post ?</h3>
+                                    <Grid columns={2}>
+                                        <Grid.Column>
+                                            <Dropdown
+                                                onChange={this.handleChange}
+                                                options={options}
+                                                placeholder='Choose an option'
+                                                selection
+                                                value={value}
+                                            />
+                                        </Grid.Column>
+                                    </Grid>
                                 </Modal.Content>
                                 <Modal.Actions>
-                                    <Button color='red' onClick={this.handleClose} inverted>
-                                        <Icon name='checkmark' /> Yes, Delete it
+                                    <Button color='green' onClick={e => this.handleReportClose(e)} inverted>
+                                        <Icon name='checkmark' /> Report Post
                                     </Button>
                                 </Modal.Actions>
                             </Modal>
-                        : 
-                            ""
-                    }
-                    {/* <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button> */}
 
-                    <Modal
-                        trigger={<Button color='red' onClick={this.handleOpen}> Report  Post </Button>}
-                        open={this.state.modalOpen}
-                        onClose={this.handleReportClose}
-                        basic
-                        size='small'
-                    >
-                        <Header icon='eye' content='Report this post' />
-                        <Modal.Content>
-                            <Grid columns={2}>
-                                <Grid.Column>
-                                    <Dropdown
-                                        onChange={this.handleChange}
-                                        options={options}
-                                        placeholder='Choose an option'
-                                        selection
-                                        value={value}
-                                    />
-                                </Grid.Column>
-                            </Grid>
-                        </Modal.Content>
-                        <Modal.Actions>
-                            <Button color='green' onClick={e => this.handleReportClose(e)} inverted>
-                                <Icon name='checkmark' /> Report Post
+                            :
+
+                            (this.props.user.id === this.state.post.user_id) ?
+                                <div>
+
+                                    <Link to={`${this.state.post.id}/edit`} > <button className="ui violet button">Edit your post</button> </Link>
+
+                                    <Modal
+                                        trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
+                                        open={this.state.modalOpen}
+                                        onClose={this.handleClose}
+                                        basic
+                                        size='small'
+                                    >
+                                        <Header icon='trash alternate' content='Delete your post' />
+                                        <Modal.Content>
+                                            <h3>Are you sure you wish to delete your post ?</h3>
+                                        </Modal.Content>
+                                        <Modal.Actions>
+                                            <Button color='red' onClick={this.handleClose} inverted>
+                                                <Icon name='checkmark' /> Yes, Delete it
                                     </Button>
-                        </Modal.Actions>
-                    </Modal>
+                                        </Modal.Actions>
+                                    </Modal>
+                                </div>
+
+                                :
+
+
+                                <Button color='purple' onClick={(e) => this.handleSavePostClick(e)} >
+                                    Save Post
+                                </Button>
+                    }
 
                 </div>
 
