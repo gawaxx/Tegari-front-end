@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Image } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Segment } from 'semantic-ui-react'
 
 
 
-
+const options = [
+    { key: 1, text: 'One', value: 1 },
+    { key: 2, text: 'Two', value: 2 },
+    { key: 3, text: 'Three', value: 3 },
+]
 
 
 export class PostCard extends Component {
@@ -13,8 +17,11 @@ export class PostCard extends Component {
     state = {
         post: [],
         user: [],
-        modalOpen: false
+        modalOpen: false,
+        value: {}
     }
+
+    handleChange = (e, { value }) => this.setState({ value })
 
     handleReport = () => {
         debugger
@@ -68,6 +75,7 @@ export class PostCard extends Component {
     render() {
         const {category, title, price, postcode, city, description, image_url, condition, created_at} = this.state.post
         const { user_name, name, points, id } = this.state.user
+        const { value } = this.state.value 
         return (
             <div className="wrapper">
 
@@ -120,7 +128,24 @@ export class PostCard extends Component {
                         :
                             ""
                     }
-                    <button className="negative ui button" onClick={ () => this.handleReport() }>Report</button>
+                    <Grid columns={2}>
+                        <Grid.Column>
+                            <Dropdown
+                                onChange={this.handleChange}
+                                options={options}
+                                placeholder='Choose an option'
+                                selection
+                                value={value}
+                            />
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Segment secondary>
+                                <pre>Current value: {value}</pre>
+                            </Segment>
+                        </Grid.Column>
+                    </Grid>
+                    <button className="negative ui button" onClick={() => this.handleReport()}>Report</button>
+
                 </div>
 
                 <div className="sellerInfo">
