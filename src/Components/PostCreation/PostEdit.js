@@ -16,7 +16,6 @@ export class PostEdit extends Component {
     }
 
     handleChange(event) {
-        console.log(event.target.value)
         this.setState({ value: {...this.state.value, [event.target.name]: event.target.value} });
     }
 
@@ -31,29 +30,9 @@ export class PostEdit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        let title = event.target.title.value
-        let desc = event.target.description.value
-        let postalCode = event.target.postalcode.value
-        let email = event.target.email.value
-        let city = event.target.city.value
-        let phonenum = event.target.phonenumber.value
-        let condition = event.target.condition.value
-        let cat = event.target.categories.value
-        let image = event.target.image.value
-        let price = event.target.price.value
         
         const patchData = {
-            title: title,
-            description: desc,
-            postcode: postalCode,
-            email: email,
-            city: city,
-            phone_number: phonenum,
-            condition: condition,
-            category: cat,
-            image_url: image,
-            price: price,
-            user_id: this.state.user.id
+            post: this.state.value
         }
 
         API.PatchAPI(APIPOSTS, patchData)
