@@ -13,7 +13,7 @@ export class NavBar extends Component {
             <div className="NavBar">
 
                 <div className="company-Logo">
-                    <Link to="/"><h1>Company Logo</h1></Link>
+                    <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }} ><h1> Tegari </h1></Link>
                 </div>
 
                 <div className="search-bar">
@@ -28,8 +28,8 @@ export class NavBar extends Component {
 
                     <div>
                         < Link to="/login">
-                            <Button animated color='purple'>
-                                <Button.Content visible> Click here to log in</Button.Content>
+                            <Button animated basic color='purple'>
+                                <Button.Content visible> Log in / Sign up</Button.Content>
                                 <Button.Content hidden>
                                     <Icon name='arrow right' />
                                 </Button.Content>
