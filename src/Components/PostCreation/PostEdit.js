@@ -2,14 +2,27 @@ import React, { Component } from 'react';
 import { API, APILINK, APIPOSTS } from '../API';
 
 export class PostEdit extends Component {
-    state = {
-        post: [],
-        user: []
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: {},
+            post: [],
+            user: []
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        console.log(event.target.value)
+        this.setState({ value: {...this.state.value, [event.target.name]: event.target.value} });
     }
 
     getThePost = () => {
         API.GetAPI(`${APILINK}/posts/${window.location.href.split("/")[4]}`)
-            .then(data => this.setState({ post: data[0], user: data[1] }) )
+            .then(data => this.setState({ post: data[0], user: data[1], value: data[0] }) )
     }
 
     componentDidMount() {
@@ -48,48 +61,48 @@ export class PostEdit extends Component {
 
 
     render() {
-        const { title, image_url, description, price, postcode, city } = this.state.post
+        const { title, image_url, description, price, postcode, city } = this.state.value
         return (
             <div className="CreateAPost" >
                 <div className="FormContainer">
                     <form onSubmit={(e) => this.handleSubmit(e)} className="whatever">
                         <label>
-                            <input type="title" name="title" placeholder="Title" value={title} />
+                            <input type="title" name="title" placeholder="Title" value={title} onChange={(e) => this.handleChange(e)}/>
                             <span> Title </span>
                         </label>
 
                         <label>
-                            <input alt="no" name="image" placeholder="Image" value={image_url} />
+                            <input alt="no" name="image_url" placeholder="Image" value={image_url} onChange={(e) => this.handleChange(e)} />
                             <span> Image </span>
                         </label>
 
                         <label>
-                            <input type="description" name="description" placeholder="Description" value={description} />
+                            <input type="description" name="description" placeholder="Description" value={description} onChange={(e) => this.handleChange(e)} />
                             <span> Description </span>
                         </label>
 
                         <label>
-                            <input type="price" name="price" placeholder="Price" value={price} />
+                            <input type="price" name="price" placeholder="Price" value={price} onChange={(e) => this.handleChange(e)} />
                             <span> Price </span>
                         </label>
 
                         <label>
-                            <input type="postalcode" name="postalcode" placeholder="Postal Code" value={postcode} />
+                            <input type="postalcode" name="postcode" placeholder="Postal Code" value={postcode} onChange={(e) => this.handleChange(e)} />
                             <span> Postal Code </span>
                         </label>
 
                         <label>
-                            <input type="email" name="email" placeholder="E-mail" />
+                            <input type="email" name="email" placeholder="E-mail" onChange={(e) => this.handleChange(e)} />
                             <span> E-mail </span>
                         </label>
 
                         <label>
-                            <input type="city" name="city" placeholder="City" value={city} />
+                            <input type="city" name="city" placeholder="City" value={city} onChange={(e) => this.handleChange(e)} />
                             <span> City </span>
                         </label>
 
                         <label>
-                            <input type="phonenumber" name="phonenumber" placeholder="Phone Number" />
+                            <input type="phonenumber" name="phonenumber" placeholder="Phone Number" onChange={(e) => this.handleChange(e)} />
                             <span> Phone Number </span>
                         </label>
 
