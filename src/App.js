@@ -53,6 +53,10 @@ function App(props) {
     history.push("/search")
   }
 
+  const redirectToPostPage = postid => {
+    history.push(`/posts/${postid}`)
+  }
+
   const logout = () => {
     setUser(null)
     localStorage.removeItem('jwt')
@@ -74,7 +78,7 @@ function App(props) {
           <Route exact path="/users/:id" component={UserContainer} />
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
           <Route exact path="/create" render={() => <PostCreation user={user} />} />
-          <Route exact path="/posts/:id/edit" render={() =>   <PostEdit user={user} /> } />
+          <Route exact path="/posts/:id/edit" render={() =>   <PostEdit user={user} redirectToPostPage={redirectToPostPage} /> } />
           {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}

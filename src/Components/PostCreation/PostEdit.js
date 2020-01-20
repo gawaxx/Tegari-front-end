@@ -35,7 +35,7 @@ export class PostEdit extends Component {
             post: this.state.value
         }
 
-        API.PatchAPI(APIPOSTS, patchData)
+        API.PatchAPI(APIPOSTS, patchData).then(this.props.redirectToPostPage(this.state.post.id))
     }
 
 
