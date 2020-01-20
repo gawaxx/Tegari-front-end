@@ -143,7 +143,7 @@ export class PostCard extends Component {
                         basic
                         size='small'
                     >
-                        <Header icon='trash alternate' content='Delete your post' />
+                        <Header icon='eye' content='Report this post' />
                         <Modal.Content>
                             <Grid columns={2}>
                                 <Grid.Column>
@@ -158,7 +158,7 @@ export class PostCard extends Component {
                             </Grid>
                         </Modal.Content>
                         <Modal.Actions>
-                            <Button color='red' onClick={e => this.handleReportClose(e)} inverted>
+                            <Button color='green' onClick={e => this.handleReportClose(e)} inverted>
                                 <Icon name='checkmark' /> Report Post
                                     </Button>
                         </Modal.Actions>
