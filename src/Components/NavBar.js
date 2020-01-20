@@ -13,7 +13,7 @@ export class NavBar extends Component {
             <div className="NavBar">
 
                 <div className="company-Logo">
-                    <Link to="/"><h1>Company Logo</h1></Link>
+                    <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit' }} ><h1> Tegari </h1></Link>
                 </div>
 
                 <div className="search-bar">
