@@ -34,6 +34,10 @@ export class PostCard extends Component {
         API.PostAPI(`${APILINK}/reports/docreate`, PostContent)
     }
 
+    handleSavePostClick = () => {
+        API.PostAPI(``)
+    }
+
     handleOpen = () => this.setState({ modalOpen: true })
 
     handleClose = () => {
@@ -111,7 +115,7 @@ export class PostCard extends Component {
                     {
                         (this.props.user === null) ?
                             ""
-                            
+
                             :
 
                             (this.props.user.id === this.state.post.user_id) ?
@@ -133,7 +137,9 @@ export class PostCard extends Component {
                                     </Modal.Actions>
                                 </Modal>
                                 :
-                                ""
+                                <Button color='purple' onClick={() => this.handleSavePostClick()} >
+                                    Save Post 
+                                </Button>
                     }
                     {/* <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button> */}
 
