@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Button, Progress } from 'semantic-ui-react'
+import { Progress } from 'semantic-ui-react'
 
 
 const AuthForms = ({ login, signup }) => {
   
   const [loginData, setLoginData] = useState({});
-  const [signupData, setSignupData] = useState({});
+  const [signupData] = useState({}); //setSignupData
   const [isLogin, setisLogin] = useState({});
   const [percent, setPercent] = useState(0);
 
@@ -21,12 +21,12 @@ const AuthForms = ({ login, signup }) => {
     });
   };
 
-  const handleChange = e => {
-    setSignupData({
-      ...signupData,
-      [e.target.name]: e.target.value
-    });
-  };
+  // const handleChange = e => {
+  //   setSignupData({
+  //     ...signupData,
+  //     [e.target.name]: e.target.value
+  //   });
+  // };
 
   const handleLoginSubmit = e => {
     e.preventDefault();

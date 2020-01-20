@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { APIPOSTS, API } from '../API.js'
+import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
 import { Button, Icon, Modal, Header, Placeholder, Image } from 'semantic-ui-react'
 
@@ -17,7 +17,7 @@ export class PostCard extends Component {
     }
 
     handleReport = () => {
-
+        API.PostAPI(`${APILINK}/reports`)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
