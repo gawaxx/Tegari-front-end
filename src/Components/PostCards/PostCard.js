@@ -120,7 +120,7 @@ export class PostCard extends Component {
                         :
                             ""
                     }
-                    <button class="negative ui button" onClick={ () => this.handleReport() }>Report</button>
+                    <button className="negative ui button" onClick={ () => this.handleReport() }>Report</button>
                 </div>
 
                 <div className="sellerInfo">
