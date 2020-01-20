@@ -1,18 +1,49 @@
 import React, { Component } from 'react';
-import { API, APILINK } from '../API';
+import { API, APILINK, APIPOSTS } from '../API';
 
 export class PostEdit extends Component {
     state = {
-        post: []
+        post: [],
+        user: []
     }
 
     getThePost = () => {
         API.GetAPI(`${APILINK}/posts/${window.location.href.split("/")[4]}`)
-            .then(data => this.setState({ post: data[0] }) )
+            .then(data => this.setState({ post: data[0], user: data[1] }) )
     }
 
     componentDidMount() {
         this.getThePost()
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        let title = event.target.title.value
+        let desc = event.target.description.value
+        let postalCode = event.target.postalcode.value
+        let email = event.target.email.value
+        let city = event.target.city.value
+        let phonenum = event.target.phonenumber.value
+        let condition = event.target.condition.value
+        let cat = event.target.categories.value
+        let image = event.target.image.value
+        let price = event.target.price.value
+        
+        const patchData = {
+            title: title,
+            description: desc,
+            postcode: postalCode,
+            email: email,
+            city: city,
+            phone_number: phonenum,
+            condition: condition,
+            category: cat,
+            image_url: image,
+            price: price,
+            user_id: this.state.user.id
+        }
+
+        API.PatchAPI(APIPOSTS, patchData)
     }
 
 
