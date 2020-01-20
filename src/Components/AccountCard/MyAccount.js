@@ -30,7 +30,7 @@ export class MyAccount extends Component {
 
     getUserPost = () => {
         API.GetAPI(`${APILINK}/users/${this.state.current_user.id}`)
-            .then(data => this.setState({ allPosts: data.posts }) )
+            .then(data => this.setState({ allPosts: data.posts, savePost: data.save_posts }) )
     }
 
     render() {
@@ -54,9 +54,9 @@ export class MyAccount extends Component {
                 <h2> Post you saved </h2>
 
                 <div className="cardscontainer"> 
-                    {/* {
+                    {
                         this.state.savePost.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
-                    } */}
+                    }
                 </div>
 
             </div>
