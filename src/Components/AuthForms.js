@@ -1,10 +1,18 @@
 import React, { useState } from "react";
+import { Button, Progress } from 'semantic-ui-react'
+
 
 const AuthForms = ({ login, signup }) => {
   
   const [loginData, setLoginData] = useState({});
   const [signupData, setSignupData] = useState({});
   const [isLogin, setisLogin] = useState({});
+  const [percent, setPercent] = useState(0);
+
+  const increment = () => 
+    setPercent((prevState) => ({
+      percent: prevState.percent >= 100 ? 0 : prevState.percent + 10,
+  }))
 
   const handleLoginChange = e => {
     setLoginData({
@@ -57,6 +65,7 @@ const AuthForms = ({ login, signup }) => {
         <div className="signupSelect">
           <h1 className="login" onClick={ () => setisLogin(true) }> Login </h1>
           <h1 className="signup" onClick={ () => setisLogin(false) } > Signup </h1> 
+          <Progress percent={percent} indicating />
         </div>
       }
       <hr></hr>

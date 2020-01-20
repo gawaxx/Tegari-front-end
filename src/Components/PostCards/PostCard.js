@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Image } from 'semantic-ui-react'
 
 
 
@@ -71,7 +71,14 @@ export class PostCard extends Component {
                         <Icon name='left arrow' />
                     </Button>
                     <br></br>
-                    <img src={image_url} alt="post" ></img>
+                    {
+                        image_url ? 
+                            <img src={image_url} alt="post" ></img>
+                        : 
+                            <Placeholder style={{ height: 300, width: 300 }}>
+                                <Placeholder.Image />
+                            </Placeholder>
+                    }
                     <h1>{title}, £{price}</h1>
                     <h2>{postcode}, {city}</h2>
                     <p>{category}</p>
@@ -102,8 +109,10 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit'}} >
-                        <h1>Username: {user_name}</h1>
+                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
+                        <Header as='h1'>
+                            <Icon name="user circle"/> {user_name}
+                        </Header>
                     </Link>
                     <h2>Posted by: {name} </h2>
                     <h2>Points: {points} </h2>
