@@ -6,9 +6,9 @@ import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Segment } fro
 
 
 const options = [
-    { key: 1, text: 'One', value: 1 },
-    { key: 2, text: 'Two', value: 2 },
-    { key: 3, text: 'Three', value: 3 },
+    { key: 1, text: 'Potential Scam', value: 'Potential Scam' },
+    { key: 2, text: 'Threatening user', value: 'Threatening user' },
+    { key: 3, text: 'Prohibited for sale', value: 'Prohibited for sale' },
 ]
 
 
@@ -23,14 +23,15 @@ export class PostCard extends Component {
 
     handleChange = (e, { value }) => this.setState({ value })
 
-    handleReport = () => {
-        debugger
+    handleReport = (e) => {
+        e.preventDefault()
         const PostContent = {
             post_id_reported: this.state.post.id,
             user_reported_id: this.state.user.id,
-            user_reporting_id: (this.props.user === null ? 173 : this.props.user.id )
+            user_reporting_id: (this.props.user === null ? 173 : this.props.user.id ),
+            reason_reporting: this.state.value 
         }
-        API.PostAPI(`${APILINK}/reports`, PostContent)
+        API.PostAPI(`${APILINK}/reports/docreate`, PostContent)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
@@ -138,13 +139,8 @@ export class PostCard extends Component {
                                 value={value}
                             />
                         </Grid.Column>
-                        <Grid.Column>
-                            <Segment secondary>
-                                <pre>Current value: {value}</pre>
-                            </Segment>
-                        </Grid.Column>
                     </Grid>
-                    <button className="negative ui button" onClick={() => this.handleReport()}>Report</button>
+                    <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button>
 
                 </div>
 
