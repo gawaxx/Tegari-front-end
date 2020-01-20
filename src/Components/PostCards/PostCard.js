@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Segment } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid } from 'semantic-ui-react'
 
 
 
@@ -152,7 +152,7 @@ export class PostCard extends Component {
                             (this.props.user.id === this.state.post.user_id) ?
                                 <div>
 
-                                    <Link to={`posts/${this.state.post.id}/edit`} > <button class="ui violet button">Edit your post</button> </Link>
+                                    <Link to={`${this.state.post.id}/edit`} > <button class="ui violet button">Edit your post</button> </Link>
 
                                     <Modal
                                         trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
