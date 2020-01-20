@@ -150,26 +150,32 @@ export class PostCard extends Component {
                             :
 
                             (this.props.user.id === this.state.post.user_id) ?
-                                <Modal
-                                    trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
-                                    open={this.state.modalOpen}
-                                    onClose={this.handleClose}
-                                    basic
-                                    size='small'
-                                >
-                                    <Header icon='trash alternate' content='Delete your post' />
-                                    <Modal.Content>
-                                        <h3>Are you sure you wish to delete your post ?</h3>
-                                    </Modal.Content>
-                                    <Modal.Actions>
-                                        <Button color='red' onClick={this.handleClose} inverted>
-                                            <Icon name='checkmark' /> Yes, Delete it
+                                <div>
+                                    <Modal
+                                        trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
+                                        open={this.state.modalOpen}
+                                        onClose={this.handleClose}
+                                        basic
+                                        size='small'
+                                    >
+                                        <Header icon='trash alternate' content='Delete your post' />
+                                        <Modal.Content>
+                                            <h3>Are you sure you wish to delete your post ?</h3>
+                                        </Modal.Content>
+                                        <Modal.Actions>
+                                            <Button color='red' onClick={this.handleClose} inverted>
+                                                <Icon name='checkmark' /> Yes, Delete it
                                     </Button>
-                                    </Modal.Actions>
-                                </Modal>
+                                        </Modal.Actions>
+                                    </Modal>
+
+                                    <button class="ui violet button">Edit your post</button>
+                                </div>
                                 :
+
+
                                 <Button color='purple' onClick={(e) => this.handleSavePostClick(e)} >
-                                    Save Post 
+                                    Save Post
                                 </Button>
                     }
 
