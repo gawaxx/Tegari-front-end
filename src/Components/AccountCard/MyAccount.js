@@ -27,6 +27,7 @@ export class MyAccount extends Component {
     componentDidMount() {
         this.props.getUserData()
         this.getUserPost()
+        this.getUserSavePost()
     }
 
     getUserPost = () => {
@@ -35,7 +36,8 @@ export class MyAccount extends Component {
     }
 
     getUserSavePost = () => {
-        API.GetAPI(`${APILINK}/save_posts`)
+        API.GetAPI(`${APILINK}/save_posts?user_id=${this.props.user.id}`)
+            .then(savePost => this.setState({ savePost }) )
     }
 
     render() {
@@ -51,6 +53,12 @@ export class MyAccount extends Component {
                 <div className="cardscontainer"> 
                     {
                         this.state.allPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
+                    }
+                </div>
+
+                <div className="cardscontainer"> 
+                    {
+                        this.state.savePost.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
                     }
                 </div>
 
