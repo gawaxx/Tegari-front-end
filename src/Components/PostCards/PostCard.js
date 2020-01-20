@@ -41,6 +41,11 @@ export class PostCard extends Component {
         this.dbhandleClick()
     }
 
+    handleReportClose = (e) => {
+        this.setState({ modalOpen: false }) 
+        this.handleReport(e)
+    }
+
     handleClick = (e, titleProps) => {
         const { index } = titleProps
         const { activeIndex } = this.state
@@ -129,18 +134,35 @@ export class PostCard extends Component {
                         : 
                             ""
                     }
-                    <Grid columns={2}>
-                        <Grid.Column>
-                            <Dropdown
-                                onChange={this.handleChange}
-                                options={options}
-                                placeholder='Choose an option'
-                                selection
-                                value={value}
-                            />
-                        </Grid.Column>
-                    </Grid>
-                    <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button>
+                    {/* <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button> */}
+
+                    <Modal
+                        trigger={<Button color='red' onClick={this.handleOpen}> Report  Post </Button>}
+                        open={this.state.modalOpen}
+                        onClose={this.handleReportClose}
+                        basic
+                        size='small'
+                    >
+                        <Header icon='trash alternate' content='Delete your post' />
+                        <Modal.Content>
+                            <Grid columns={2}>
+                                <Grid.Column>
+                                    <Dropdown
+                                        onChange={this.handleChange}
+                                        options={options}
+                                        placeholder='Choose an option'
+                                        selection
+                                        value={value}
+                                    />
+                                </Grid.Column>
+                            </Grid>
+                        </Modal.Content>
+                        <Modal.Actions>
+                            <Button color='red' onClick={e => this.handleReportClose(e)} inverted>
+                                <Icon name='checkmark' /> Report Post
+                                    </Button>
+                        </Modal.Actions>
+                    </Modal>
 
                 </div>
 
