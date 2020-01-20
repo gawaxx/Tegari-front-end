@@ -90,15 +90,15 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="PostInfo">
-                    <Button icon labelPosition='left' onClick={ () => {this.handleClick()} } >
+                    <Button icon labelPosition='left' onClick={() => { this.handleClick() }} >
                         Go Back
                         <Icon name='left arrow' />
                     </Button>
                     <br></br>
                     {
-                        image_url ? 
+                        image_url ?
                             <img src={image_url} alt="post" ></img>
-                        : 
+                            :
                             <Placeholder style={{ height: 300, width: 300 }}>
                                 <Placeholder.Image />
                             </Placeholder>
@@ -111,28 +111,29 @@ export class PostCard extends Component {
                     {
                         (this.props.user === null) ?
                             ""
-                        :
+                            
+                            :
 
-                        (this.props.user.id === this.state.post.user_id) ? 
-                            <Modal
-                                trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
-                                open={this.state.modalOpen}
-                                onClose={this.handleClose}
-                                basic
-                                size='small'
-                            >
-                                <Header icon='trash alternate' content='Delete your post' />
-                                <Modal.Content>
-                                    <h3>Are you sure you wish to delete your post ?</h3>
-                                </Modal.Content>
-                                <Modal.Actions>
-                                    <Button color='red' onClick={this.handleClose} inverted>
-                                        <Icon name='checkmark' /> Yes, Delete it
+                            (this.props.user.id === this.state.post.user_id) ?
+                                <Modal
+                                    trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
+                                    open={this.state.modalOpen}
+                                    onClose={this.handleClose}
+                                    basic
+                                    size='small'
+                                >
+                                    <Header icon='trash alternate' content='Delete your post' />
+                                    <Modal.Content>
+                                        <h3>Are you sure you wish to delete your post ?</h3>
+                                    </Modal.Content>
+                                    <Modal.Actions>
+                                        <Button color='red' onClick={this.handleClose} inverted>
+                                            <Icon name='checkmark' /> Yes, Delete it
                                     </Button>
-                                </Modal.Actions>
-                            </Modal>
-                        : 
-                            ""
+                                    </Modal.Actions>
+                                </Modal>
+                                :
+                                ""
                     }
                     {/* <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button> */}
 
