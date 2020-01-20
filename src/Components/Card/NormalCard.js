@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Placeholder } from 'semantic-ui-react'
+
 
 export class NormalCard extends Component {
 
@@ -13,9 +15,12 @@ export class NormalCard extends Component {
             <div>
                 <div className="blog-card" onClick={ () => this.handleClick()}>
                     <div className="meta">
-                    <div className="photo">
-                        <img alt="placholder" src={image_url}></img>
-                    </div>
+                        <div className="photo">
+                            <img alt="placholder" src={image_url}></img>
+                            <Placeholder style={{ height: 300, width: 300 }}>
+                                <Placeholder.Image />
+                            </Placeholder>
+                        </div>
                     <ul className="details">
                         <li className="author"><a href="/"> {user_id} </a></li>
                         <li className="date"> {created_at} </li>
