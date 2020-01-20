@@ -85,6 +85,10 @@ export class PostCard extends Component {
                     <p>condition: {condition}</p>
                     <p>{description}</p>
                     {
+                        (this.props.user === null) ?
+                            ""
+                        :
+
                         (this.props.user.id === this.state.post.user_id) ? 
                             <Modal
                                 trigger={<Button color='red' onClick={this.handleOpen}>Delete your post</Button>}
