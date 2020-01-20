@@ -7,9 +7,8 @@ export class PostEdit extends Component {
     }
 
     getThePost = () => {
-        debugger
-        API.GetAPI(`${APILINK}/posts?id=${window.location.href.split("/")[4]}`)
-            .then(post => this.setState({ post }) )
+        API.GetAPI(`${APILINK}/posts/${window.location.href.split("/")[4]}`)
+            .then(data => this.setState({ post: data[0] }) )
     }
 
     componentDidMount() {
