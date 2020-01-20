@@ -119,7 +119,33 @@ export class PostCard extends Component {
                     <p>{description}</p>
                     {
                         (this.props.user === null) ?
-                            ""
+                            <Modal
+                                trigger={<Button color='red' onClick={this.handleOpen}> Report  Post </Button>}
+                                open={this.state.modalOpen}
+                                onClose={this.handleReportClose}
+                                basic
+                                size='small'
+                            >
+                                <Header icon='eye' content='Report this post' />
+                                <Modal.Content>
+                                    <Grid columns={2}>
+                                        <Grid.Column>
+                                            <Dropdown
+                                                onChange={this.handleChange}
+                                                options={options}
+                                                placeholder='Choose an option'
+                                                selection
+                                                value={value}
+                                            />
+                                        </Grid.Column>
+                                    </Grid>
+                                </Modal.Content>
+                                <Modal.Actions>
+                                    <Button color='green' onClick={e => this.handleReportClose(e)} inverted>
+                                        <Icon name='checkmark' /> Report Post
+                                    </Button>
+                                </Modal.Actions>
+                            </Modal>
 
                             :
 
@@ -146,35 +172,6 @@ export class PostCard extends Component {
                                     Save Post 
                                 </Button>
                     }
-                    {/* <button className="negative ui button" onClick={(e) => this.handleReport(e)}>Report</button> */}
-
-                    <Modal
-                        trigger={<Button color='red' onClick={this.handleOpen}> Report  Post </Button>}
-                        open={this.state.modalOpen}
-                        onClose={this.handleReportClose}
-                        basic
-                        size='small' 
-                    >
-                        <Header icon='eye' content='Report this post' />
-                        <Modal.Content>
-                            <Grid columns={2}>
-                                <Grid.Column>
-                                    <Dropdown
-                                        onChange={this.handleChange}
-                                        options={options}
-                                        placeholder='Choose an option'
-                                        selection
-                                        value={value}
-                                    />
-                                </Grid.Column>
-                            </Grid>
-                        </Modal.Content>
-                        <Modal.Actions>
-                            <Button color='green' onClick={e => this.handleReportClose(e)} inverted>
-                                <Icon name='checkmark' /> Report Post
-                                    </Button>
-                        </Modal.Actions>
-                    </Modal>
 
                 </div>
 

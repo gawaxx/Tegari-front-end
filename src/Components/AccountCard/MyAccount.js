@@ -55,7 +55,7 @@ export class MyAccount extends Component {
 
                 <div className="cardscontainer"> 
                     {
-                        this.state.savePost.map(post => <Link to={`/posts/${post.post_id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={post} key={post.id} /> </Link> )
+                        this.state.savePost.map(post => <Link to={`/posts/${post.post_id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <AllPostMyAccount post={() => API.GetAPI(`${APILINK}/posts/${post.post_id}`).then(post => post)} key={post.id} /> </Link> )
                     }
                 </div>
 
