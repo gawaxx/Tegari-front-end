@@ -17,7 +17,13 @@ export class PostCard extends Component {
     }
 
     handleReport = () => {
-        API.PostAPI(`${APILINK}/reports`)
+        debugger
+        const PostContent = {
+            post_id_reported: this.state.post.id,
+            user_reported_id: this.state.user.id,
+            // user_reporting_id: (this.)
+        }
+        API.PostAPI(`${APILINK}/reports`, PostContent)
     }
 
     handleOpen = () => this.setState({ modalOpen: true })
