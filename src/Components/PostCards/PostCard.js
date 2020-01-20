@@ -126,7 +126,7 @@ export class PostCard extends Component {
                                     </Button>
                                 </Modal.Actions>
                             </Modal>
-                        :
+                        : 
                             ""
                     }
                     <Grid columns={2}>
