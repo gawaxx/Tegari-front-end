@@ -10,8 +10,8 @@ const AuthForms = ({ login, signup }) => {
   const [percent, setPercent] = useState(0);
 
   const increment = () => 
-    setPercent((prevState) => ({
-      percent: prevState.percent >= 100 ? 0 : prevState.percent + 10,
+  setPercent((prevState) => ({
+      percent: prevState.percent >= 100 ? 0 : prevState.percent + 17,
   }))
 
   const handleLoginChange = e => {
@@ -21,7 +21,7 @@ const AuthForms = ({ login, signup }) => {
     });
   };
 
-  const handleSignupChange = e => {
+  const handleChange = e => {
     setSignupData({
       ...signupData,
       [e.target.name]: e.target.value
@@ -95,32 +95,32 @@ const AuthForms = ({ login, signup }) => {
           <form onSubmit={handleSignupSubmit}>
           <h2>sign up</h2>
           <label>
-            <input type="email" name="email" placeholder="E-mail" onChange={handleSignupChange} />
+            <input type="email" name="email" placeholder="E-mail" onChange={ () => increment() } />
             <span> E-mail</span>
           </label>
 
           <label>
-            <input type="password" name="password" placeholder="Password" onChange={handleLoginChange} />
+            <input type="password" name="password" placeholder="Password" onChange={() => increment()} />
             <span> Password </span>
           </label>
 
           <label>
-            <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={handleLoginChange} />
+            <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={() => increment()} />
             <span> Password confirmation</span>
           </label>
 
           <label>
-            <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={handleSignupChange} />
+            <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={() => increment()} />
             <span> Your name</span>
           </label>
 
           <label>
-            <input type="familyName" name="familyName" placeholder="Your last name" onChange={handleSignupChange} />
+            <input type="familyName" name="familyName" placeholder="Your last name" onChange={() => increment()} />
             <span> Your last name</span>
           </label>
 
           <label>
-            <input type="username" name="username" placeholder="Username" onChange={handleSignupChange} />
+            <input type="username" name="username" placeholder="Username" onChange={() => increment()} />
             <span> Username </span>
           </label>
 
