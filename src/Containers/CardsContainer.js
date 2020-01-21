@@ -15,7 +15,10 @@ export class CardsContainer extends Component {
     }
 
     getUNPost = () => {
-        API.GetAPI(`${APILINK}/posts?title=${this.props.search}`).then(posts => this.filterNUPosts(posts))
+        (this.props.search.category !== "all") ?
+            API.GetAPI(`${APILINK}/posts?title=${this.props.search.value}&category=${this.props.search.category}`).then(posts => this.filterNUPosts(posts))
+        :
+            API.GetAPI(`${APILINK}/posts?title=${this.props.search.value}`).then(posts => this.filterNUPosts(posts))
     }
 
     getUPost = () => {

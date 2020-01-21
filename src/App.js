@@ -48,8 +48,8 @@ function App(props) {
       .then(history.push("/login"))
   }; //makes a post request for a user
 
-  const handleSearchSubmit = value => {
-    setsearch(value)
+  const handleSearchSubmit = searchParams => {
+    setsearch(searchParams)
     history.push("/search")
   }
 
