@@ -43,7 +43,7 @@ export class PostCreation extends Component {
                 }
 
                 API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
-                API.PostAPI(APIPOSTS, postData)
+                API.PostAPI(APIPOSTS, postData).then(this.props.redirectToUserPage())
             })
         }
     }
