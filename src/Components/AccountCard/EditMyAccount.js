@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API } from "../API";
 
-const EditMyAccount = () => {
+const EditMyAccount = props => {
 
     const [signupData] = useState({})
     const [percent, setPercent] = useState(0)
@@ -12,7 +12,7 @@ const EditMyAccount = () => {
     }))
 
     const getUserData = () => {
-        API.GetAPI()
+        API.GetAPI(`users/${props.user.id}`)
     }
 
 
