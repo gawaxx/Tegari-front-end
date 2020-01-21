@@ -14,10 +14,8 @@ export class EditMyAccount extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    increment = () => {
-        this.setState((prevState) => ({
-            percent: prevState.percent >= 100 ? 0 : prevState.percent + 17,
-        }))
+    componentDidMount() {
+        this.setState({ value: this.props.user })
     }
 
     handleChange(event) {
@@ -39,37 +37,38 @@ export class EditMyAccount extends Component {
     }
   
     render() {
+        const { email, password, password_confirmation, name, surname, user_name } = this.state.value
         return (
             <div className="FormContainer" >
                 <form onSubmit={() => this.handleSubmit() }>
-                    <h2>sign up</h2>
+                    <h2>Edit your info</h2>
                     <label>
-                        <input type="email" name="email" placeholder="E-mail" onChange={() => this.increment()} />
+                        <input type="email" name="email" placeholder="E-mail" value={email} onChange={(e) => this.handleChange(e)} />
                         <span> E-mail</span>
                     </label>
 
                     <label>
-                        <input type="password" name="password" placeholder="Password" onChange={() => this.increment()} />
+                        <input type="password" name="password" placeholder="Password" value={password} onChange={(e) => this.handleChange(e)} />
                         <span> Password </span>
                     </label>
 
                     <label>
-                        <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={() => this.increment()} />
+                        <input type="password" name="password_confirmation" placeholder="Password confirmation" value={password_confirmation}onChange={(e) => this.handleChange(e)} />
                         <span> Password confirmation</span>
                     </label>
 
                     <label>
-                        <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={() => this.increment()} />
+                        <input type="nameofuser" name="nameofuser" placeholder="Your Name" value={name} onChange={(e) => this.handleChange(e)} />
                         <span> Your name</span>
                     </label>
 
                     <label>
-                        <input type="familyName" name="familyName" placeholder="Your last name" onChange={() => this.increment()} />
+                        <input type="familyName" name="familyName" placeholder="Your last name" value={surname} onChange={(e) => this.handleChange(e)} />
                         <span> Your last name</span>
                     </label>
 
                     <label>
-                        <input type="username" name="username" placeholder="Username" onChange={() => this.increment()} />
+                        <input type="username" name="username" placeholder="Username" value={user_name} onChange={(e) => this.handleChange(e)} />
                         <span> Username </span>
                     </label>
 
