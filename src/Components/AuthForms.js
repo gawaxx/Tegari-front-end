@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Progress } from 'semantic-ui-react'
+import { Progress, Message } from 'semantic-ui-react'
 
 
 const AuthForms = ({ login, signup }) => {
@@ -30,7 +30,7 @@ const AuthForms = ({ login, signup }) => {
 
   const handleLoginSubmit = e => {
     e.preventDefault();
-    login(loginData);
+    login(loginData)
   };
 
   const handleSignupSubmit = e => {

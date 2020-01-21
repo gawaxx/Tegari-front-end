@@ -9,7 +9,8 @@ import AuthForms from '../Components/AuthForms.js'
  class AuthFormsContainer extends Component {
 
     handleLogin = loginData => {
-        API.login( `${APILINK}/login`, loginData).then(user => this.props.setUser(user));
+        API.login( `${APILINK}/login`, loginData)
+            .then(user => this.props.setUser(user))
     };
 
     render() {

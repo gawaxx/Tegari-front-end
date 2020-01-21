@@ -17,7 +17,7 @@ export class LandingPage extends Component {
                 <div className="Welcome" >
 
                     <div>
-                        <h1> WELCOME TO *INSERT APP NAME* </h1>
+                        <h1> WELCOME TO Tegari </h1>
                     </div>
 
                     <div>

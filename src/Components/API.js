@@ -53,10 +53,9 @@ export const validateUser = (url) => { // APILINK/profile
   })
   .then(jsonify)
   .then(data => {
-    console.log('got the token =>', data.jwt)
     localStorage.setItem("jwt", data.jwt)
     return data.user
-  });
+  })
   
   export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
   // export const signUp = (url, signupData) =>

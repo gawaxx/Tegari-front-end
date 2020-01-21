@@ -27,7 +27,9 @@ function App(props) {
   useEffect(() => {
       API.validateUser(`${APILINK}/validate_user`)
         .then(user => setUser(user))
-        .catch(console.error);
+        .catch((error) => {
+          console.error('Error:', error);
+        })
   }, []);
 
   const getUserData = () => {
@@ -79,13 +81,11 @@ function App(props) {
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
           <Route exact path="/create" render={() => <PostCreation user={user} />} />
           <Route exact path="/posts/:id/edit" render={() =>   <PostEdit user={user} redirectToPostPage={redirectToPostPage} /> } />
-          {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
           </Route>
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/search' render={() => <CardsContainer search={search} />} />
-          {/* <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  /> */}
           <Route exact path="/login" >
             {loggedIn ? <Redirect to='/my_profile' /> : <AuthFormsContainer user={user} handleSignup={handleSignup} setUser={setUser} />}
           </Route>
