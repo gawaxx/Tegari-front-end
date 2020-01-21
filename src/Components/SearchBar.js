@@ -33,7 +33,7 @@ const SearchBar = props => {
         <Form onSubmit={() => handleSubmit() }> 
             <Input className="searchBar"
                 action={
-                <Dropdown button basic floating 
+                <Dropdown button inverted floating 
                 options={options} 
                 defaultValue='page' 
                 onChange={ (e, value) => getCategory(e, value)}
