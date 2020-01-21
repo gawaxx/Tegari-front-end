@@ -30,13 +30,13 @@ code {
 
 /* Search Bar */
 .searchBar {
-  width: 30vw;
+  width: 28vw;
   left: -5vw;
 }
 
 .fullsearchbar {
   display: grid;
-  grid-template-columns: 2.2fr 0.3fr 0.7fr;
+  grid-template-columns: 0.7fr 0.15fr 0.15fr;
 }
 
 .fullsearchbar .button {
