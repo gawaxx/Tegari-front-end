@@ -11,7 +11,7 @@ export class CreatePost extends Component {
             <div>
                 <div className="cardCreatePostButton" onClick={() => this.handleClick()} >
                     <div className="containerCreatePostButton">
-                        <Icon className="plus square" />
+                        <Icon className="plus square outline icon" />
                         <h4><b>Create A post !</b></h4>
                     </div>
                 </div>

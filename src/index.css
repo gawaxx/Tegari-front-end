@@ -156,21 +156,28 @@ input[name=search] {
   background-color: rgb(35,35,35);
   margin: 1rem auto;
   width: 95%;
+  height: 20vh;
 }
 
 /* On mouse-over, add a deeper shadow */
 .cardCreatePostButton:hover {
-box-shadow: 0 16px 32px 0 rgba(0,0,0,0.8);
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 }
 
 /* Add some padding inside the card container */
 .containerCreatePostButton {
-padding: 2px 16px;
-text-align: center;
+  text-align: center;
 }
 
 .containerCreatePostButton h4 {
   font-size: 25px;
+  color: white;
+}
+
+.containerCreatePostButton .icon {
+  font-size: 70px;
+  margin-bottom: -30px;
+  margin-top: 40px;
   color: white;
 }
 
