@@ -57,6 +57,7 @@ code {
 
 .Welcome h1,h2{
   color: rgba(255, 255, 255, 0.8);
+  padding-top: 30px;
 }
 
 .FrontPageRightSide {
