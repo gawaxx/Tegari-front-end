@@ -109,6 +109,7 @@ code {
   width: 20%;
   background-color: rgb(35, 35, 35);
   border-bottom-left-radius: 5px;
+  text-align: center;
 }
 
 .company-Logo h1 {
