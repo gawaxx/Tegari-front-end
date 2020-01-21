@@ -21,13 +21,6 @@ const AuthForms = ({ login, signup }) => {
     });
   };
 
-  // const handleChange = e => {
-  //   setSignupData({
-  //     ...signupData,
-  //     [e.target.name]: e.target.value
-  //   });
-  // };
-
   const handleLoginSubmit = e => {
     e.preventDefault();
     login(loginData)

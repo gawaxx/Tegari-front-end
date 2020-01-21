@@ -30,7 +30,7 @@ export class PostEdit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        
+
         const patchData = {
             post: this.state.value
         }

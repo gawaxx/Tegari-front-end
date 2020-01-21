@@ -1,80 +1,83 @@
-import React, { useState } from "react";
-import { API } from "../API";
+import React, { Component } from 'react';
 
-const EditMyAccount = props => {
+export class EditMyAccount extends Component {
 
-    const [signupData] = useState({})
-    const [percent, setPercent] = useState(0)
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: {},
+            user: this.props.user,
+            percent: {}
+        };
 
-    const increment = () =>
-        setPercent((prevState) => ({
-            percent: prevState.percent >= 100 ? 0 : prevState.percent + 17,
-    }))
-
-    const getUserData = () => {
-        API.GetAPI(`users/${props.user.id}`)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    increment = () => {
+        this.setState((prevState) => ({
+            percent: prevState.percent >= 100 ? 0 : prevState.percent + 17,
+        }))
+    }
 
-    const handleSignupSubmit = e => {
+    handleChange(event) {
+        this.setState({ value: {...this.state.value, [event.target.name]: event.target.value} });
+    }
+
+    handleSubmit = e => {
         if (e.target.password.value === e.target.password_confirmation.value) {
             e.preventDefault();
             let signUpData = {
-                email: signupData.email,
-                password: e.target.password.value,
-                name: e.target.nameofuser.value,
-                familyName: e.target.familyName.value,
-                username: e.target.username.value
+                user: this.state.value
             }
-            // signup(signUpData)
+            //POST REQUEST GOES HERE 
         }
         else {
             e.preventDefault()
             console.log("Passwords don't match")
         }
     }
+  
+    render() {
+        return (
+            <div className="FormContainer" >
+                <form onSubmit={() => this.handleSubmit() }>
+                    <h2>sign up</h2>
+                    <label>
+                        <input type="email" name="email" placeholder="E-mail" onChange={() => this.increment()} />
+                        <span> E-mail</span>
+                    </label>
 
+                    <label>
+                        <input type="password" name="password" placeholder="Password" onChange={() => this.increment()} />
+                        <span> Password </span>
+                    </label>
 
+                    <label>
+                        <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={() => this.increment()} />
+                        <span> Password confirmation</span>
+                    </label>
 
-    return (
-        <div className="FormContainer" >
-            <form onSubmit={handleSignupSubmit}>
-                <h2>sign up</h2>
-                <label>
-                    <input type="email" name="email" placeholder="E-mail" onChange={() => increment()} />
-                    <span> E-mail</span>
-                </label>
+                    <label>
+                        <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={() => this.increment()} />
+                        <span> Your name</span>
+                    </label>
 
-                <label>
-                    <input type="password" name="password" placeholder="Password" onChange={() => increment()} />
-                    <span> Password </span>
-                </label>
+                    <label>
+                        <input type="familyName" name="familyName" placeholder="Your last name" onChange={() => this.increment()} />
+                        <span> Your last name</span>
+                    </label>
 
-                <label>
-                    <input type="password" name="password_confirmation" placeholder="Password confirmation" onChange={() => increment()} />
-                    <span> Password confirmation</span>
-                </label>
+                    <label>
+                        <input type="username" name="username" placeholder="Username" onChange={() => this.increment()} />
+                        <span> Username </span>
+                    </label>
 
-                <label>
-                    <input type="nameofuser" name="nameofuser" placeholder="Your Name" onChange={() => increment()} />
-                    <span> Your name</span>
-                </label>
-
-                <label>
-                    <input type="familyName" name="familyName" placeholder="Your last name" onChange={() => increment()} />
-                    <span> Your last name</span>
-                </label>
-
-                <label>
-                    <input type="username" name="username" placeholder="Username" onChange={() => increment()} />
-                    <span> Username </span>
-                </label>
-
-                <input type="submit" />
-            </form>
-        </div>
-    );
-
+                    <input type="submit" />
+                </form>
+            </div>
+        );
+    }
 }
 
 export default EditMyAccount;
