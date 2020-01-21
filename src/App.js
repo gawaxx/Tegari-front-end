@@ -55,7 +55,6 @@ function App(props) {
 
   const redirectToPostPage = postid => {
     history.push(`/posts/${postid}`)
-    window.location.reload(false);
   }
 
 
