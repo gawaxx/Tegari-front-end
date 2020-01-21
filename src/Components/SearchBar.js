@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-// import { FaSearch } from 'react-icons/fa';
-// import { Link } from 'react-router-dom'
 import { Dropdown, Input, Form } from 'semantic-ui-react'
-// <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
 import Select from 'react-select';
 
 
@@ -11,7 +8,6 @@ const options = [
     { key: 'entertainment', text: 'In entertainment', value: 'entertainment' },
     { key: 'electronic', text: 'In electronic', value: 'electronic' },
     { key: 'furniture', text: 'In furniture', value: 'furniture' },
-    // { key: 'all', text: 'In all', value: {} },
   ]
 
 const SearchBar = props => {
