@@ -95,14 +95,14 @@ code {
   height: 12vh;
   position: absolute;
   top: 0px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  background-color: rgb(170,170,170);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.87);
 }
 
 .company-Logo {
   display: table-cell;
   width: 20%;
-  background-color: #C0C0C0;
+  background-color: rgb(35, 35, 35);
   border-bottom-left-radius: 5px;
 }
 
@@ -110,7 +110,7 @@ code {
 .account-info {
   display: table-cell;
   width: 20%;
-  background-color: #C0C0C0;
+  background-color: rgb(35, 35, 35);
   border-bottom-right-radius: 5px;
 }
 
@@ -119,7 +119,7 @@ code {
 .search-bar {
   display: table-cell;
   width: 60%;
-  background-color: #C0C0C0;
+  background-color: rgb(35, 35, 35);
   text-align: center;
   position: relative;
 }
