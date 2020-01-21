@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { APIUSERS, API } from '../API';
 
 export class EditMyAccount extends Component {
 
@@ -25,10 +26,10 @@ export class EditMyAccount extends Component {
     handleSubmit = e => {
         if (e.target.password.value === e.target.password_confirmation.value) {
             e.preventDefault();
-            let signUpData = {
+            let patchData = {
                 user: this.state.value
             }
-            //POST REQUEST GOES HERE 
+            API.PatchAPI(APIUSERS, patchData)
         }
         else {
             e.preventDefault()
