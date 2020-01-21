@@ -41,7 +41,7 @@ export class EditMyAccount extends Component {
         const { email, password, password_confirmation, name, surname, user_name } = this.state.value
         return (
             <div className="FormContainer" >
-                <form onSubmit={() => this.handleSubmit() }>
+                <form onSubmit={(e) => this.handleSubmit(e) }>
                     <h2>Edit your info</h2>
                     <label>
                         <input type="email" name="email" placeholder="E-mail" value={email} onChange={(e) => this.handleChange(e)} />
