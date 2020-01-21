@@ -28,7 +28,7 @@ export class NavBar extends Component {
 
                     <div>
                         < Link to="/login">
-                            <Button animated basic color='purple'>
+                            <Button animated inverted color='white'>
                                 <Button.Content visible> Log in / Sign up</Button.Content>
                                 <Button.Content hidden>
                                     <Icon name='arrow right' />
