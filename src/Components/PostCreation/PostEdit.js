@@ -30,12 +30,12 @@ export class PostEdit extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        
+
         const patchData = {
             post: this.state.value
         }
 
-        API.PatchAPI(APIPOSTS, patchData)
+        API.PatchAPI(APIPOSTS, patchData).then(this.props.redirectToPostPage(this.state.post.id))
     }
 
 

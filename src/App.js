@@ -12,9 +12,7 @@ import PostCreation from "./Components/PostCreation/PostCreation";
 import MyAccount from "./Components/AccountCard/MyAccount";
 import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
 import PostEdit from "./Components/PostCreation/PostEdit";
-
-
-
+import EditMyAccount from "./Components/AccountCard/EditMyAccount";
 
 // {/* <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" /> */}
 
@@ -25,9 +23,11 @@ function App(props) {
   const [search, setsearch] = useState("");
 
   useEffect(() => {
-      API.validateUser(`${APILINK}/validate_user`)
-        .then(user => setUser(user))
-        .catch(console.error);
+    API.validateUser(`${APILINK}/validate_user`)
+      .then(user => setUser(user))
+      .catch((error) => {
+        console.error('Error:', error);
+      })
   }, []);
 
   const getUserData = () => {
@@ -53,13 +53,21 @@ function App(props) {
     history.push("/search")
   }
 
+  const redirectToPostPage = postid => {
+    history.push(`/posts/${postid}`)
+  }
+
+  const redirectToUserPage = () => {
+    history.push("/my_profile")
+  }
+
   const logout = () => {
     setUser(null)
     localStorage.removeItem('jwt')
     history.push('/')
   }
 
-  const loggedIn = !!user 
+  const loggedIn = !!user
 
   return (
     <>
@@ -73,15 +81,16 @@ function App(props) {
         <Container className="sublinks">
           <Route exact path="/users/:id" component={UserContainer} />
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
-          <Route exact path="/create" render={() => <PostCreation user={user} />} />
-          <Route exact path="/posts/:id/edit" render={() =>   <PostEdit user={user} /> } />
-          {/* <Route exact path="/my_profile" render={() => < MyAccount getUserData={getUserData} user={user} />} /> */}
+          <Route exact path="/create" render={() => <PostCreation user={user} redirectToUserPage={redirectToUserPage} />} />
+          <Route exact path="/posts/:id/edit" render={() => <PostEdit user={user} redirectToPostPage={redirectToPostPage} />} />
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
           </Route>
+          <Route exact path='/my_profile/edit'>
+            {loggedIn ? <EditMyAccount user={user} /> : <Redirect to='/login' /> }
+          </Route> 
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/search' render={() => <CardsContainer search={search} />} />
-          {/* <Route exact path='/login' render={() => <AuthFormsContainer user={user} handleLogin={handleLogin} handleSignup={handleSignup} setUser={setUser} /> }  /> */}
           <Route exact path="/login" >
             {loggedIn ? <Redirect to='/my_profile' /> : <AuthFormsContainer user={user} handleSignup={handleSignup} setUser={setUser} />}
           </Route>
@@ -102,7 +111,7 @@ function App(props) {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About Me' />
                 <List link inverted>
-                <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
+                  <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
               <Grid.Column width={7}>
@@ -111,7 +120,7 @@ function App(props) {
               </Header>
                 <p>
                   *App name* made with <span role="img" > 🥖 </span> by Jules Blanc, 2020.
-              </p>
+                </p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
