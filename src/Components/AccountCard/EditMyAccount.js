@@ -59,17 +59,17 @@ export class EditMyAccount extends Component {
                     </label>
 
                     <label>
-                        <input type="nameofuser" name="nameofuser" placeholder="Your Name" value={name} onChange={(e) => this.handleChange(e)} />
+                        <input type="nameofuser" name="name" placeholder="Your Name" value={name} onChange={(e) => this.handleChange(e)} />
                         <span> Your name</span>
                     </label>
 
                     <label>
-                        <input type="familyName" name="familyName" placeholder="Your last name" value={surname} onChange={(e) => this.handleChange(e)} />
+                        <input type="familyName" name="surname" placeholder="Your last name" value={surname} onChange={(e) => this.handleChange(e)} />
                         <span> Your last name</span>
                     </label>
 
                     <label>
-                        <input type="username" name="username" placeholder="Username" value={user_name} onChange={(e) => this.handleChange(e)} />
+                        <input type="username" name="user_name" placeholder="Username" value={user_name} onChange={(e) => this.handleChange(e)} />
                         <span> Username </span>
                     </label>
 
