@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Icon } from 'semantic-ui-react'
 
 export class CreatePost extends Component {
 
@@ -10,7 +11,7 @@ export class CreatePost extends Component {
             <div>
                 <div className="cardCreatePostButton" onClick={() => this.handleClick()} >
                     <div className="containerCreatePostButton">
-                        <h1> <b> + </b> </h1>
+                        <Icon className="plus square" />
                         <h4><b>Create A post !</b></h4>
                     </div>
                 </div>
