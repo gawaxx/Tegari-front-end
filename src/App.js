@@ -119,7 +119,7 @@ function App(props) {
                   Footer Header
               </Header>
                 <p>
-                  *App name* made with <span role="img" > 🥖 </span> by Jules Blanc, 2020.
+                  *App name* made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
                 </p>
               </Grid.Column>
             </Grid.Row>
