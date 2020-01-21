@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Progress, Message } from 'semantic-ui-react'
+import { Progress } from 'semantic-ui-react'
 
 
 const AuthForms = ({ login, signup }) => {

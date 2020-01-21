@@ -63,7 +63,7 @@ export class MyAccount extends Component {
                 </div>
 
                 <div>
-                    <Button color='purple'>Edit your Account</Button>
+                    <Link to='my_profile/edit' > <Button color='purple'>Edit your Account</Button> </Link>
                 </div>
 
             </div>
