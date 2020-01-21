@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Dropdown, Input, Form } from 'semantic-ui-react'
-import Select from 'react-select';
 
 
 const options = [
