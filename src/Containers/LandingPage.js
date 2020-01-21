@@ -11,14 +11,14 @@ export class LandingPage extends Component {
     render() {
         return (
             <div className="BigWrapper LandingPage">
-                
+
                 <div className="FrontPageLeftSide">
                 </div>
 
                 <div className="Welcome" >
 
                     <div>
-                        <h1> WELCOME TO Tegari </h1>
+                        <h1> WELCOME TO TEGARI </h1>
                     </div>
 
                     <div>
