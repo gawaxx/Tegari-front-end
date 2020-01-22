@@ -107,8 +107,7 @@ code {
 /* Nav Bar  */
 
 .navbar_container {
-  height: 140px;
-  /* position: absolute; */
+  height: 12vh;
   top: 0
 }
 
@@ -116,7 +115,7 @@ code {
   display: table;
   width: 100vw;
   left: 0;
-  height: 12vh;
+  max-height: 12vh;
   position: absolute;
   top: 0px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
