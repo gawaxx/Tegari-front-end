@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dropdown, Input, Form } from 'semantic-ui-react'
+import { Dropdown, Input, Form, Button } from 'semantic-ui-react'
 
 
 const options = [
@@ -30,21 +30,37 @@ const SearchBar = props => {
     }
 
     return (
-        <Form onSubmit={() => handleSubmit() }> 
-            <Input className="searchBar"
-                action={
-                <Dropdown button inverted floating 
-                options={options} 
-                defaultValue='page' 
-                onChange={ (e, value) => getCategory(e, value)}
-                />
-                }
-                icon='search'
-                iconPosition='left'
-                placeholder='Search for a product!'
-                onChange={ (e) => setValue(e.target.value)}
-            />
-        </Form>
+        <div className="fullsearchbar" >
+
+            <div className="searchbarleft">
+                <Form onSubmit={() => handleSubmit() }> 
+                    <Input className="searchBar"
+                        action={
+                        <Dropdown button inverted floating 
+                        options={options} 
+                        defaultValue='page' 
+                        onChange={ (e, value) => getCategory(e, value)}
+                        className="dropdown"
+                        />
+                        }
+                        icon='search'
+                        iconPosition='left'
+                        placeholder='Search for a product!'
+                        onChange={ (e) => setValue(e.target.value)}
+                    />
+                </Form>
+            </div>
+
+            <div className="searchbarcenter" >
+                <p> and let's go! </p>
+            </div>
+
+            <div className="searchbarright">
+                <Button inverted color='green' className="button" >
+                    Go !
+                </Button>
+            </div>
+        </div>
         
     );
 }
