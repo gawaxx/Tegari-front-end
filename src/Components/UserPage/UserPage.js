@@ -64,7 +64,7 @@ export class UserPage extends Component {
 
                     </div>
                 </div>
-            </div>
+            </div>  
         );
     }
 }
