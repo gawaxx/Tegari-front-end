@@ -47,29 +47,21 @@ export class UserPage extends Component {
 
                 <div className="right">
                     <div className="TheirInfo">
-                        <div className="username" >
-                            <h1> {user_name} </h1>
-                        </div>
-
-                        <div className="name" >
-                            <h1> Name: {name} </h1>
-                        </div>
-
-                        <div>
-                            <h1> {points} points </h1>
-                        </div>
 
                         <Card>
-                            <Card.Content header={`${user_name}'s profile`} />
-                            <Card.Content extra>
+                            <Card.Content header>
+                                <Icon name='user circle' /> {user_name}'s profile
+                            </Card.Content>
+                            <Card.Content >
                                 Name: {name}
                                 <br></br>
                                 Account created {created_at}
                             </Card.Content>
                             <Card.Content extra>
-                                <Icon name='user' />4 Friends
+                                <Icon name='star' /> {points} points
                             </Card.Content>
                         </Card>
+
                     </div>
                 </div>
             </div>
