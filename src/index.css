@@ -455,6 +455,11 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
   overflow-x: auto;
 }
 
+.postCardWrapper {
+  display: grid;
+  grid-template-columns: 0.7fr 0.4fr 0.7fr;
+}
+
 .Postcard {
   margin: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -473,7 +478,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
     
 .PostcardContainer {
   padding: 2px 16px;
-  width: 260px;
+  width: 250px;
 }
 
 
