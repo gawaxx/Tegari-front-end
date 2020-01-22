@@ -114,12 +114,20 @@ function App(props) {
                   <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={7}>
+              <Grid.Column width={6}>
                 <Header as='h4' inverted>
                   Footer Header
               </Header>
                 <p>
                   *App name* made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
+                </p>
+              </Grid.Column>
+              <Grid.Column width={3}>
+                <Header as='h4' inverted>
+                  Technologies used
+              </Header>
+                <p>
+                  React | Ruby on Rails | Semantic ui | CSS
                 </p>
               </Grid.Column>
             </Grid.Row>
