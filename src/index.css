@@ -38,18 +38,18 @@ code {
   left: -5vw;
 } */
 
-/* .fullsearchbar {
+.fullsearchbar {
   display: grid;
   grid-template-columns: 0.8fr 0.15fr 0.15fr;
-} */
+}
 
 /* .fullsearchbar .button {
   width: 5vw;
-}
+} */
 
 .fullsearchbar p {
   color: white;
-} */
+}
 
 /* Search Page container */
 /* LandingPage */

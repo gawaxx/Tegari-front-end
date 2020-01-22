@@ -51,7 +51,7 @@ const SearchBar = props => {
                 </Form>
             </div>
 
-            {/* <div className="searchbarcenter" >
+            <div className="searchbarcenter" >
                 <p> and let's go! </p>
             </div>
 
@@ -59,7 +59,7 @@ const SearchBar = props => {
                 <Button inverted color='green' className="button" >
                     Go !
                 </Button>
-            </div> */}
+            </div>
         </div>
         
     );
