@@ -40,6 +40,7 @@ const SearchBar = props => {
                         options={options} 
                         defaultValue='page' 
                         onChange={ (e, value) => getCategory(e, value)}
+                        className="dropdown"
                         />
                         }
                         icon='search'
