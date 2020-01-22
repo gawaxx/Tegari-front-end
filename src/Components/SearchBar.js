@@ -56,7 +56,7 @@ const SearchBar = props => {
             </div>
 
             <div className="searchbarright">
-                <Button inverted color='green' className="button" >
+                <Button inverted color='green' className="button" onClick={() => handleSubmit()} >
                     Go !
                 </Button>
             </div>
