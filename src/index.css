@@ -274,14 +274,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 
 /* Form Container */
 
-/* .whatever{
+.whatever{
   display: flex;
   flex-wrap: wrap;
-} */
-/* 
+}
+
 .ag{
   margin-left: 15vw;
-}  */
+} 
 
 .FormContainer h1 {
   display: table;

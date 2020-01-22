@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
+import { Dropdown } from 'semantic-ui-react'
+
+
+const conditionOptions = [
+    { key: 1, text: 'New', value: "new" },
+    { key: 2, text: 'Mostly New', value: "mostly_new" },
+    { key: 3, text: 'Used', value: "used" },
+    { key: 4, text: 'Very used', value: "very_used" },
+]
 
 
 export class PostCreation extends Component {
 
     state = {
-        userid: 172
+        userid: 172,
+        conditionCat: "",
     } 
+
+    getCategory = (e, value) => {
+        this.setState({ conditionCat: (value.value)} )
+    }
 
     // handleChange(event) {
     //     // this.setState({value: event.target.value});
@@ -96,12 +110,12 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <select id="condition" >
-                                <option value="New">New</option>
-                                <option value="Almostnew">Almost new</option>
-                                <option value="Used">Used</option>
-                                <option value="Veryused">Very used</option>
-                            </select>
+                            <Dropdown 
+                                clearable 
+                                options={conditionOptions} 
+                                selection
+                                onChange={ (e, value) => this.getCategory(e, value)}
+                            />
                         </label>
 
                         <label>
