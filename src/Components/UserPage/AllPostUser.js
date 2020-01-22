@@ -5,7 +5,9 @@ export class AllPostUser extends Component {
         const { title, price, postcode, city, image_url, created_at} = this.props.post
         return (
             <div className="Postcard">
-                <img src={image_url} alt="the" />
+                <div>
+                    <img src={image_url} alt="the" />
+                </div>
                 <div className="PostcardContainer">
                     <h4><b>{title}</b></h4>
                     <p> £{price} <br></br> {postcode}, {city} </p>

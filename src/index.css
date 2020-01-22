@@ -461,6 +461,11 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
   transition: 0.3s;
   display: table-caption;
 }
+
+.Postcard img{ 
+  width: 250px;
+  height: 250px;
+}
     
 .Postcard:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -468,6 +473,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
     
 .PostcardContainer {
   padding: 2px 16px;
+  width: 260px;
 }
 
 
