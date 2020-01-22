@@ -122,7 +122,7 @@ function App(props) {
                   *App name* made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
                 </p>
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column width={4}>
                 <Header as='h4' inverted>
                   Technologies used
               </Header>
