@@ -48,6 +48,7 @@ code {
 } */
 
 .fullsearchbar p {
+  top: 5px;
   color: white;
 }
 
