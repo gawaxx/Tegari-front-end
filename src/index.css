@@ -143,6 +143,8 @@ code {
   border-bottom-right-radius: 5px;
 }
 
+
+
 /* Search Bar */
 
 .search-bar {
@@ -151,6 +153,7 @@ code {
   background-color: rgb(35, 35, 35);
   text-align: center;
   position: relative;
+  left: -4vw;
 }
 
 .SubmitButton {
