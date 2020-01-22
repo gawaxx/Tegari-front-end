@@ -10,16 +10,27 @@ const conditionOptions = [
     { key: 4, text: 'Very used', value: "very_used" },
 ]
 
+const categoryOptions = [
+    { key: 1, text: 'Furniture', value: "furniture" },
+    { key: 2, text: 'Electronic', value: "electronic" },
+    { key: 3, text: 'Entertainment', value: "entertainment" },
+]
+
 
 export class PostCreation extends Component {
 
     state = {
         userid: 172,
         conditionCat: "",
+        category: "",
     } 
 
-    getCategory = (e, value) => {
+    handleConditionChange = (e, value) => {
         this.setState({ conditionCat: (value.value)} )
+    }
+
+    handleCategoryChange = (e, value) => {
+        this.setState({ category: (value.value)} )
     }
 
     // handleChange(event) {
@@ -35,7 +46,7 @@ export class PostCreation extends Component {
         let email = event.target.email.value
         let city = event.target.city.value 
         let phonenum = event.target.phonenumber.value 
-        let condition = event.target.condition.value 
+        let condition = this.state.conditionCat
         let cat = event.target.categories.value
         let image = event.target.image.value
         let price = event.target.price.value
@@ -114,16 +125,17 @@ export class PostCreation extends Component {
                                 clearable 
                                 options={conditionOptions} 
                                 selection
-                                onChange={ (e, value) => this.getCategory(e, value)}
+                                onChange={ (e, value) => this.handleConditionChange(e, value)}
                             />
                         </label>
 
                         <label>
-                            <select id="categories" >
-                                <option value="electronic">electronic</option>
-                                <option value="furniture">furniture</option>
-                                <option value="entertainment">entertainment</option>
-                            </select>
+                            <Dropdown 
+                                clearable 
+                                options={categoryOptions} 
+                                selection
+                                onChange={ (e, value) => this.handleConditionChange(e, value)}
+                            />
                         </label>
 
                         <input className="ag" type="submit" value="Post Your ad !"/>
