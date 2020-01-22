@@ -38,7 +38,7 @@ const SearchBar = props => {
                         action={
                         <Dropdown button inverted floating 
                         options={options} 
-                        defaultValue='page' 
+                        defaultValue='all' 
                         onChange={ (e, value) => getCategory(e, value)}
                         className="dropdown"
                         />

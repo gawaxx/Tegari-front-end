@@ -11,27 +11,12 @@ export class accountCard extends Component {
 
     render() {
         return (
-            // <div>
-            //     <div>
-            //         <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit'}} >
-            //             <div className="AccountCard">
-            //                 <div className="AccountCardcontainer" onClick={() => this.handleClick()}>
-            //                     {/* <NavLink className='bottom-nav-link' to="/" exact> */}
-            //                         <h4><b> Welcome {this.props.user.user_name} </b></h4>
-            //                         <p> {this.props.user.points} points </p>
-            //                     {/* </Navlink> */}
-            //                 </div>
-            //             </div>
-            //         </Link>
-            //     </div>
-            // </div>
-
-            <Card>
+            <Card className="account-card-info" >
                 <Card.Content>
                     <Image
-                    floated='right'
-                    size='mini'
-                    src='https://i7.pngguru.com/preview/243/8/56/computer-icons-user-profile-clip-art-person-icon-user-person-man-icon.jpg'
+                        floated='right'
+                        size='mini'
+                        src='https://i7.pngguru.com/preview/243/8/56/computer-icons-user-profile-clip-art-person-icon-user-person-man-icon.jpg'
                     />
                     <Card.Header>{this.props.user.user_name}</Card.Header>
                     <Card.Meta>{this.props.user.points} points</Card.Meta>
@@ -41,13 +26,13 @@ export class accountCard extends Component {
                 </Card.Content>
                 <Card.Content extra>
                     <div className='ui two buttons'>
-                    <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit'}} >
-                        <Button positive>
-                            My Profile
+                        <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit' }} >
+                            <Button positive>
+                                My Profile
                         </Button>
-                    </Link>
-                    <Button negative onClick={this.props.logout}>
-                        Logout
+                        </Link>
+                        <Button negative onClick={this.props.logout}>
+                            Logout
                     </Button>
                     </div>
                 </Card.Content>

@@ -30,7 +30,7 @@ const AuthForms = ({ login, signup }) => {
     if (e.target.password.value === e.target.password_confirmation.value) {
       e.preventDefault();
       let signUpData = {
-        email: signupData.email,
+        email: e.target.email.value,
         password: e.target.password.value,
         name: e.target.nameofuser.value,
         familyName: e.target.familyName.value,

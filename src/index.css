@@ -29,21 +29,26 @@ code {
 
 
 /* Search Bar */
-.searchBar {
-  width: 27vw;
-  left: -5vw;
+/* .searchBar {
+  width:  100%;
 }
+
+.fullsearchbar .searchbarleft {
+  width: 30vw;
+  left: -5vw;
+} */
 
 .fullsearchbar {
   display: grid;
   grid-template-columns: 0.8fr 0.15fr 0.15fr;
 }
 
-.fullsearchbar .button {
+/* .fullsearchbar .button {
   width: 5vw;
-}
+} */
 
 .fullsearchbar p {
+  top: 5px;
   color: white;
 }
 
@@ -103,7 +108,6 @@ code {
 
 .navbar_container {
   height: 140px;
-  /* position: absolute; */
   top: 0
 }
 
@@ -111,7 +115,7 @@ code {
   display: table;
   width: 100vw;
   left: 0;
-  height: 12vh;
+  max-height: 10vh;
   position: absolute;
   top: 0px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
@@ -139,6 +143,8 @@ code {
   border-bottom-right-radius: 5px;
 }
 
+
+
 /* Search Bar */
 
 .search-bar {
@@ -147,6 +153,7 @@ code {
   background-color: rgb(35, 35, 35);
   text-align: center;
   position: relative;
+  left: -4vw;
 }
 
 .SubmitButton {
@@ -411,14 +418,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
   justify-content: space-around;
 }
 
-/* .PostedByThem {
+.PostedByThem {
   width: 70vw;
 }
 
 .cardscontainer {
   display: flex;
   overflow-x: auto;
-} */
+}
 
 .postCardWrapper {
   display: grid;
