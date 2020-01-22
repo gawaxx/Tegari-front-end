@@ -29,23 +29,27 @@ code {
 
 
 /* Search Bar */
-.searchBar {
-  width: 27vw;
-  left: -5vw;
+/* .searchBar {
+  width:  100%;
 }
 
-.fullsearchbar {
+.fullsearchbar .searchbarleft {
+  width: 30vw;
+  left: -5vw;
+} */
+
+/* .fullsearchbar {
   display: grid;
   grid-template-columns: 0.8fr 0.15fr 0.15fr;
-}
+} */
 
-.fullsearchbar .button {
+/* .fullsearchbar .button {
   width: 5vw;
 }
 
 .fullsearchbar p {
   color: white;
-}
+} */
 
 /* Search Page container */
 /* LandingPage */
@@ -411,14 +415,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
   justify-content: space-around;
 }
 
-/* .PostedByThem {
+.PostedByThem {
   width: 70vw;
 }
 
 .cardscontainer {
   display: flex;
   overflow-x: auto;
-} */
+}
 
 .postCardWrapper {
   display: grid;
