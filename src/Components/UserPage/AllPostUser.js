@@ -5,7 +5,7 @@ export class AllPostUser extends Component {
         const { title, price, postcode, city, image_url, created_at} = this.props.post
         return (
 
-            <div className="postCardWrapper">
+            <div className="postCardWrapper six wide column">
                 <div className="postcardright">
 
                 </div>
