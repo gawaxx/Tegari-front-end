@@ -11,6 +11,20 @@ const options = [
     { key: 3, text: 'Prohibited for sale', value: 'Prohibited for sale' },
 ]
 
+const advice = [
+    { key: 1, text: 'Potential Scam', value: 'Potential Scam' },
+    { key: 2, text: 'Threatening user', value: 'Threatening user' },
+    { key: 3, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 4, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 5, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 6, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 7, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 8, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 9, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 10, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+]
+
+
 
 export class PostCard extends Component {
 
@@ -96,7 +110,8 @@ export class PostCard extends Component {
             <div className="wrapper">
 
                 <div className="tips">
-                    <h3>If it looks too good to be true, it probably is</h3>
+                    {/* <h3>If it looks too good to be true, it probably is</h3> */}
+                    <h2> {advice.key === this.state.selectedPage } </h2>
                     <Pagination
                         boundaryRange={0}
                         defaultActivePage={1}
