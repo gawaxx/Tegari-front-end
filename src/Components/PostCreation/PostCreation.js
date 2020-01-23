@@ -47,7 +47,7 @@ export class PostCreation extends Component {
         let city = event.target.city.value 
         let phonenum = event.target.phonenumber.value 
         let condition = this.state.conditionCat
-        let cat = event.target.categories.value
+        let cat = this.state.category
         let image = event.target.image.value
         let price = event.target.price.value
         if (this.props.user !== null) {
@@ -67,8 +67,13 @@ export class PostCreation extends Component {
                     user_id: this.state.userid
                 }
 
-                API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
-                API.PostAPI(APIPOSTS, postData).then(this.props.redirectToUserPage())
+                if (this.props.user !== null) {
+                    API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
+                    API.PostAPI(APIPOSTS, postData).then(this.props.redirectToUserPage())
+                } else {
+                    API.PostAPI(APIPOSTS, postData).then(this.props.redirectToMainPage())
+                }
+
             })
         }
     }
@@ -134,7 +139,7 @@ export class PostCreation extends Component {
                                 clearable 
                                 options={categoryOptions} 
                                 selection
-                                onChange={ (e, value) => this.handleConditionChange(e, value)}
+                                onChange={ (e, value) => this.handleCategoryChange(e, value)}
                             />
                         </label>
 

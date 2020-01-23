@@ -61,6 +61,10 @@ function App(props) {
     history.push("/my_profile")
   }
 
+  const redirectToMainPage = () => {
+    history.push("/")
+  }
+
   const logout = () => {
     setUser(null)
     localStorage.removeItem('jwt')
@@ -81,7 +85,7 @@ function App(props) {
         <Container className="sublinks">
           <Route exact path="/users/:id" component={UserContainer} />
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
-          <Route exact path="/create" render={() => <PostCreation user={user} redirectToUserPage={redirectToUserPage} />} />
+          <Route exact path="/create" render={() => <PostCreation user={user} redirectToMainPage={redirectToMainPage} redirectToUserPage={redirectToUserPage} />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEdit user={user} redirectToPostPage={redirectToPostPage} />} />
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
@@ -128,7 +132,7 @@ function App(props) {
                   Technologies used
               </Header>
                 <p>
-                  React | Ruby on Rails | Semantic ui | CSS
+                  React | Ruby on Rails | Semantic ui | CSS | JWT Authentication
                 </p>
               </Grid.Column>
             </Grid.Row>
