@@ -27,6 +27,36 @@ code {
   min-height: 70vh;
 }
 
+/* Post Card */
+
+.PostInfo .para {
+  background-color: rgb(235, 235, 235);
+  border-radius: 2px;
+  min-height: 20px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  max-width: 14vw;
+}
+
+.PostInfo .description {
+  background-color: rgb(235, 235, 235);
+  border-radius: 2px;
+  min-height: 100px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.PostInfo .maininfo {
+  background-color: rgb(235, 235, 235);
+  border-radius: 2px;
+  min-height: 10px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  max-width: 25vw;
+  padding-top: 0px !important;
+}
+
 
 /* Search Bar */
 /* .searchBar {
@@ -107,7 +137,7 @@ code {
 /* Nav Bar  */
 
 .navbar_container {
-  height: 140px;
+  height: 125px;
   top: 0
 }
 
@@ -115,7 +145,7 @@ code {
   display: table;
   width: 100vw;
   left: 0;
-  max-height: 10vh;
+  height: 12vh;
   position: absolute;
   top: 0px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
@@ -213,7 +243,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 .Urgentcard {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: #fff;
   margin-bottom: 4%;
   width: 95%;
@@ -230,7 +260,7 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 
 .urgentimg {
   max-height: 150px;
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
   width: 100%;
 }
 
@@ -274,14 +304,14 @@ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
 
 /* Form Container */
 
-/* .whatever{
+.whatever{
   display: flex;
   flex-wrap: wrap;
-} */
-/* 
+}
+
 .ag{
   margin-left: 15vw;
-}  */
+} 
 
 .FormContainer h1 {
   display: table;

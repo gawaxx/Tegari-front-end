@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Card, Pagination } from 'semantic-ui-react'
 
 
 
@@ -11,6 +11,20 @@ const options = [
     { key: 3, text: 'Prohibited for sale', value: 'Prohibited for sale' },
 ]
 
+const advice = [
+    { key: 1, text: 'Potential Scam', value: 'Potential Scam' },
+    { key: 2, text: 'Threatening user', value: 'Threatening user' },
+    { key: 3, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 4, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 5, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 6, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 7, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 8, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 9, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+    { key: 10, text: 'Prohibited for sale', value: 'Prohibited for sale' },
+]
+
+
 
 export class PostCard extends Component {
 
@@ -18,7 +32,8 @@ export class PostCard extends Component {
         post: [],
         user: [],
         modalOpen: false,
-        value: {}
+        value: {},
+        selectedPage: 1,
     }
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -95,7 +110,18 @@ export class PostCard extends Component {
             <div className="wrapper">
 
                 <div className="tips">
-                    <h3>If it looks too good to be true, it probably is</h3>
+                    {/* <h3>If it looks too good to be true, it probably is</h3> */}
+                    <h2> {advice.key === this.state.selectedPage } </h2>
+                    <Pagination
+                        boundaryRange={0}
+                        defaultActivePage={1}
+                        ellipsisItem={null}
+                        firstItem={null}
+                        lastItem={null}
+                        siblingRange={1}
+                        totalPages={10}
+                        onClick={(e) => this.setState({selectedPage: e.target.getAttribute('value')}) }
+                    />
                 </div>
 
                 <div className="PostInfo">
@@ -105,18 +131,33 @@ export class PostCard extends Component {
                     </Button>
                     <br></br>
                     {
-                        image_url ?
-                            <img src={image_url} alt="post" ></img>
+                        (image_url !== null ) ?
+                            <img src={image_url} alt="post" style={{width: '300px', height: '300px'}} ></img>
                             :
                             <Placeholder style={{ height: 300, width: 300 }}>
                                 <Placeholder.Image />
                             </Placeholder>
                     }
-                    <h1>{title}, £{price}</h1>
-                    <h2>{postcode}, {city}</h2>
-                    <p>{category}</p>
-                    <p>condition: {condition}</p>
-                    <p>{description}</p>
+
+                    <div className="maininfo" >
+                        <h1>{title}, £{price}</h1>
+                    </div>
+
+                    <div className="maininfo" >
+                        <h2 style={{color: 'black'}} >{postcode}, {city}</h2>
+                    </div>
+
+                    <div className="para" >
+                        <p>Category: {category}</p>
+                    </div>
+
+                    <div className="para" >
+                        <p>condition: {condition}</p>
+                    </div>
+
+                    <div className="description" >
+                        <h3> {description} </h3>
+                    </div>
                     {
                         (this.props.user === null) ?
                             <Modal
@@ -184,16 +225,26 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
-                        <Header as='h1'>
-                            <Icon name="user circle"/> {user_name}
-                        </Header>
-                    </Link>
-                    <h2>Posted by: {name} </h2>
-                    <h2>Points: {points} </h2>
-                    <p> posted at {created_at} </p>
+
+                    <Card>
+                        <Card.Content header>
+                            <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
+                                <Header as='h1'>
+                                    <Icon name="user circle" /> {user_name}
+                                </Header>
+                            </Link>
+                        </Card.Content>
+                        <Card.Content description={description} >
+                            <h3 style={{color: 'black'}} >Posted by: {name} </h3>
+                            <h3 style={{color: 'black'}} > {points} points </h3>
+                        </Card.Content>
+                        <Card.Content extra>
+                            <Icon name="pencil square" /> <p> posted on {created_at} </p>
+                        </Card.Content>
+                    </Card>
+
                 </div>
-            
+
             </div>
         );
     }

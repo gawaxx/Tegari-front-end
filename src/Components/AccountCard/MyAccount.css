@@ -1,3 +1,7 @@
 .allign {
     display: flex;
 }
+
+h2 {
+    color: black;
+}

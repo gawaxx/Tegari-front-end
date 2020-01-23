@@ -61,6 +61,10 @@ function App(props) {
     history.push("/my_profile")
   }
 
+  const redirectToMainPage = () => {
+    history.push("/")
+  }
+
   const logout = () => {
     setUser(null)
     localStorage.removeItem('jwt')
@@ -81,7 +85,7 @@ function App(props) {
         <Container className="sublinks">
           <Route exact path="/users/:id" component={UserContainer} />
           <Route exact path="/posts/:id" render={() => <PostCard user={user} />} />
-          <Route exact path="/create" render={() => <PostCreation user={user} redirectToUserPage={redirectToUserPage} />} />
+          <Route exact path="/create" render={() => <PostCreation user={user} redirectToMainPage={redirectToMainPage} redirectToUserPage={redirectToUserPage} />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEdit user={user} redirectToPostPage={redirectToPostPage} />} />
           <Route exact path="/my_profile" >
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
@@ -105,21 +109,30 @@ function App(props) {
               <Grid.Column width={3}>
                 <Header inverted as='h4' content='About This Project' />
                 <List link inverted>
-                  <List.Item as='a' target="_blank" href="https://github.com/gawaxx/mod-5-front-end" >Github</List.Item>
+                  <List.Item as='a' target="_blank" href="https://github.com/gawaxx/mod-5-front-end" >Github Front-end</List.Item>
+                  <List.Item as='a' target="_blank" href="https://github.com/gawaxx/mod-5-back-end" >Github Back-end</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={3}>
+              <Grid.Column width={2}>
                 <Header inverted as='h4' content='About Me' />
                 <List link inverted>
                   <List.Item as='a' target="_blank" href="http://www.linkedin.com/in/jules-blanc-29a36b179" >LinkedIn</List.Item>
                 </List>
               </Grid.Column>
-              <Grid.Column width={7}>
+              <Grid.Column width={6}>
                 <Header as='h4' inverted>
                   Footer Header
               </Header>
                 <p>
                   *App name* made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
+                </p>
+              </Grid.Column>
+              <Grid.Column width={5}>
+                <Header as='h4' inverted>
+                  Technologies used
+              </Header>
+                <p>
+                  React | Ruby on Rails | Semantic ui | CSS | JWT Authentication
                 </p>
               </Grid.Column>
             </Grid.Row>

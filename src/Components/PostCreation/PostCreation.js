@@ -1,12 +1,37 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
+import { Dropdown } from 'semantic-ui-react'
+
+
+const conditionOptions = [
+    { key: 1, text: 'New', value: "new" },
+    { key: 2, text: 'Mostly New', value: "mostly_new" },
+    { key: 3, text: 'Used', value: "used" },
+    { key: 4, text: 'Very used', value: "very_used" },
+]
+
+const categoryOptions = [
+    { key: 1, text: 'Furniture', value: "furniture" },
+    { key: 2, text: 'Electronic', value: "electronic" },
+    { key: 3, text: 'Entertainment', value: "entertainment" },
+]
 
 
 export class PostCreation extends Component {
 
     state = {
-        userid: 172
+        userid: 172,
+        conditionCat: "",
+        category: "",
     } 
+
+    handleConditionChange = (e, value) => {
+        this.setState({ conditionCat: (value.value)} )
+    }
+
+    handleCategoryChange = (e, value) => {
+        this.setState({ category: (value.value)} )
+    }
 
     // handleChange(event) {
     //     // this.setState({value: event.target.value});
@@ -21,8 +46,8 @@ export class PostCreation extends Component {
         let email = event.target.email.value
         let city = event.target.city.value 
         let phonenum = event.target.phonenumber.value 
-        let condition = event.target.condition.value 
-        let cat = event.target.categories.value
+        let condition = this.state.conditionCat
+        let cat = this.state.category
         let image = event.target.image.value
         let price = event.target.price.value
         if (this.props.user !== null) {
@@ -42,8 +67,13 @@ export class PostCreation extends Component {
                     user_id: this.state.userid
                 }
 
-                API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
-                API.PostAPI(APIPOSTS, postData).then(this.props.redirectToUserPage())
+                if (this.props.user !== null) {
+                    API.GetAPI(`${APILINK}/users/${this.props.user.id}/morepoints`)
+                    API.PostAPI(APIPOSTS, postData).then(this.props.redirectToUserPage())
+                } else {
+                    API.PostAPI(APIPOSTS, postData).then(this.props.redirectToMainPage())
+                }
+
             })
         }
     }
@@ -96,20 +126,21 @@ export class PostCreation extends Component {
                         </label>
 
                         <label>
-                            <select id="condition" >
-                                <option value="New">New</option>
-                                <option value="Almostnew">Almost new</option>
-                                <option value="Used">Used</option>
-                                <option value="Veryused">Very used</option>
-                            </select>
+                            <Dropdown 
+                                clearable 
+                                options={conditionOptions} 
+                                selection
+                                onChange={ (e, value) => this.handleConditionChange(e, value)}
+                            />
                         </label>
 
                         <label>
-                            <select id="categories" >
-                                <option value="electronic">electronic</option>
-                                <option value="furniture">furniture</option>
-                                <option value="entertainment">entertainment</option>
-                            </select>
+                            <Dropdown 
+                                clearable 
+                                options={categoryOptions} 
+                                selection
+                                onChange={ (e, value) => this.handleCategoryChange(e, value)}
+                            />
                         </label>
 
                         <input className="ag" type="submit" value="Post Your ad !"/>
