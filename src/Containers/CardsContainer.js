@@ -4,6 +4,8 @@ import NormalCard from '../Components/Card/NormalCard.js'
 import CreatePost from '../Components/CreatePost.js';
 import UrgentCard from '../Components/Card/UrgentCard.js';
 import { Link } from 'react-router-dom'
+import { Placeholder } from 'semantic-ui-react'
+
 
 
 export class CardsContainer extends Component {
@@ -66,6 +68,14 @@ export class CardsContainer extends Component {
                     }
                 </div>
                 <div className="SearchResultContainer">
+                    {
+                        this.props.search !== "" ? 
+                            <h2 style={{color: 'black'}} > Your results for: {this.props.search.value} in {this.props.search.category} </h2>
+                        :
+                        <Placeholder>
+                            <Placeholder.Line />
+                        </Placeholder>
+                    }
                     {
                         this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
                     }
