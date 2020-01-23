@@ -184,9 +184,6 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <h2 style={{color: 'black'}} >Posted by: {name} </h2>
-                    <h2 style={{color: 'black'}} >Points: {points} </h2>
-                    <p> posted at {created_at} </p>
 
                     <Card>
                         <Card.Content header>
@@ -196,11 +193,15 @@ export class PostCard extends Component {
                                 </Header>
                             </Link>
                         </Card.Content>
-                        <Card.Content description={description} />
+                        <Card.Content description={description} >
+                            <h2 style={{color: 'black'}} >Posted by: {name} </h2>
+                            <h2 style={{color: 'black'}} >Points: {points} </h2>
+                        </Card.Content>
                         <Card.Content extra>
-                            <Icon name='user' />4 Friends
+                            <Icon name="pencil square" /> <p> posted on {created_at} </p>
                         </Card.Content>
                     </Card>
+
                 </div>
 
             </div>
