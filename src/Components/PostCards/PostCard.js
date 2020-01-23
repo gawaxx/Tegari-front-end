@@ -194,8 +194,8 @@ export class PostCard extends Component {
                             </Link>
                         </Card.Content>
                         <Card.Content description={description} >
-                            <h2 style={{color: 'black'}} >Posted by: {name} </h2>
-                            <h2 style={{color: 'black'}} >Points: {points} </h2>
+                            <h3 style={{color: 'black'}} >Posted by: {name} </h3>
+                            <h3 style={{color: 'black'}} > {points} points </h3>
                         </Card.Content>
                         <Card.Content extra>
                             <Icon name="pencil square" /> <p> posted on {created_at} </p>
