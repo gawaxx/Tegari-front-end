@@ -121,9 +121,15 @@ export class PostCard extends Component {
                                 <Placeholder.Image />
                             </Placeholder>
                     }
-                    <h1>{title}, £{price}</h1>
-                    <h2 style={{color: 'black'}} >{postcode}, {city}</h2>
-                    
+
+                    <div className="maininfo" >
+                        <h1>{title}, £{price}</h1>
+                    </div>
+
+                    <div className="maininfo" >
+                        <h2 style={{color: 'black'}} >{postcode}, {city}</h2>
+                    </div>
+
                     <div className="para" >
                         <p>Category: {category}</p>
                     </div>

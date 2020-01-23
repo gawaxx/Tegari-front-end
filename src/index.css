@@ -47,6 +47,16 @@ code {
   margin-bottom: 15px;
 }
 
+.PostInfo .maininfo {
+  background-color: rgb(235, 235, 235);
+  border-radius: 2px;
+  min-height: 10px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  max-width: 25vw;
+  padding-top: 0px !important;
+}
+
 
 /* Search Bar */
 /* .searchBar {
