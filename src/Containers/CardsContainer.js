@@ -72,9 +72,7 @@ export class CardsContainer extends Component {
                         this.props.search !== "" ? 
                             <h2 style={{color: 'black'}} > Your results for: {this.props.search.value} in {this.props.search.category} </h2>
                         :
-                        <Placeholder>
-                            <Placeholder.Line />
-                        </Placeholder>
+                            <h2 style={{color: 'black'}} > You haven't searched for anything! Search for something up there </h2>
                     }
                     {
                         this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
