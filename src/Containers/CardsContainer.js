@@ -65,7 +65,7 @@ export class CardsContainer extends Component {
                 <div className="UrgentPostContainer">
                     <h2 style={{color: 'black'}} > Urgent Posts </h2>
                     {
-                        this.state.urgentPosts.map(post => <UrgentCard key={post.id} post={post} />)
+                        this.state.urgentPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <UrgentCard key={post.id} post={post} /> </Link>)
                     }
                 </div>
                 <div className="SearchResultContainer">
