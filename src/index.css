@@ -30,10 +30,11 @@ code {
 /* Post Card */
 
 .PostInfo .description {
-  background-color: rgb(21  0, 210, 210);
+  background-color: rgb(210, 210, 210);
   border-radius: 4px;
   min-height: 40px;
   padding-left: 10px;
+  margin-bottom: 15px;
 }
 
 /* Search Bar */
