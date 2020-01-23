@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Card } from 'semantic-ui-react'
 
 
 
@@ -105,8 +105,8 @@ export class PostCard extends Component {
                     </Button>
                     <br></br>
                     {
-                        image_url ?
-                            <img src={image_url} alt="post" ></img>
+                        (image_url !== null ) ?
+                            <img src={image_url} alt="post" style={{width: '300px', height: '300px'}} ></img>
                             :
                             <Placeholder style={{ height: 300, width: 300 }}>
                                 <Placeholder.Image />
@@ -184,16 +184,25 @@ export class PostCard extends Component {
                 </div>
 
                 <div className="sellerInfo">
-                    <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
-                        <Header as='h1'>
-                            <Icon name="user circle"/> {user_name}
-                        </Header>
-                    </Link>
-                    <h2>Posted by: {name} </h2>
-                    <h2>Points: {points} </h2>
+                    <h2 style={{color: 'black'}} >Posted by: {name} </h2>
+                    <h2 style={{color: 'black'}} >Points: {points} </h2>
                     <p> posted at {created_at} </p>
+
+                    <Card>
+                        <Card.Content header>
+                            <Link to={`/users/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }} >
+                                <Header as='h1'>
+                                    <Icon name="user circle" /> {user_name}
+                                </Header>
+                            </Link>
+                        </Card.Content>
+                        <Card.Content description={description} />
+                        <Card.Content extra>
+                            <Icon name='user' />4 Friends
+                        </Card.Content>
+                    </Card>
                 </div>
-            
+
             </div>
         );
     }
