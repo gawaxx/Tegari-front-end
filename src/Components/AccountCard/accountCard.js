@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, Image } from 'semantic-ui-react'
+import { Button, Card, Image, Dropdown } from 'semantic-ui-react'
 
 
 export class accountCard extends Component {
@@ -11,32 +11,29 @@ export class accountCard extends Component {
 
     render() {
         return (
-            <Card className="account-card-info" >
-                <Card.Content>
-                    <Image
-                        floated='right'
-                        size='mini'
-                        src='https://i7.pngguru.com/preview/243/8/56/computer-icons-user-profile-clip-art-person-icon-user-person-man-icon.jpg'
-                    />
-                    <Card.Header>{this.props.user.user_name}</Card.Header>
-                    <Card.Meta>{this.props.user.points} points</Card.Meta>
-                    {/* <Card.Description>
-                    This here is your profile card
-                    </Card.Description> */}
-                </Card.Content>
-                <Card.Content extra>
-                    <div className='ui two buttons'>
+            <Dropdown text="My profile" style={{ color: 'white'}} >
+                <Dropdown.Menu>
+                    <Dropdown.Item >
+                        <Card.Header> Hi {this.props.user.user_name}</Card.Header>
+                    </Dropdown.Item >
+                    <Dropdown.Item >
+                        <Card.Meta>{this.props.user.points} points</Card.Meta>
+                    </Dropdown.Item >
+                    <Dropdown.Item >
                         <Link to="/my_profile" style={{ color: 'inherit', textDecoration: 'inherit' }} >
                             <Button positive>
                                 My Profile
-                        </Button>
+                         </Button>
                         </Link>
-                        <Button negative onClick={this.props.logout}>
-                            Logout
-                    </Button>
-                    </div>
-                </Card.Content>
-            </Card>
+                    </Dropdown.Item >
+                    <Dropdown.Item >
+                    <Button negative onClick={this.props.logout}>
+                             Logout
+                     </Button>
+                    </Dropdown.Item >
+                    
+                </Dropdown.Menu>
+            </Dropdown>
         );
     }
 }
