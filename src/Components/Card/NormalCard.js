@@ -35,7 +35,7 @@ export class NormalCard extends Component {
                     </ul>
                     </div>
                     <div className="description">
-                    <h1> Selling a {title}  </h1>
+                    <h1> {title}  </h1>
                     <h2> Condition: {condition} | {postcode}({city}) </h2>
                     <p> {description} </p>
                     <p className="read-more">

@@ -63,6 +63,7 @@ export class CardsContainer extends Component {
         return (
             <div className="BigWrapper">
                 <div className="UrgentPostContainer">
+                    <h2 style={{color: 'black'}} > Urgent Posts </h2>
                     {
                         this.state.urgentPosts.map(post => <UrgentCard key={post.id} post={post} />)
                     }
@@ -70,9 +71,9 @@ export class CardsContainer extends Component {
                 <div className="SearchResultContainer">
                     {
                         this.props.search !== "" ? 
-                            <h2 style={{color: 'black'}} > Your results for: {this.props.search.value} in {this.props.search.category} </h2>
+                            <h2 style={{color: 'black'}} > {this.state.nonUrgentPosts.length} results for {this.props.search.value} in {this.props.search.category} </h2>
                         :
-                            <h2 style={{color: 'black'}} > You haven't searched for anything! Search for something up there </h2>
+                            <h2 style={{color: 'black', textAlign: 'center'}} > You haven't searched for anything! Search for something up there </h2>
                     }
                     {
                         this.state.nonUrgentPosts.map(post => <Link to={`/posts/${post.id}`} style={{ color: 'inherit', textDecoration: 'inherit'}}> <NormalCard key={post.id} post={post} renderAPost={this.renderAPost} /> </Link> )
