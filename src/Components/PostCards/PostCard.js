@@ -18,7 +18,8 @@ export class PostCard extends Component {
         post: [],
         user: [],
         modalOpen: false,
-        value: {}
+        value: {},
+        selectedPage: 1,
     }
 
     handleChange = (e, { value }) => this.setState({ value })
@@ -104,6 +105,7 @@ export class PostCard extends Component {
                         lastItem={null}
                         siblingRange={1}
                         totalPages={10}
+                        onClick={(e) => this.setState({selectedPage: e.target.getAttribute('value')}) }
                     />
                 </div>
 
