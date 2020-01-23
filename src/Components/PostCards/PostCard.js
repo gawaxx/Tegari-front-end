@@ -124,11 +124,11 @@ export class PostCard extends Component {
                     <h1>{title}, £{price}</h1>
                     <h2 style={{color: 'black'}} >{postcode}, {city}</h2>
                     
-                    <div className="description" >
+                    <div className="para" >
                         <p>Category: {category}</p>
                     </div>
 
-                    <div className="description" >
+                    <div className="para" >
                         <p>condition: {condition}</p>
                     </div>
 
