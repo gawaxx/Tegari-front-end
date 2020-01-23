@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { APIPOSTS, API, APILINK } from '../API.js'
 import { Link } from 'react-router-dom' // Link, Switch
-import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Card } from 'semantic-ui-react'
+import { Button, Icon, Modal, Header, Placeholder, Dropdown, Grid, Card, Pagination } from 'semantic-ui-react'
 
 
 
@@ -96,6 +96,15 @@ export class PostCard extends Component {
 
                 <div className="tips">
                     <h3>If it looks too good to be true, it probably is</h3>
+                    <Pagination
+                        boundaryRange={0}
+                        defaultActivePage={1}
+                        ellipsisItem={null}
+                        firstItem={null}
+                        lastItem={null}
+                        siblingRange={1}
+                        totalPages={10}
+                    />
                 </div>
 
                 <div className="PostInfo">
@@ -113,10 +122,19 @@ export class PostCard extends Component {
                             </Placeholder>
                     }
                     <h1>{title}, £{price}</h1>
-                    <h2>{postcode}, {city}</h2>
-                    <p>{category}</p>
-                    <p>condition: {condition}</p>
-                    <p>{description}</p>
+                    <h2 style={{color: 'black'}} >{postcode}, {city}</h2>
+                    
+                    <div className="description" >
+                        <p>Category: {category}</p>
+                    </div>
+
+                    <div className="description" >
+                        <p>condition: {condition}</p>
+                    </div>
+
+                    <div className="description" >
+                        <h3> {description} </h3>
+                    </div>
                     {
                         (this.props.user === null) ?
                             <Modal
