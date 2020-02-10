@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, Image, Dropdown } from 'semantic-ui-react'
+import { Button, Card, Dropdown } from 'semantic-ui-react'
 
 
 export class accountCard extends Component {

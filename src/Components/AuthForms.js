@@ -5,7 +5,7 @@ import { Progress } from 'semantic-ui-react'
 const AuthForms = ({ login, signup }) => {
   
   const [loginData, setLoginData] = useState({});
-  const [signupData] = useState({}); //setSignupData
+  // const [signupData] = useState({}); //setSignupData
   const [isLogin, setisLogin] = useState({});
   const [percent, setPercent] = useState(0);
 

@@ -91,7 +91,7 @@ function App(props) {
             {loggedIn ? < MyAccount getUserData={getUserData} user={user} logOut={logOut} /> : <Redirect to='/login' />}
           </Route>
           <Route exact path='/my_profile/edit'>
-            {loggedIn ? <EditMyAccount user={user} /> : <Redirect to='/login' /> }
+            {loggedIn ? <EditMyAccount user={user} redirectToMainPage={redirectToMainPage} /> : <Redirect to='/login' /> }
           </Route> 
           <Route exact path='/' component={LandingPage} />
           <Route exact path='/search' render={() => <CardsContainer search={search} />} />
@@ -124,7 +124,7 @@ function App(props) {
                   Footer Header
               </Header>
                 <p>
-                  *App name* made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
+                  Tegari | made with <span role="img" aria-label="baguette"> 🥖 </span> by Jules Blanc, 2020.
                 </p>
               </Grid.Column>
               <Grid.Column width={5}>

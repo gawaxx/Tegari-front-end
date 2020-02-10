@@ -29,7 +29,7 @@ export class EditMyAccount extends Component {
             let patchData = {
                 user: this.state.value
             }
-            API.PatchAPI(APIUSERS, patchData).then(this.props.redirectToPostPage(this.state.post.id))
+            API.PatchAPI(APIUSERS, patchData).then(this.props.redirectToMainPage())
         }
         else {
             e.preventDefault()
