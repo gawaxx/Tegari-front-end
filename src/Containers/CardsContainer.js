@@ -4,8 +4,6 @@ import NormalCard from '../Components/Card/NormalCard.js'
 import CreatePost from '../Components/CreatePost.js';
 import UrgentCard from '../Components/Card/UrgentCard.js';
 import { Link } from 'react-router-dom'
-import { Placeholder } from 'semantic-ui-react'
-
 
 
 export class CardsContainer extends Component {
