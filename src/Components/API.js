@@ -1,7 +1,13 @@
+// In this file is all the API calls and methods
+
+// Switch between these two depending on if I am testing or in development
 // export const APILINK = "http://localhost:3000"
 export const APILINK = "https://tegari.herokuapp.com"
+
 export const APIUSERS = `${APILINK}/users`
 export const APIPOSTS = `${APILINK}/posts`
+
+// Just need to uncomment if I ever need to add more features
 // export const APISAVEPOST = `${APILINK}/save_posts`
 // export const APIADMIN = `${APILINK}/admins`
 
@@ -58,13 +64,4 @@ export const validateUser = (url) => { // APILINK/profile
     return data.user
   })
   
-  export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
-  // export const signUp = (url, signupData) =>
-  //   fetch(url, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Accept: "application/json"
-  //     },
-  //     body: JSON.stringify({ user: signupData })
-  //   }).then(jsonify);
+export const API = { GetAPI, PostAPI, PatchAPI, DeleteAPI, validateUser, login }
