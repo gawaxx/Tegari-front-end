@@ -1,5 +1,5 @@
-export const APILINK = "http://localhost:3000"
-// export const APILINK = "https://tegari.herokuapp.com"
+// export const APILINK = "http://localhost:3000"
+export const APILINK = "https://tegari.herokuapp.com"
 export const APIUSERS = `${APILINK}/users`
 export const APIPOSTS = `${APILINK}/posts`
 // export const APISAVEPOST = `${APILINK}/save_posts`
@@ -41,7 +41,7 @@ export const validateUser = (url) => { // APILINK/profile
     } else {
       return Promise.reject({ error: "no token" });
     }
-  };
+  }; 
   
   export const login = (url, loginData) =>
   fetch(url, {
