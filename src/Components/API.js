@@ -1,6 +1,5 @@
 // In this file is all the API calls and methods
 
-
 // Switch between these two depending on if I am testing or in development
 // export const APILINK = "http://localhost:3000"
 export const APILINK = "https://tegari.herokuapp.com"
@@ -48,7 +47,7 @@ export const validateUser = (url) => { // APILINK/profile
     } else {
       return Promise.reject({ error: "no token" });
     }
-  };
+  }; 
   
   export const login = (url, loginData) =>
   fetch(url, {
